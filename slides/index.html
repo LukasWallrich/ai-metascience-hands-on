@@ -316,6 +316,11 @@
       <aside class="notes">
         13:29 (2 min). Switch the screen to T3 Code now. Paste the case A and case B prompts into each
         agent's thread and start them. Then switch back to the slides.
+        Start the case B (red card) threads first. Run times last night: case A 3–6 min for every agent;
+        case B 8.5 min (Codex), 51 min (DeepSeek), about 1 hour (Claude, whose mixed models take 18 min).
+        Expect only Codex to finish case B live; slides 18–19 hold the backup results.
+        Prompts: cases/*/PROMPT.md in the materials repo. Data: case folders in
+        ~/Documents/Coding/presentations/ai-metascience-hands-on-prerun/live/ (fresh copies, no outputs).
       </aside>
     </section>
 
@@ -550,28 +555,53 @@
       </aside>
     </section>
 
-    <!-- RESULTS PLACEHOLDER -->
+    <!-- Backup results from the runs on 28 Sep (prerun/runs/redcards-*) -->
     <section data-cid="s-7b25d588" class="pad">
-      <p data-cid="e-4cd99fed" class="marker">Case B · results</p>
-      <h2 data-cid="e-c5c7a9b5">Case B: three analysts, three answers?</h2>
-      <p data-cid="e-21312127" class="small quiet">Live results; backup from runs on 28 Sep.</p>
-      <aside class="notes">First look at the live T3 threads; switch to backup slides only if runs failed.</aside>
+      <p data-cid="e-4cd99fed" class="marker">Case B · results from last night's runs</p>
+      <h2 data-cid="e-c5c7a9b5">Three analysts, three answers?</h2>
+      <table class="grid">
+        <tr><th></th><th>Claude</th><th>Codex</th><th>DeepSeek</th></tr>
+        <tr><td>Model</td><td>mixed model, player &amp; referee random effects</td><td>logistic, clustered SEs</td><td>logistic, clustered SEs</td></tr>
+        <tr><td>Outcome</td><td>red cards</td><td>red cards + second yellows</td><td>red cards</td></tr>
+        <tr><td>Skin-tone contrast</td><td>very light &rarr; very dark</td><td>0.25 &rarr; 0.75</td><td>very light &rarr; very dark</td></tr>
+        <tr><td>Odds ratio [95% CI]</td><td>1.38 [1.12, 1.70]</td><td>1.12 [1.03, 1.22]</td><td>1.34 [1.10, 1.62]</td></tr>
+        <tr><td>Time to finish</td><td>about 1 hour</td><td>8.5 min</td><td>51 min</td></tr>
+      </table>
+      <p data-cid="e-21312127" class="small" style="margin-top:0.8em;">Codex's estimate covers half the scale. Over the full scale it is about 1.26, close to the others.</p>
+      <aside class="notes">
+        First look at the live T3 threads. Red-card runs will probably not have finished live: Claude's R script alone took 18 minutes, DeepSeek took 51 minutes in total.
+        Codex rescaled: 1.121 squared = 1.26 (CI 1.06–1.50). Codex's unadjusted all-dismissals estimate (1.115 per half scale, about 1.24 full scale) matches DeepSeek's all-dismissals estimate of 1.24.
+        Claude's headless run backgrounded its R job and ended its turn; it was resumed once with "run it in the foreground". In T3 Code this does not happen: the agent is woken when its background job finishes.
+        All three agree once outcome and scale are lined up: a modest association that is robust across their own checks.
+      </aside>
     </section>
 
-    <!-- RESULTS PLACEHOLDER -->
     <section data-cid="s-4dcaa8bd" class="pad">
-      <p data-cid="e-a0a13e41" class="marker">Case B · results</p>
-      <h2 data-cid="e-2cb22ec4">Case B: where the agents fall among the 29 teams</h2>
-      <p data-cid="e-f26761bb" class="small quiet">Live results; backup from runs on 28 Sep.</p>
-      <aside class="notes">First look at the live T3 threads; switch to backup slides only if runs failed.</aside>
+      <p data-cid="e-a0a13e41" class="marker">Case B · results from last night's runs</p>
+      <h2 data-cid="e-2cb22ec4">Where the agents fall among the 29 teams</h2>
+      <img src="assets/redcards_teams.png" alt="Odds ratios with 95% confidence intervals for the 29 teams in grey and the three agents in red, sorted by estimate. Claude and DeepSeek sit just above the teams' median of 1.31; Codex's half-scale estimate sits low, and rescaled to the full scale it is near 1.26." style="width:100%; margin:0.2em 0 0 0;">
+      <p data-cid="e-f26761bb" class="small">Codex ranked its 1.12 "below 24 of 29 teams", after noting that the teams' contrasts differ from its own.</p>
+      <aside class="notes">
+        Teams' data: OSF file fa743 (harmonised OR column). Median 1.31, range 0.89–2.93, 20 of 29 CIs exclude 1.
+        Claude: above 17 of 29. DeepSeek: above 16 of 29. Both call their estimate central; Codex calls its own low.
+        The hollow marker is my rescaling of Codex's estimate, not something Codex reported.
+      </aside>
     </section>
 
-    <!-- RESULTS PLACEHOLDER -->
     <section data-cid="s-db4326cd" class="pad">
       <p data-cid="e-3ed9c29e" class="marker">Both cases</p>
       <h2 data-cid="e-51a2eba9">What each agent decided without being asked</h2>
-      <p data-cid="e-f4ced829" class="small quiet">Live results; backup from runs on 28 Sep.</p>
-      <aside class="notes">First look at the live T3 threads; switch to backup slides only if runs failed. 14:20 at the latest: move on.</aside>
+      <ul class="small" style="margin-top:0.3em;">
+        <li data-cid="e-f4ced829"><strong>Trusting the documentation.</strong> The hurricane README described a variable wrongly. Claude checked the data and noticed; Codex and DeepSeek did not.</li>
+        <li data-cid="e-7c31d0a4"><strong>Where "severe" starts.</strong> 1 SD, the 75th or the 90th percentile of damage: three headline effects from one model.</li>
+        <li data-cid="e-8e52b1f7"><strong>What counts as a red card.</strong> Codex added second yellows; the others did not.</li>
+        <li data-cid="e-2d94c6a8"><strong>How far apart to compare.</strong> DeepSeek read its narrower dark/light split as "removing the association". Claude flagged its own, similar split as a narrower contrast.</li>
+        <li data-cid="e-b61e0f3c"><strong>Where the paper came from.</strong> PubMed Central, or a PDF on a blog.</li>
+      </ul>
+      <aside class="notes">
+        Each of these is visible in the report or the trace, because the prompt asked for the decisions list and the source of each number. None is a bug in the code: every number regenerates from each agent's own script.
+        14:20 at the latest: move on.
+      </aside>
     </section>
 
     <!-- What still needs a human -->
