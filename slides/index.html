@@ -205,7 +205,7 @@
       <p data-cid="e-311e7871" class="marker">The next 70 minutes</p>
       <h2 data-cid="e-bb3cedc7">Plan</h2>
       <div class="turns timeline">
-        <div class="turn"><span data-cid="e-e137f659" class="tool">Start</span><span data-cid="e-f12fd5a9" class="res">Two cases, three agents: we set the runs going.</span></div>
+        <div class="turn"><span data-cid="e-e137f659" class="tool">Start</span><span data-cid="e-f12fd5a9" class="res">Two cases, three agents. The slow case is already running; we start the other now.</span></div>
         <div class="turn"><span data-cid="e-b11a52b7" class="tool">Meanwhile</span><span data-cid="e-572571eb" class="res">How coding agents work, and how to work with them.</span></div>
         <div class="turn"><span data-cid="e-e3bcf5ca" class="tool">Results</span><span data-cid="e-7a662aa9" class="res">We look at what came back.</span></div>
         <div class="turn"><span data-cid="e-986e9d06" class="tool">Last</span><span data-cid="e-d1dcad1f" class="res">What still needs a human, then your questions.</span></div>
@@ -220,7 +220,7 @@
 
     <!-- Case A -->
     <section data-cid="s-f078d7bd" class="pad">
-      <p data-cid="e-e98b6a4c" class="marker">Case A · small, runs in seconds</p>
+      <p data-cid="e-e98b6a4c" class="marker">Case A · small, agents finish in a few minutes</p>
       <h2 data-cid="e-b40b8039">"Female hurricanes are deadlier than male hurricanes"</h2>
       <p data-cid="e-db773f91" style="margin-top:0.6em;"><strong>92 US hurricanes</strong>, 1950–2012. Storms with more feminine names killed more people.</p>
       <p data-cid="e-48cf816b">The authors' explanation: people take a storm with a feminine name less seriously.</p>
@@ -249,7 +249,7 @@
         </div>
       </div>
       <p data-cid="e-19b671f5" class="small quiet" style="margin-top:0.8em;">Our agents see this spread only after they finish their own analysis.</p>
-      <p data-cid="e-19074b3c" class="tiny" style="margin-top:0.6em;"><cite key="silberzahn2018"></cite>, <em>AMPPS</em>, 1(3). Numbers from the teams' estimates file on OSF.</p>
+      <p data-cid="e-19074b3c" class="tiny" style="margin-top:0.6em;"><cite key="silberzahn2018"></cite>, <em>AMPPS</em>, 1(3), 337&ndash;356. Numbers from the teams' estimates file on OSF.</p>
       <aside class="notes">
         13:24 (2 min). Here the agent gets no published answer to reproduce. It picks its own analysis,
         like one more team. Then it downloads the 29 teams' estimates and places itself among them.
@@ -258,22 +258,22 @@
 
     <!-- The prompt -->
     <section data-cid="s-4f4faa94" class="pad">
-      <p data-cid="e-c0d1ac91" class="marker">Case A · the prompt, verbatim</p>
-      <h2 data-cid="e-b0fa0ff0" style="margin-bottom:0.4em;">What each agent gets</h2>
-      <div data-cid="e-812d75df" class="prompt">
-        <p data-cid="e-7be92022">This folder contains the data behind Jung et al. (2014), "Female hurricanes are deadlier than male hurricanes", PNAS, https://doi.org/10.1073/pnas.1402786111. README.md describes the variables.</p>
-        <p data-cid="e-e66b41fa">1. Reproduce the main result of the paper. Write one script (R or Python) that runs from a clean start and produces every number you report.</p>
-        <p data-cid="e-283998a9">2. Put your estimates next to the published ones in a table. For each published number, say where you got it: a source you opened in this session (give the URL), or your memory of the paper.</p>
-        <p data-cid="e-c01250c2">3. List each analysis decision you had to make that the paper did not settle for you.</p>
-        <p data-cid="e-68651c3f">4. Test how robust the result is. Before running anything, list 6–10 alternative choices that a reasonable analyst could defend, and say which ones you expect to change the conclusion. Then run all of them, and summarise the estimates in one table and one figure. Keep the research question fixed.</p>
-        <p data-cid="e-7a9451a1">5. End with two or three sentences on whether the headline claim holds up.</p>
-        <p data-cid="e-e7aaf9a5">Write the results to report.md in this folder.</p>
-      </div>
+      <p data-cid="e-c0d1ac91" class="marker">Case A · the prompt in short (full text on the page)</p>
+      <h2 data-cid="e-b0fa0ff0" style="margin-bottom:0.5em;">What each agent gets</h2>
+      <p data-cid="e-7be92022" class="small quiet">The data, a README, and the paper's reference and DOI. Then:</p>
+      <ol style="font-size:0.9em; margin-top:0.3em;">
+        <li data-cid="e-e66b41fa"><strong>Reproduce</strong> the main result, with one script that runs from a clean start.</li>
+        <li data-cid="e-283998a9"><strong>Compare</strong> with the published numbers, and say where each one came from.</li>
+        <li data-cid="e-c01250c2"><strong>List</strong> the decisions the paper left open.</li>
+        <li data-cid="e-68651c3f"><strong>Stress-test:</strong> predict first, then run 6&ndash;10 defensible alternatives.</li>
+        <li data-cid="e-7a9451a1"><strong>Judge</strong> whether the headline claim holds up.</li>
+      </ol>
       <p data-cid="e-536fb666" class="small quiet" style="margin-top:0.6em;">Case B: the agent chooses its own analysis, and compares it with the 29 teams only afterwards.</p>
       <aside class="notes">
         13:26 (2 min). Walk through the five steps briefly; we come back to why the prompt looks like this
         once the agents are running. Point out step 2: every published number needs a source, and
-        "my memory" is an allowed answer, as long as it is declared.
+        "my memory" is an allowed answer, as long as it is declared. "Clean start": the script runs
+        on its own, in a fresh session, without anything the agent did by hand.
       </aside>
     </section>
 
@@ -316,9 +316,11 @@
       <aside class="notes">
         13:29 (2 min). Switch the screen to T3 Code now. Paste the case A and case B prompts into each
         agent's thread and start them. Then switch back to the slides.
-        Start the case B (red card) threads first. Run times last night: case A 3–6 min for every agent;
-        case B 8.5 min (Codex), 51 min (DeepSeek), about 1 hour (Claude, whose mixed models take 18 min).
-        Expect only Codex to finish case B live; slides 18–19 hold the backup results.
+        BEFORE THE SESSION (about 12:50): start the three case B (red card) threads, so the heavy R jobs
+        are done before you share your screen. At 13:29 show them running, and start case A live.
+        Run times last night: case A 2.5–6 min for every agent; case B 8.5 min (Codex), 51 min (DeepSeek),
+        about 1 hour (Claude, including an 18-minute R script on 6 cores).
+        Set the same models in T3 Code as last night: Claude Fable 5.1, GPT-6 Sol (high), DeepSeek Flash.
         Prompts: cases/*/PROMPT.md in the materials repo. Data: case folders in
         ~/Documents/Coding/presentations/ai-metascience-hands-on-prerun/live/ (fresh copies, no outputs).
       </aside>
@@ -430,7 +432,7 @@
       <div class="habits">
         <div class="fragment" data-fragment-index="0">
           <h3 data-cid="e-cb993762">Context</h3>
-          <p data-cid="e-67f01a02">The paper, and a README that describes the variables.</p>
+          <p data-cid="e-67f01a02">The paper's reference and DOI, and a README that describes the variables. Better still: the PDF in the folder.</p>
           <p data-cid="e-900d963c" class="said">"the data behind Jung et al. (2014) … README.md describes the variables"</p>
         </div>
         <div class="fragment" data-fragment-index="1">
@@ -478,7 +480,7 @@
       <div class="cols" style="gap:4%; margin-top:0.5em;">
         <div data-cid="e-b862bc8f" class="card">
           <div data-cid="e-2190d8a7" class="label">Asked from memory: no files, no web</div>
-          <p data-cid="e-e722a0e9" class="small" style="margin:0;">All three agents gave Silberzahn's numbers exactly: 29 teams, odds ratios 0.89–2.93, 20 significant.</p>
+          <p data-cid="e-e722a0e9" class="small" style="margin:0;">All three agents recalled Silberzahn's numbers: 29 teams, odds ratios 0.89–2.93, 20 significant.</p>
           <p data-cid="e-29ead66b" class="small" style="margin:0.5em 0 0 0;">DeepSeek put the hurricane paper on pp. 10185–10190. It is on pp. 8782–8787.</p>
         </div>
         <div data-cid="e-b623ceb8" class="card accent">
@@ -509,28 +511,34 @@
         </div>
       </div>
       <aside class="notes">
-        13:55. First look at the live T3 threads. Switch to the backup slides that follow only if runs failed.
+        13:55. Two steps. (1) About 8 min in T3 Code: the live case A reports side by side, and any
+        case B thread that has finished. Say that live numbers can differ from last night's: agents are
+        not deterministic. (2) About 15 min on slides 16–20: last night's runs, compared.
+        "Trace": the log of every command the agent ran and what came back.
       </aside>
     </section>
 
     <!-- Backup results from the runs on 28 Sep (prerun/runs/himmicanes-*) -->
     <section data-cid="s-2a2593cc" class="pad">
       <p data-cid="e-62296435" class="marker">Case A · results from last night's runs</p>
-      <h2 data-cid="e-c0607efa">Same model, three headline numbers</h2>
+      <h2 data-cid="e-c0607efa">Same coefficients, different headlines</h2>
       <table class="grid">
         <tr><th></th><th>Published</th><th>Claude</th><th>Codex</th><th>DeepSeek</th></tr>
         <tr><td>Name × damage</td><td>0.705</td><td>0.705</td><td>0.705</td><td>0.705</td></tr>
         <tr><td>Its SE</td><td>0.184</td><td>0.150</td><td>0.184</td><td>&ndash;</td></tr>
         <tr><td>Paper read from</td><td></td><td>PubMed Central</td><td>a PDF on a cycling blog</td><td>PubMed Central</td></tr>
-        <tr><td>"Severe storm" effect</td><td>15 vs 42 deaths</td><td>+0.88 log deaths per SD</td><td>ratio 1.51 (75th pct damage)</td><td>ratio 4.37 (90th pct damage)</td></tr>
+        <tr><td>Deaths, feminine vs masculine name, severe storm</td><td>&times;2.8<br><span class="tiny">high vs low damage split</span></td><td>&times;5.1<br><span class="tiny">damage +1 SD</span></td><td>&times;1.5<br><span class="tiny">75th percentile</span></td><td>&times;2.8<br><span class="tiny">median split, as the paper</span></td></tr>
       </table>
-      <p data-cid="e-b8b7fafc" class="small" style="margin-top:0.8em;">The coefficients reproduce exactly. The paper never says what counts as a severe storm, so each agent picked its own point, and each headline differs.</p>
+      <p data-cid="e-b8b7fafc" class="small" style="margin-top:0.7em;">The coefficients reproduce exactly. The paper does not say where "severe" starts, so each agent chose its own point.</p>
+      <p data-cid="e-9b3f5d21" class="tiny">Runs on 28 Sep: Claude Fable 5.1 (Claude Code) · GPT-6 Sol, high effort (Codex) · DeepSeek Flash (OpenCode).</p>
       <aside class="notes">
         First look at the live T3 threads; use this slide if the runs failed or to compare.
         SEs: Claude used glm.nb, which treats the dispersion parameter as fixed (0.150); Codex's statsmodels fit estimates it jointly and matches the paper (0.184). Claude said the paper "probably used different software", which is right.
         All numbers were rerun from each agent's own script in a clean folder: they regenerate exactly.
         Codex found the paper through a copy on cyclingandchill.com: ask where your agent got the paper from.
-        Codex and DeepSeek both report that the published 15.15 vs 41.84 deaths come from a model with damage split into high and low.
+        Published: 15.15 vs 41.84 predicted deaths (MFI 3 vs 9), from a model with damage split into high and low; the paper does not give the cut. DeepSeek reproduced that model with a median split: 17.85 vs 50.35 (×2.82).
+        Claude: 10.09 vs 51.54 at damage +1 SD, pressure at the mean. Codex: 9.74 vs 14.69 at the 75th percentile of damage.
+        DeepSeek's own robustness baseline used a different model (updated pressure; ×4.37 at the 90th percentile): see the next slide.
       </aside>
     </section>
 
@@ -544,14 +552,15 @@
         <tr><td>no interaction terms</td><td>no</td><td>&ndash;</td><td>no</td></tr>
         <tr><td>binary name gender</td><td>yes</td><td>yes</td><td>yes</td></tr>
         <tr><td>dropping the deadliest storms</td><td>yes</td><td>yes</td><td>&ndash;</td></tr>
-        <tr><td>the other pressure variable</td><td>yes</td><td>yes*</td><td>yes</td></tr>
+        <tr><td>the other pressure variable</td><td>yes</td><td>yes*</td><td>yes*</td></tr>
       </table>
-      <p data-cid="e-2a69cbbb" class="small" style="margin-top:0.8em;">Each ran 9&ndash;10 checks, and all three concluded that the claim is fragile. All three chose the 1979 split: the best-known critique of the paper.</p>
-      <p data-cid="e-4f1c2a90" class="tiny">* Codex's check changed nothing: both runs used the same pressure variable.</p>
+      <p data-cid="e-2a69cbbb" class="small" style="margin-top:0.7em;">Each ran 9 checks and concluded that the claim is fragile. All three chose the 1979 split, the best-known critique of the paper.</p>
+      <p data-cid="e-4f1c2a90" class="tiny">Each agent judged "survives" by its own yardstick. * Both followed a wrong line in my README.</p>
       <aside class="notes">
         Before 1979 all Atlantic hurricanes had female names, so name gender is confounded with era.
         Each agent predicted before running which checks would matter; they predicted the 1979 split correctly. Is that insight, or memory of the critique?
-        The README said ZMinPressure_A was standardised from the updated pressure values. It is standardised from the original ones. Claude checked the data and noticed; Codex and DeepSeek trusted the README, so Codex's "original pressure" check re-ran the reference model.
+        My README for these runs said ZMinPressure_A was standardised from the updated pressure values. It is standardised from the original ones (the DHARMa package documentation has the same error; the README on the page is corrected). Claude checked the data and noticed. Codex and DeepSeek trusted the README: Codex's "original pressure" check re-ran the published model; DeepSeek's "paper replication" baseline used the updated pressure, so its "original pressure" check (×5.18 at the 90th percentile) is the published model.
+        Yardsticks: Claude, CI of the femininity effect at damage +1 SD; DeepSeek, CI of the death ratio at the 90th percentile; Codex, interaction p &lt; .05. Codex's own summary: "only 1 of 10 high-damage ratio intervals exclude 1".
       </aside>
     </section>
 
@@ -569,9 +578,9 @@
       </table>
       <p data-cid="e-21312127" class="small" style="margin-top:0.8em;">Codex's estimate covers half the scale. Over the full scale it is about 1.26, close to the others.</p>
       <aside class="notes">
-        First look at the live T3 threads. Red-card runs will probably not have finished live: Claude's R script alone took 18 minutes, DeepSeek took 51 minutes in total.
+        First look at the live T3 threads, started around 12:50. Last night Claude's R script alone took 18 minutes and DeepSeek took 51 minutes in total.
         Codex rescaled: 1.121 squared = 1.26 (CI 1.06–1.50). Codex's unadjusted all-dismissals estimate (1.115 per half scale, about 1.24 full scale) matches DeepSeek's all-dismissals estimate of 1.24.
-        Claude's headless run backgrounded its R job and ended its turn; it was resumed once with "run it in the foreground". In T3 Code this does not happen: the agent is woken when its background job finishes.
+        Claude's headless run backgrounded its R job and ended its turn; it was resumed once with "run it in the foreground". In T3 Code, Claude is woken when a background job finishes (the session that prepared these slides ran in T3 Code and was woken this way several times).
         All three agree once outcome and scale are lined up: a modest association that is robust across their own checks.
       </aside>
     </section>
@@ -580,7 +589,7 @@
       <p data-cid="e-a0a13e41" class="marker">Case B · results from last night's runs</p>
       <h2 data-cid="e-2cb22ec4">Where the agents fall among the 29 teams</h2>
       <img src="assets/redcards_teams.png" alt="Odds ratios with 95% confidence intervals for the 29 teams in grey and the three agents in red, sorted by estimate. Claude and DeepSeek sit just above the teams' median of 1.31; Codex's half-scale estimate sits low, and rescaled to the full scale it is near 1.26." style="width:100%; margin:0.2em 0 0 0;">
-      <p data-cid="e-f26761bb" class="small">Codex ranked its 1.12 "below 24 of 29 teams", after noting that the teams' contrasts differ from its own.</p>
+      <p data-cid="e-f26761bb" class="small">Codex placed its 1.12 below 24 of the 29 teams, after noting that the teams' contrasts differ from its own.</p>
       <aside class="notes">
         Teams' data: OSF file fa743 (harmonised OR column). Median 1.31, range 0.89–2.93, 20 of 29 CIs exclude 1.
         Claude: above 17 of 29. DeepSeek: above 16 of 29. Both call their estimate central; Codex calls its own low.
@@ -592,14 +601,15 @@
       <p data-cid="e-3ed9c29e" class="marker">Both cases</p>
       <h2 data-cid="e-51a2eba9">What each agent decided without being asked</h2>
       <ul class="small" style="margin-top:0.3em;">
-        <li data-cid="e-f4ced829"><strong>Trusting the documentation.</strong> The hurricane README described a variable wrongly. Claude checked the data and noticed; Codex and DeepSeek did not.</li>
-        <li data-cid="e-7c31d0a4"><strong>Where "severe" starts.</strong> 1 SD, the 75th or the 90th percentile of damage: three headline effects from one model.</li>
+        <li data-cid="e-f4ced829"><strong>Trusting the documentation.</strong> My README for these runs described one variable wrongly. Claude checked the data and noticed; Codex and DeepSeek built on the error.</li>
+        <li data-cid="e-7c31d0a4"><strong>Where "severe" starts.</strong> A median split, 1 SD above average, or the 75th percentile of damage: death ratios from &times;1.5 to &times;5.1 from one model.</li>
         <li data-cid="e-8e52b1f7"><strong>What counts as a red card.</strong> Codex added second yellows; the others did not.</li>
-        <li data-cid="e-2d94c6a8"><strong>How far apart to compare.</strong> DeepSeek read its narrower dark/light split as "removing the association". Claude flagged its own, similar split as a narrower contrast.</li>
+        <li data-cid="e-2d94c6a8"><strong>How far apart to compare.</strong> DeepSeek concluded that a dark/light split "removes the association". Codex ran the same split and flagged that it measures a different contrast.</li>
         <li data-cid="e-b61e0f3c"><strong>Where the paper came from.</strong> PubMed Central, or a PDF on a blog.</li>
       </ul>
       <aside class="notes">
-        Each of these is visible in the report or the trace, because the prompt asked for the decisions list and the source of each number. None is a bug in the code: every number regenerates from each agent's own script.
+        Each of these is visible in the report or the trace, because the prompt asked for the decisions list and the source of each number. Every reported number regenerates from the agent's own script: the problems are in the choices and their labels, not in the code running. DeepSeek's red-card script uses an absolute path, so it only runs in its original folder.
+        Dark/light split: DeepSeek 1.11 [0.95, 1.30] and Codex 1.14 [1.00, 1.30], both ratings above vs below 0.5. Claude's split (≥0.75 vs ≤0.25) gave 1.29 [1.08, 1.53], and it noted that this is a narrower contrast than 0 → 1.
         14:20 at the latest: move on.
       </aside>
     </section>
