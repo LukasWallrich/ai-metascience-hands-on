@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hands-on: agentic reproductions and robustness checks</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌀</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#FDFBF7; --surface:#fff; --text:#2D2A24; --text-2:#5C574D; --accent:#8B2635;
+          --accent-lt:#F5E6E8; --border:#E8E4DC; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.55 Inter, -apple-system, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  h1, h2 { font-family: Fraunces, Georgia, serif; font-weight: 500; line-height: 1.15; }
+  h1 { font-size: 2rem; margin: .2rem 0 .6rem; }
+  h2 { font-size: 1.4rem; margin: 2.2rem 0 .6rem; }
+  .marker { text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; font-weight: 600; color: var(--accent); margin: 0; }
+  .lead { color: var(--text-2); font-size: 1.08rem; }
+  a { color: var(--accent); }
+  .case { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1rem 1.2rem; margin: 1rem 0; }
+  .case h3 { font-family: Fraunces, Georgia, serif; font-weight: 500; font-size: 1.15rem; margin: 0 0 .3rem; }
+  .case p { margin: .4rem 0; }
+  .btn { display: inline-block; background: var(--accent); color: #fff; text-decoration: none; border-radius: 6px;
+         padding: .35rem .8rem; font-size: .9rem; font-weight: 500; margin-right: .4rem; }
+  pre { background: #F6F3EC; border: 1px solid var(--border); border-radius: 8px; padding: .9rem 1rem; white-space: pre-wrap;
+        font: .86rem/1.5 ui-monospace, Menlo, monospace; position: relative; margin: .6rem 0; }
+  button.copy { position: absolute; top: .5rem; right: .5rem; font: 500 .75rem Inter, sans-serif; border: 1px solid var(--border);
+                background: #fff; border-radius: 5px; padding: .2rem .55rem; cursor: pointer; }
+  details summary { cursor: pointer; font-weight: 500; }
+  li { margin-bottom: .35rem; }
+  .quiet { color: var(--text-2); font-size: .92rem; }
+</style>
+</head>
+<body>
+<main>
+<p class="marker">FORRT AI in Metascience · Tuesday 29 September, 13:20 CEST</p>
+<h1>Getting our hands dirty: agentic reproductions and robustness checks</h1>
+<p class="lead">Give a coding agent a published analysis and its data. Ask it to reproduce the result, then to test how robust it is. Then look closely at what it hands back.</p>
+<p><a href="slides/">Slides</a></p>
+
+<h2>What you need to follow along</h2>
+<ul>
+  <li>A coding agent you can already use, for example <a href="https://www.anthropic.com/claude-code">Claude Code</a>, <a href="https://developers.openai.com/codex">Codex</a> or <a href="https://opencode.ai">OpenCode</a>. A standard paid plan (around $20 a month) is enough for one case.</li>
+  <li>R or Python on your machine, so the agent can run the code it writes.</li>
+  <li>An empty folder for each case. Put the case files in it and start the agent from inside that folder.</li>
+</ul>
+<p class="quiet">Setting up an agent for the first time takes longer than this session allows. If you don't have one yet, watch the live runs and try a case afterwards.</p>
+
+<h2>Pick a case</h2>
+
+<div class="case">
+  <p class="marker">Case A · small, runs in seconds</p>
+  <h3>"Female hurricanes are deadlier than male hurricanes"</h3>
+  <p>Jung et al. (2014), <em>PNAS</em>, <a href="https://doi.org/10.1073/pnas.1402786111">doi:10.1073/pnas.1402786111</a>. 92 US hurricanes, 1950–2012.</p>
+  <p><a class="btn" href="cases/himmicanes.zip">Download case A</a> <span class="quiet">(data, README and prompt)</span></p>
+</div>
+
+<div class="case">
+  <p class="marker">Case B · larger, many analysts</p>
+  <h3>Do referees give more red cards to dark-skin-toned players?</h3>
+  <p>Silberzahn et al. (2018), <em>AMPPS</em>, <a href="https://doi.org/10.1177/2515245917747646">doi:10.1177/2515245917747646</a>. 146,028 player–referee pairs; 29 teams analysed the same data.</p>
+  <p><a class="btn" href="cases/redcards.zip">Download case B</a> <span class="quiet">(README and prompt)</span> Then add the data from OSF: <a href="https://osf.io/download/fv8c3/">osf.io/download/fv8c3</a> (5 MB zip), unzipped into the same folder.</p>
+</div>
+
+<div class="case">
+  <p class="marker">Case C · your own</p>
+  <h3>A paper you know well, with open data</h3>
+  <p>You know the right answer and where the analysis is fragile, so you can judge the agent best here. Use published or de-identified data only; don't give identifiable participant data to a commercial agent.</p>
+  <p><a class="btn" href="cases/your-own/PROMPT.md">Prompt template</a></p>
+</div>
+
+<h2>The prompts</h2>
+<p>Paste the prompt for your case into the agent, unchanged, so we can compare results across agents and participants.</p>
+
+<details open>
+<summary>Case A: hurricanes</summary>
+<pre id="p-a"></pre>
+</details>
+<details>
+<summary>Case B: red cards</summary>
+<pre id="p-b"></pre>
+</details>
+<details>
+<summary>Case C: your own paper (fill in the brackets)</summary>
+<pre id="p-c"></pre>
+</details>
+
+<h2>While it runs</h2>
+<ul>
+  <li>Watch the trace, not only the answer. Where did it find the published numbers?</li>
+  <li>Note each choice it makes that the prompt did not ask for.</li>
+  <li>When it finishes, rerun its script yourself. Do the numbers in report.md come out of the script?</li>
+</ul>
+
+<p class="quiet" style="margin-top:3rem;">Lukas Wallrich, Birkbeck, University of London. Materials: <a href="https://github.com/LukasWallrich/ai-metascience-hands-on">github.com/LukasWallrich/ai-metascience-hands-on</a>. The hurricane data is the <code>hurricanes</code> dataset from the DHARMa R package (GPL-3). The red-card data is hosted on the project's <a href="https://osf.io/gvm2z/">OSF page</a>.</p>
+</main>
+<script>
+  const load = (id, path) => fetch(path).then(r => r.text()).then(t => {
+    const pre = document.getElementById(id);
+    pre.textContent = t.trim();
+    const b = document.createElement('button');
+    b.className = 'copy'; b.textContent = 'Copy';
+    b.onclick = () => navigator.clipboard.writeText(t.trim()).then(() => { b.textContent = 'Copied'; setTimeout(() => b.textContent = 'Copy', 1500); });
+    pre.appendChild(b);
+  });
+  load('p-a', 'cases/himmicanes/PROMPT.md');
+  load('p-b', 'cases/redcards/PROMPT.md');
+  load('p-c', 'cases/your-own/PROMPT.md');
+</script>
+</body>
+</html>
