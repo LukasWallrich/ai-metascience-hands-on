@@ -26,4 +26,4 @@ DHARMa R package (GPL-3), exported to CSV.
 | `NDAM` | Normalised damage in millions of US dollars (2013 values) |
 | `Elapsed_Yrs` | Years elapsed since the hurricane |
 | `Source` | Source of the record (MWR or Wikipedia) |
-| `ZMasFem`, `ZMinPressure_A`, `ZNDAM` | Standardised versions of `MasFem`, `Minpressure_Updated_2014` and `NDAM` |
+| `ZMasFem`, `ZMinPressure_A`, `ZNDAM` | Standardised versions of `MasFem`, `MinPressure_before` and `NDAM` |
