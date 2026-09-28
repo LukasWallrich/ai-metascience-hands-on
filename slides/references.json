@@ -1,0 +1,32 @@
+{
+  "jung2014": {
+    "authors": "Jung, K., Shavitt, S., Viswanathan, M., & Hilbe, J. M.",
+    "year": 2014,
+    "title": "Female hurricanes are deadlier than male hurricanes",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "volume": "111",
+    "issue": "24",
+    "pages": "8782-8787",
+    "doi": "10.1073/pnas.1402786111"
+  },
+  "silberzahn2018": {
+    "authors": "Silberzahn, R., Uhlmann, E. L., Martin, D. P., ... Nosek, B. A.",
+    "year": 2018,
+    "title": "Many analysts, one data set: Making transparent how variations in analytic choices affect results",
+    "journal": "Advances in Methods and Practices in Psychological Science",
+    "volume": "1",
+    "issue": "3",
+    "pages": "337-356",
+    "doi": "10.1177/2515245917747646"
+  },
+  "simonsohn2020": {
+    "authors": "Simonsohn, U., Simmons, J. P., & Nelson, L. D.",
+    "year": 2020,
+    "title": "Specification curve analysis",
+    "journal": "Nature Human Behaviour",
+    "volume": "4",
+    "issue": "11",
+    "pages": "1208-1214",
+    "doi": "10.1038/s41562-020-0912-z"
+  }
+}
