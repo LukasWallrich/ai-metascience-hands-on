@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reproduction and sensitivity analysis: Borjas and Breznau (2026) · Codex GPT-6-Sol</title>
+<meta name="description" content="Independent reproduction and sensitivity analysis of Borjas and Breznau (2026).">
+<style>
+    :root { --ink:#203745; --muted:#526873; --teal:#176f83; --rust:#b95e3b;
+      --paper:#ffffff; --ground:#edf3f5; --line:#d2e0e5; --soft:#f5f9fa; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--ink); background:var(--ground);
+      font-family:"Avenir Next",Avenir,"Segoe UI",sans-serif; font-size:16px; line-height:1.62; }
+    a { color:#096078; text-underline-offset:3px; }
+    a:hover { color:#8b4a32; }
+    a:focus-visible { outline:3px solid var(--rust); outline-offset:3px; border-radius:2px; }
+    .masthead { background:#173c4d; color:white; border-bottom:5px solid var(--teal); }
+    .masthead-inner { max-width:1320px; margin:auto; padding:18px 30px; display:flex;
+      align-items:center; justify-content:space-between; gap:24px; flex-wrap:wrap; }
+    .identity { display:flex; align-items:baseline; gap:12px; line-height:1.2; }
+    .identity strong { font-size:17px; letter-spacing:.01em; }
+    .identity span { color:#b9d6de; font-size:14px; }
+    .masthead-links { display:flex; gap:22px; font-size:14px; }
+    .masthead-links a { color:#e7f4f7; text-decoration:none; border-bottom:1px solid #6e99a6; }
+    .layout { max-width:1320px; margin:auto; padding:0 30px 70px; display:grid;
+      grid-template-columns:210px minmax(0,1fr); gap:42px; }
+    .contents { padding-top:56px; }
+    .contents nav { position:sticky; top:24px; border-left:2px solid #afcbd2; padding-left:17px; }
+    .contents p { margin:0 0 12px; font-size:13px; font-weight:700; color:var(--muted); }
+    .contents a { display:block; margin:0 0 12px; color:#395663; text-decoration:none;
+      font-size:13px; line-height:1.35; }
+    .contents a:hover { color:var(--teal); text-decoration:underline; }
+    .report { min-width:0; background:var(--paper); padding:44px clamp(24px,4.5vw,68px) 80px;
+      box-shadow:0 5px 28px rgba(23,60,77,.05); }
+    .report header { padding-bottom:25px; border-bottom:2px solid var(--teal); margin-bottom:36px; }
+    .report h1 { font-size:clamp(2.1rem,4vw,3.25rem); line-height:1.13; letter-spacing:-.04em;
+      max-width:850px; margin:0 0 13px; font-weight:730; }
+    .report .credit { margin:0 0 26px; color:var(--muted); font-size:14px; }
+    .report .credit strong { color:var(--teal); }
+    .abstract { max-width:800px; padding:21px 25px; background:#e8f2f5; border-left:5px solid var(--teal); }
+    .abstract h2 { font-size:15px; margin:0 0 5px; letter-spacing:.01em; }
+    .abstract p { margin:0; font-family:"Iowan Old Style",Georgia,serif; font-size:18px; line-height:1.55; }
+    .document h2 { font-size:1.55rem; line-height:1.25; letter-spacing:-.018em;
+      margin:57px 0 17px; scroll-margin-top:24px; }
+    .document h2:first-child { margin-top:0; }
+    .document p, .document ul { max-width:77ch; }
+    .document p { margin:0 0 18px; }
+    .document ul { padding-left:22px; margin:0 0 24px; }
+    .document li { padding-left:3px; margin-bottom:8px; }
+    .document code { background:#eff4f5; padding:1px 4px; border-radius:2px; font-size:.91em; }
+    .table-scroll { overflow-x:auto; margin:20px 0 25px; border:1px solid var(--line); }
+    table { border-collapse:collapse; width:100%; min-width:720px; font-size:13px; line-height:1.4; }
+    th, td { padding:10px 12px; text-align:left; vertical-align:top; border-bottom:1px solid #e0e9ec; }
+    thead th { background:#e7f1f4; color:#173c4d; font-weight:700; white-space:nowrap; }
+    tbody tr:nth-child(even) { background:#f8fbfc; }
+    tbody tr:last-child td { border-bottom:0; }
+    td a { overflow-wrap:anywhere; }
+    .document svg { display:block; width:100%; height:auto; margin:23px 0 13px;
+      border:1px solid var(--line); background:white; }
+    .document p:has(> svg) { max-width:none; overflow-x:auto; }
+    .figure-link { font-size:13px; margin-top:-3px !important; }
+    .document h2#conclusion { border-top:2px solid var(--teal); padding-top:25px; }
+    @media (max-width:900px) { .layout { grid-template-columns:1fr; gap:0; padding:0 18px 35px; }
+      .contents { padding-top:19px; } .contents nav { position:static; display:flex; flex-wrap:wrap;
+        gap:6px 17px; border-left:0; padding-left:0; }
+      .contents p { width:100%; margin-bottom:1px; } .contents a { margin:0; }
+      .report { padding:30px 24px 55px; }
+      .document svg { min-width:850px; }
+      .document p:has(> svg)::before { content:"Scroll figure horizontally, or open it at full size below";
+        display:block; color:var(--muted); font-size:12px; } }
+    @media (max-width:560px) { .masthead-inner { padding:15px 18px; }
+      .identity { flex-direction:column; gap:2px; } .masthead-links { gap:15px; }
+      .report { padding:25px 17px 45px; } .abstract { padding:16px; }
+      .abstract p { font-size:16px; } table { font-size:12px; }
+      .table-scroll::before { content:"Scroll horizontally for all columns"; display:block;
+        color:var(--muted); background:var(--soft); font-size:12px; padding:5px 10px; } }
+    @media print { body { background:white; } .masthead { color:#173c4d; background:white; }
+      .masthead-links,.contents { display:none; } .layout { display:block; padding:0; }
+      .report { box-shadow:none; padding:10px 20px; } a { color:inherit; }
+      .table-scroll { overflow:visible; } table { min-width:0; font-size:10px; }
+      h2,figure { break-after:avoid; } tr { break-inside:avoid; } }
+    </style></head><body>
+<div class="masthead"><div class="masthead-inner"><div class="identity"><strong>Codex GPT-6-Sol</strong><span>Research reproduction report</span></div>
+<div class="masthead-links"><a href="report.md">Markdown</a><a href="reproduce.py">Analysis script</a></div></div></div>
+<div class="layout"><aside class="contents"><nav aria-label="Report contents"><p>Contents</p><a href="#main-result">Main result</a>
+<a href="#robustness-of-the-ame-category-contrast">Robustness estimates</a>
+<a href="#robustness-choices-recorded-before-estimation">Prespecified choices</a>
+<a href="#analysis-decisions-left-open-by-the-paper">Analysis decisions</a>
+<a href="#reproducibility-and-interpretation">Reproducibility</a>
+<a href="#conclusion">Conclusion</a></nav></aside>
+<main class="report" id="top"><header><h1>Reproduction and sensitivity analysis: Borjas and Breznau (2026)</h1><p class="credit">Prepared by <strong>Codex GPT-6-Sol</strong></p>
+<div class="abstract" id="abstract"><h2>Abstract</h2><p>The adjusted pro-minus-anti-immigration team AME difference is 0.085 (95% CI 0.023 to 0.146), matching the published result. All eight predeclared alternative estimates remain positive, but only 5 have 95% intervals excluding zero. The association is consistent in direction, while its precision depends on defensible analysis choices and does not establish causation.</p></div></header>
+<article class="document"><h2 id="robustness-choices-recorded-before-estimation">Robustness choices recorded before estimation</h2>
+<p>The fixed question is whether teams classified as pro-immigration produce higher average marginal effect (AME) estimates than teams classified as anti-immigration. I will report the adjusted pro-minus-anti contrast from Table 1, column 3, and compare the same contrast under eight defensible alternatives. For the sensitivity exercise, I will call the direction stable if the contrast remains positive, and the inferential conclusion stable if its two-sided 95% confidence interval excludes zero. These choices and expectations were written before running the reproduction or robustness models.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Alternative choice</th>
+<th>Reason an analyst might choose it</th>
+<th>Expected effect on the headline conclusion, before estimation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Give each reported model equal weight instead of each team equal total weight.</td>
+<td>Treat every submitted specification as evidence, irrespective of team.</td>
+<td><strong>May change it</strong> because teams submitted very different numbers of models.</td>
+</tr>
+<tr>
+<td>2. Omit all covariates and estimate the raw pro-minus-anti difference.</td>
+<td>Describe the observed association without model-based adjustment.</td>
+<td><strong>May change it</strong> because ideology and team characteristics may covary.</td>
+</tr>
+<tr>
+<td>3. Keep skill, topic experience, and team size but omit discipline indicators.</td>
+<td>Avoid many indicators with only 71 independent teams.</td>
+<td><strong>May change it</strong> if discipline strongly confounds the association.</td>
+</tr>
+<tr>
+<td>4. Add the team's prior belief about the hypothesis.</td>
+<td>Account for a related pre-analysis attitude.</td>
+<td>Unlikely to change it materially, based on the paper's own supplementary result.</td>
+</tr>
+<tr>
+<td>5. Winsorise the model-level AME at its pooled 1st and 99th percentiles.</td>
+<td>Reduce the influence of extreme submitted estimates while retaining all models.</td>
+<td><strong>May change it</strong> if the tails drive the mean.</td>
+</tr>
+<tr>
+<td>6. Trim model-level AMEs outside those same pooled percentile cutoffs, then recalculate inverse model-count weights within teams.</td>
+<td>Exclude the most extreme submitted estimates.</td>
+<td><strong>May change it</strong> for the same reason; the number of retained teams will be checked.</td>
+</tr>
+<tr>
+<td>7. Replace each team's mean AME with its median and regress the 71 team medians on the baseline covariates.</td>
+<td>Describe a team's typical rather than average submitted finding.</td>
+<td><strong>May change it</strong> if a few within-team results drive team means.</td>
+</tr>
+<tr>
+<td>8. Refit the baseline after deleting each team in turn, and report the smallest pro-minus-anti contrast.</td>
+<td>Check dependence on any single team, especially among nine anti-immigration teams.</td>
+<td><strong>May change it</strong>, particularly its confidence interval. The deletion rule is fixed here, before inspecting influence.</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="main-result">Main result</h2>
+<p>I used the supplied <code>data/df.dta</code> and reproduced the nine key Table 1 estimates. The input has 1,253 usable model records from 71 teams: 9 anti-immigration, 31 moderate, and 31 pro-immigration teams. One extra <code>.dta</code> record has no team ID or AME and is excluded. Table 1 regressions give each team equal total weight and cluster standard errors by team. The negative and positive tail outcomes use the indicators already supplied in the dataset.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Outcome</th>
+<th>Ideology contrast</th>
+<th style="text-align: right;">Published estimate (SE)</th>
+<th style="text-align: right;">Reproduced estimate (SE)</th>
+<th style="text-align: right;">Reproduced 95% CI</th>
+<th>Published source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AME</td>
+<td>Mean sentiment, per scale point</td>
+<td style="text-align: right;">0.011 (0.006)</td>
+<td style="text-align: right;">0.011 (0.006)</td>
+<td style="text-align: right;">[0.000, 0.022]</td>
+<td><a href="https://gborjas.scholars.harvard.edu/sites/g/files/omnuum4696/files/2026-01/sciadv.adz7173_0.pdf">Paper PDF, Table 1, col. 1</a></td>
+</tr>
+<tr>
+<td>AME</td>
+<td>Pro minus anti team fraction</td>
+<td style="text-align: right;">0.074 (0.024)</td>
+<td style="text-align: right;">0.074 (0.024)</td>
+<td style="text-align: right;">[0.025, 0.122]</td>
+<td><a href="https://gborjas.scholars.harvard.edu/sites/g/files/omnuum4696/files/2026-01/sciadv.adz7173_0.pdf">Paper PDF, Table 1, col. 2</a></td>
+</tr>
+<tr>
+<td>AME</td>
+<td>Pro minus anti team category</td>
+<td style="text-align: right;">0.085 (0.031)</td>
+<td style="text-align: right;">0.085 (0.031)</td>
+<td style="text-align: right;">[0.023, 0.146]</td>
+<td><a href="https://gborjas.scholars.harvard.edu/sites/g/files/omnuum4696/files/2026-01/sciadv.adz7173_0.pdf">Paper PDF, Table 1, col. 3</a></td>
+</tr>
+<tr>
+<td>Negative tail</td>
+<td>Mean sentiment, per scale point</td>
+<td style="text-align: right;">-0.051 (0.021)</td>
+<td style="text-align: right;">-0.051 (0.021)</td>
+<td style="text-align: right;">[-0.093, -0.010]</td>
+<td><a href="https://gborjas.scholars.harvard.edu/sites/g/files/omnuum4696/files/2026-01/sciadv.adz7173_0.pdf">Paper PDF, Table 1, col. 4</a></td>
+</tr>
+<tr>
+<td>Negative tail</td>
+<td>Pro minus anti team fraction</td>
+<td style="text-align: right;">-0.242 (0.107)</td>
+<td style="text-align: right;">-0.242 (0.107)</td>
+<td style="text-align: right;">[-0.456, -0.027]</td>
+<td><a href="https://gborjas.scholars.harvard.edu/sites/g/files/omnuum4696/files/2026-01/sciadv.adz7173_0.pdf">Paper PDF, Table 1, col. 5</a></td>
+</tr>
+<tr>
+<td>Negative tail</td>
+<td>Pro minus anti team category</td>
+<td style="text-align: right;">-0.274 (0.125)</td>
+<td style="text-align: right;">-0.274 (0.125)</td>
+<td style="text-align: right;">[-0.524, -0.024]</td>
+<td><a href="https://gborjas.scholars.harvard.edu/sites/g/files/omnuum4696/files/2026-01/sciadv.adz7173_0.pdf">Paper PDF, Table 1, col. 6</a></td>
+</tr>
+<tr>
+<td>Positive tail</td>
+<td>Mean sentiment, per scale point</td>
+<td style="text-align: right;">0.019 (0.012)</td>
+<td style="text-align: right;">0.019 (0.012)</td>
+<td style="text-align: right;">[-0.004, 0.042]</td>
+<td><a href="https://gborjas.scholars.harvard.edu/sites/g/files/omnuum4696/files/2026-01/sciadv.adz7173_0.pdf">Paper PDF, Table 1, col. 7</a></td>
+</tr>
+<tr>
+<td>Positive tail</td>
+<td>Pro minus anti team fraction</td>
+<td style="text-align: right;">0.114 (0.045)</td>
+<td style="text-align: right;">0.114 (0.046)</td>
+<td style="text-align: right;">[0.023, 0.206]</td>
+<td><a href="https://gborjas.scholars.harvard.edu/sites/g/files/omnuum4696/files/2026-01/sciadv.adz7173_0.pdf">Paper PDF, Table 1, col. 8</a></td>
+</tr>
+<tr>
+<td>Positive tail</td>
+<td>Pro minus anti team category</td>
+<td style="text-align: right;">0.087 (0.035)</td>
+<td style="text-align: right;">0.087 (0.035)</td>
+<td style="text-align: right;">[0.018, 0.156]</td>
+<td><a href="https://gborjas.scholars.harvard.edu/sites/g/files/omnuum4696/files/2026-01/sciadv.adz7173_0.pdf">Paper PDF, Table 1, col. 9</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>The AME category contrast is the headline comparison: pro-immigration teams have higher adjusted AMEs than anti-immigration teams. All nine point estimates agree with the paper at three decimal places. Eight of nine standard errors do too; for the positive-tail team-fraction contrast (column 8), the paper prints 0.045, while the package's <code>code/Log Files/02_Main_Regs.log</code> gives 0.0458145 and this calculation rounds to 0.046. The tail results are linear probability contrasts; a value of 0.087 represents 8.7 percentage points.</p>
+<h2 id="robustness-of-the-ame-category-contrast">Robustness of the AME category contrast</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Analysis</th>
+<th style="text-align: right;">Pro minus anti</th>
+<th style="text-align: right;">SE</th>
+<th style="text-align: right;">95% CI</th>
+<th style="text-align: right;">Two-sided p</th>
+<th style="text-align: right;">Teams</th>
+<th style="text-align: right;">Models</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Published specification</td>
+<td style="text-align: right;">0.085</td>
+<td style="text-align: right;">0.031</td>
+<td style="text-align: right;">[0.023, 0.146]</td>
+<td style="text-align: right;">0.008</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">1,253</td>
+</tr>
+<tr>
+<td>Equal model weight</td>
+<td style="text-align: right;">0.054</td>
+<td style="text-align: right;">0.023</td>
+<td style="text-align: right;">[0.007, 0.101]</td>
+<td style="text-align: right;">0.024</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">1,253</td>
+</tr>
+<tr>
+<td>No covariates</td>
+<td style="text-align: right;">0.050</td>
+<td style="text-align: right;">0.032</td>
+<td style="text-align: right;">[-0.014, 0.115]</td>
+<td style="text-align: right;">0.123</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">1,253</td>
+</tr>
+<tr>
+<td>No discipline indicators</td>
+<td style="text-align: right;">0.041</td>
+<td style="text-align: right;">0.029</td>
+<td style="text-align: right;">[-0.017, 0.099]</td>
+<td style="text-align: right;">0.164</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">1,253</td>
+</tr>
+<tr>
+<td>Add prior belief</td>
+<td style="text-align: right;">0.084</td>
+<td style="text-align: right;">0.031</td>
+<td style="text-align: right;">[0.021, 0.146]</td>
+<td style="text-align: right;">0.010</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">1,253</td>
+</tr>
+<tr>
+<td>Winsorised AME</td>
+<td style="text-align: right;">0.080</td>
+<td style="text-align: right;">0.030</td>
+<td style="text-align: right;">[0.019, 0.141]</td>
+<td style="text-align: right;">0.011</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">1,253</td>
+</tr>
+<tr>
+<td>Trimmed AME</td>
+<td style="text-align: right;">0.078</td>
+<td style="text-align: right;">0.031</td>
+<td style="text-align: right;">[0.017, 0.139]</td>
+<td style="text-align: right;">0.013</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">1,227</td>
+</tr>
+<tr>
+<td>Team median AME</td>
+<td style="text-align: right;">0.059</td>
+<td style="text-align: right;">0.043</td>
+<td style="text-align: right;">[-0.027, 0.144]</td>
+<td style="text-align: right;">0.176</td>
+<td style="text-align: right;">71</td>
+<td style="text-align: right;">71</td>
+</tr>
+<tr>
+<td>Minimum leave-one-team-out</td>
+<td style="text-align: right;">0.052</td>
+<td style="text-align: right;">0.015</td>
+<td style="text-align: right;">[0.021, 0.082]</td>
+<td style="text-align: right;">0.001</td>
+<td style="text-align: right;">70</td>
+<td style="text-align: right;">1,251</td>
+</tr>
+</tbody>
+</table></div>
+<p><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1120 440" role="img" aria-label="Pro minus anti team AME contrasts and 95 percent confidence intervals">
+<rect width="100%" height="100%" fill="white"/>
+<style>text{font-family:Arial,sans-serif;fill:#202c39} .label{font-size:15px} .small{font-size:12px;fill:#51606f}</style>
+<text x="24" y="28" font-size="19" font-weight="bold">Pro minus anti team AME contrast</text>
+<text x="24" y="47" class="small">Points are estimates; bars are two-sided 95% confidence intervals.</text>
+<line x1="319.2" y1="65" x2="319.2" y2="376" stroke="#e5e9ed" stroke-width="1"/>
+<text x="319.2" y="414" text-anchor="middle" class="small">-0.05</text>
+<line x1="415.4" y1="65" x2="415.4" y2="376" stroke="#8c98a3" stroke-width="1.6"/>
+<text x="415.4" y="414" text-anchor="middle" class="small">0.00</text>
+<line x1="511.5" y1="65" x2="511.5" y2="376" stroke="#e5e9ed" stroke-width="1"/>
+<text x="511.5" y="414" text-anchor="middle" class="small">0.05</text>
+<line x1="607.7" y1="65" x2="607.7" y2="376" stroke="#e5e9ed" stroke-width="1"/>
+<text x="607.7" y="414" text-anchor="middle" class="small">0.10</text>
+<line x1="703.8" y1="65" x2="703.8" y2="376" stroke="#e5e9ed" stroke-width="1"/>
+<text x="703.8" y="414" text-anchor="middle" class="small">0.15</text>
+<line x1="800.0" y1="65" x2="800.0" y2="376" stroke="#e5e9ed" stroke-width="1"/>
+<text x="800.0" y="414" text-anchor="middle" class="small">0.20</text>
+<text x="24" y="83" class="label">Published specification</text>
+<line x1="458.9" y1="78" x2="696.9" y2="78" stroke="#186e83" stroke-width="2.5"/>
+<line x1="458.9" y1="73" x2="458.9" y2="83" stroke="#186e83" stroke-width="2"/>
+<line x1="696.9" y1="73" x2="696.9" y2="83" stroke="#186e83" stroke-width="2"/>
+<circle cx="577.9" cy="78" r="5" fill="#186e83"/>
+<text x="821" y="83" class="small">0.085 [0.023, 0.146]</text>
+<text x="24" y="118" class="label">Equal model weight</text>
+<line x1="429.7" y1="113" x2="609.6" y2="113" stroke="#bc643d" stroke-width="2.5"/>
+<line x1="429.7" y1="108" x2="429.7" y2="118" stroke="#bc643d" stroke-width="2"/>
+<line x1="609.6" y1="108" x2="609.6" y2="118" stroke="#bc643d" stroke-width="2"/>
+<circle cx="519.7" cy="113" r="5" fill="#bc643d"/>
+<text x="821" y="118" class="small">0.054 [0.007, 0.101]</text>
+<text x="24" y="153" class="label">No covariates</text>
+<line x1="388.5" y1="148" x2="636.2" y2="148" stroke="#bc643d" stroke-width="2.5"/>
+<line x1="388.5" y1="143" x2="388.5" y2="153" stroke="#bc643d" stroke-width="2"/>
+<line x1="636.2" y1="143" x2="636.2" y2="153" stroke="#bc643d" stroke-width="2"/>
+<circle cx="512.4" cy="148" r="5" fill="#bc643d"/>
+<text x="821" y="153" class="small">0.050 [-0.014, 0.115]</text>
+<text x="24" y="188" class="label">No discipline indicators</text>
+<line x1="382.5" y1="183" x2="604.9" y2="183" stroke="#bc643d" stroke-width="2.5"/>
+<line x1="382.5" y1="178" x2="382.5" y2="188" stroke="#bc643d" stroke-width="2"/>
+<line x1="604.9" y1="178" x2="604.9" y2="188" stroke="#bc643d" stroke-width="2"/>
+<circle cx="493.7" cy="183" r="5" fill="#bc643d"/>
+<text x="821" y="188" class="small">0.041 [-0.017, 0.099]</text>
+<text x="24" y="223" class="label">Add prior belief</text>
+<line x1="455.9" y1="218" x2="696.7" y2="218" stroke="#bc643d" stroke-width="2.5"/>
+<line x1="455.9" y1="213" x2="455.9" y2="223" stroke="#bc643d" stroke-width="2"/>
+<line x1="696.7" y1="213" x2="696.7" y2="223" stroke="#bc643d" stroke-width="2"/>
+<circle cx="576.3" cy="218" r="5" fill="#bc643d"/>
+<text x="821" y="223" class="small">0.084 [0.021, 0.146]</text>
+<text x="24" y="258" class="label">Winsorised AME</text>
+<line x1="452.4" y1="253" x2="686.2" y2="253" stroke="#bc643d" stroke-width="2.5"/>
+<line x1="452.4" y1="248" x2="452.4" y2="258" stroke="#bc643d" stroke-width="2"/>
+<line x1="686.2" y1="248" x2="686.2" y2="258" stroke="#bc643d" stroke-width="2"/>
+<circle cx="569.3" cy="253" r="5" fill="#bc643d"/>
+<text x="821" y="258" class="small">0.080 [0.019, 0.141]</text>
+<text x="24" y="293" class="label">Trimmed AME</text>
+<line x1="447.9" y1="288" x2="683.0" y2="288" stroke="#bc643d" stroke-width="2.5"/>
+<line x1="447.9" y1="283" x2="447.9" y2="293" stroke="#bc643d" stroke-width="2"/>
+<line x1="683.0" y1="283" x2="683.0" y2="293" stroke="#bc643d" stroke-width="2"/>
+<circle cx="565.4" cy="288" r="5" fill="#bc643d"/>
+<text x="821" y="293" class="small">0.078 [0.017, 0.139]</text>
+<text x="24" y="328" class="label">Team median AME</text>
+<line x1="363.3" y1="323" x2="692.5" y2="323" stroke="#bc643d" stroke-width="2.5"/>
+<line x1="363.3" y1="318" x2="363.3" y2="328" stroke="#bc643d" stroke-width="2"/>
+<line x1="692.5" y1="318" x2="692.5" y2="328" stroke="#bc643d" stroke-width="2"/>
+<circle cx="527.9" cy="323" r="5" fill="#bc643d"/>
+<text x="821" y="328" class="small">0.059 [-0.027, 0.144]</text>
+<text x="24" y="363" class="label">Minimum leave-one-team-out</text>
+<line x1="456.5" y1="358" x2="573.1" y2="358" stroke="#bc643d" stroke-width="2.5"/>
+<line x1="456.5" y1="353" x2="456.5" y2="363" stroke="#bc643d" stroke-width="2"/>
+<line x1="573.1" y1="353" x2="573.1" y2="363" stroke="#bc643d" stroke-width="2"/>
+<circle cx="514.8" cy="358" r="5" fill="#bc643d"/>
+<text x="821" y="363" class="small">0.052 [0.021, 0.082]</text>
+<text x="550.0" y="435" text-anchor="middle" class="small">AME difference (pro − anti)</text>
+</svg>
+</p>
+<p class="figure-link"><a href="robustness.svg">Open the figure at full size</a></p>
+<p>The pooled AME cutoffs for winsorisation and trimming are -0.544 and 0.580. Across all 71 single-team deletions, the contrast ranges from 0.052 to 0.101; 71 remain positive and 71 have 95% intervals above zero. The minimum occurs on deleting team 42 (anti-immigration). Each trimmed team's weight was recalculated as the inverse of its retained model count. The median analysis uses one record per team and HC3 standard errors; other rows use model-level weighted least squares and team-clustered standard errors.</p>
+<h2 id="analysis-decisions-left-open-by-the-paper">Analysis decisions left open by the paper</h2>
+<ul>
+<li><p>I chose Table 1's AME category contrast as the numerical headline. The paper also emphasises the continuous ideology and tail outcomes, reproduced above.</p></li>
+<li><p>I began with the package's prepared <code>df.dta</code> rather than rebuilding it from the raw survey and model files. Thus, this reproduction accepts its team classification, skill and topic scores, discipline coding, and imputations. For the tail models, I used the package's existing indicators rather than reconstructing percentiles and significance tests.</p></li>
+<li><p>I excluded the record without a team ID or AME to match the paper's analysis sample. The supplied <code>nmodel</code> matches the actual number of model records per team.</p></li>
+<li><p>To implement the paper's weighted regressions in Python, I used weighted least squares, the lowest observed <code>mdegree</code> code as the categorical reference, a finite-sample cluster covariance correction, and t critical values with teams minus one degrees of freedom. The reference code affects individual discipline coefficients but not the reported ideology contrasts.</p></li>
+<li><p>I set a two-sided 95% interval as the threshold for the sensitivity conclusion and set the pooled, unweighted model-level 1st and 99th percentiles as the cutoffs for trimming and winsorisation. Within trimmed data I recalculated team weights. For team medians I used HC3 intervals.</p></li>
+<li><p>The prespecified deletion diagnostic reports the smallest pro-minus-anti contrast across single-team removals; its p value is descriptive rather than a new confirmatory test.</p></li>
+</ul>
+<h2 id="reproducibility-and-interpretation">Reproducibility and interpretation</h2>
+<p>Run <code>python3 reproduce.py</code> from a clean Python session with <code>pandas</code>, <code>numpy</code>, <code>scipy</code>, <code>statsmodels</code>, and <code>pyreadstat</code> installed, plus Pandoc for HTML conversion. The script reads only <code>data/df.dta</code> and writes <code>report.md</code>, <code>report.html</code>, and <code>robustness.svg</code>. The nine published numbers and standard errors in the comparison table are transcribed from the paper PDF; all reproduced and sensitivity estimates, intervals, p values, sample counts, cutoffs, and figure coordinates are computed by this script.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The adjusted pro-minus-anti AME difference reproduces the published result at its reported precision, and its direction stays positive in 9 of 9 specifications. The two-sided 95% interval excludes zero in 6 of 9 specifications (5 of eight alternatives), so the strength of evidence depends on reasonable analysis choices. These are observational associations across teams, with only nine anti-immigration teams, and do not by themselves establish that ideology caused the different estimates.</p>
+</article></main></div></body></html>

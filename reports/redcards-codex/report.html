@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="color-scheme" content="light" />
+<title>Red cards and player skin tone | Codex GPT-6-Sol</title>
+<style>
+:root{--ink:#18303a;--muted:#53666c;--paper:#f6f9f9;--white:#fff;--line:#d2dfe1;--teal:#1e6170;--teal-pale:#e8f1f2;--red:#a23921}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+a{color:var(--teal);text-underline-offset:.18em}a:hover{color:#124754}
+a:focus-visible,.table-wrap:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.page-header{background:#193b46;color:var(--white);padding:3.7rem max(24px,calc((100vw - 1140px)/2)) 3.35rem}
+.page-header .inner{max-width:860px}
+.page-header h1{font:normal clamp(2.6rem,5vw,4.15rem)/1.09 Georgia,"Times New Roman",serif;letter-spacing:-.025em;margin:0 0 .75rem;max-width:14ch}
+.page-header .question{font-size:1.12rem;line-height:1.45;max-width:660px;margin:.3rem 0 1.6rem;color:#d9e7e9}
+.byline{font-size:.93rem;color:#dfebed;margin:0;padding-top:.8rem;border-top:1px solid #56717a;max-width:660px}
+.byline strong{color:white;font-weight:700}
+.abstract{max-width:1140px;margin:0 auto;padding:2.35rem 24px 2.1rem;border-bottom:1px solid var(--line)}
+.abstract-inner{max-width:860px;margin-left:220px}
+.abstract h2{font-size:1rem;line-height:1.35;letter-spacing:.01em;color:var(--teal);margin:0 0 .65rem}
+.abstract p{font:1.2rem/1.62 Georgia,"Times New Roman",serif;margin:0;max-width:74ch}
+.layout{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:180px minmax(0,860px);gap:40px;padding:1.5rem 24px 5rem}
+.toc{align-self:start;position:sticky;top:1.5rem;padding-top:1.7rem}
+.toc h2{font-size:.82rem;line-height:1.3;margin:0 0 .8rem;color:var(--muted);font-weight:700}
+.toc ul{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}
+.toc li{margin:0}.toc a{display:block;padding:.36rem 0 .36rem .85rem;font-size:.86rem;line-height:1.35;color:var(--muted);text-decoration:none}.toc a:hover,.toc a:focus-visible{color:var(--teal);border-left:2px solid var(--teal);margin-left:-1px}
+.report{min-width:0}.report h2{font:normal 1.9rem/1.2 Georgia,"Times New Roman",serif;letter-spacing:-.01em;margin:2.65rem 0 .9rem;padding-top:1.35rem;border-top:1px solid var(--line);scroll-margin-top:1rem}.report h2:first-child{margin-top:0;border-top:0;padding-top:0}
+.report p{margin:.7rem 0 1.12rem;max-width:75ch}.report strong{font-weight:700}.report code{font-size:.91em;background:#eaf0f1;padding:.12em .28em;border-radius:3px;color:#23414a}
+.report ol{padding-left:1.42rem;max-width:75ch}.report li{padding-left:.24rem;margin:.42rem 0}.report li::marker{color:var(--teal);font-weight:700}
+.table-wrap{overflow-x:auto;max-width:100%;margin:1.15rem 0 1.5rem;border:1px solid var(--line);background:white;scrollbar-color:#9bb1b8 #edf2f3}
+.table-wrap table{border-collapse:collapse;width:100%;min-width:650px;font-size:.91rem;line-height:1.45}
+.table-wrap th,.table-wrap td{padding:.72rem .75rem;vertical-align:top;border-bottom:1px solid #e2eaeb;text-align:left}
+.table-wrap th{background:var(--teal-pale);color:#1d414b;font-weight:700;white-space:normal}
+.table-wrap tbody tr:nth-child(even){background:#f8fbfb}.table-wrap tbody tr:last-child td{border-bottom:0}
+.table-wrap .alternatives th:first-child,.table-wrap .alternatives td:first-child{width:28%;font-weight:600}
+.table-wrap .alternatives th:nth-child(2){width:53%}
+.table-wrap .numeric th:not(:first-child),.table-wrap .numeric td:not(:first-child){text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.table-wrap .numeric td:first-child{font-weight:600}
+.plot{margin:1.5rem 0 1.8rem;background:white;border:1px solid var(--line);padding:1rem 1rem .8rem}
+.plot img{display:block;width:100%;height:auto}.plot figcaption{font-size:.82rem;color:var(--muted);line-height:1.45;margin:.55rem .25rem .1rem}
+.report h2#primary-result+p strong{color:#8a3022}
+.footer{background:#e9f0f1;border-top:1px solid var(--line);padding:1.3rem 24px;color:var(--muted);font-size:.84rem;text-align:center}
+@media(max-width:900px){.abstract-inner{margin-left:0}.layout{grid-template-columns:1fr;gap:1.2rem}.toc{position:static;padding:0 0 .8rem;border-bottom:1px solid var(--line)}.toc ul{border:0;display:flex;flex-wrap:wrap;gap:.2rem .8rem}.toc a{padding:.2rem 0}.toc a:hover,.toc a:focus-visible{border:0;margin:0}}
+@media(max-width:600px){body{font-size:15px}.page-header{padding:2.6rem 20px 2.3rem}.page-header h1{font-size:2.7rem}.abstract{padding:1.7rem 20px}.abstract p{font-size:1.08rem}.layout{padding:1rem 20px 3rem}.report h2{font-size:1.6rem}.plot{padding:.35rem}.table-wrap table{font-size:.87rem}}
+@media print{html{scroll-behavior:auto}body{background:white;color:#000;font-size:10pt}.page-header{background:white;color:#000;padding:0 0 1rem}.page-header .question,.byline{color:#000}.byline{border-color:#aaa}.toc{display:none}.abstract{padding:0 0 1rem}.layout{display:block;padding:0}.report h2{break-after:avoid}.table-wrap{overflow:visible;border:0}.table-wrap table{min-width:0;font-size:8pt}.plot{break-inside:avoid;border:0}a{color:#000}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header class="page-header"><div class="inner">
+<h1>Red cards and player skin tone</h1>
+<p class="question">Are soccer referees more likely to give red cards to dark-skin-toned players than to light-skin-toned players?</p>
+<p class="byline">Analysis report by <strong>Codex GPT-6-Sol</strong></p>
+</div></header>
+<section class="abstract" aria-labelledby="abstract-heading"><div class="abstract-inner"><h2 id="abstract-heading">Abstract</h2><p>I analysed 3,092 dismissals across 373,067 player-games for 1,585 players with photograph-based skin-tone ratings. After adjusting for player position and league, the odds ratio for a rating of 0.75 rather than 0.25 was 1.12 (95% CI 1.03–1.22). Nine planned alternatives pointed in the same direction. The association does not establish whether referee discrimination caused the difference.</p></div></section>
+<div class="layout">
+<nav class="toc" aria-label="Report sections"><h2>Contents</h2><ul><li><a href="#analysis-choices-set-before-estimation">Analysis choices set before estimation</a></li><li><a href="#primary-result">Primary result</a></li><li><a href="#sensitivity-analyses">Sensitivity analyses</a></li><li><a href="#decisions-and-limits">Decisions and limits</a></li><li><a href="#comparison-with-the-29-teams">Comparison with the 29 teams</a></li><li><a href="#conclusion">Conclusion</a></li></ul></nav>
+<main class="report" id="report"><h2 id="analysis-choices-set-before-estimation">Analysis choices set before estimation</h2>
+<p>The primary outcome is any dismissal (<code>redCards + yellowReds</code>) per game in each player–referee dyad. I fit an aggregated binomial logistic regression, adjusting for player position (including a missing-position category) and league country. Skin tone is the mean of the two raters' scores. I report the odds ratio for a change from 0.25 to 0.75 on the 0–1 scale, with a 95% confidence interval that clusters observations by both player and referee. Players without ratings cannot contribute to the skin-tone comparison. The estimate is an association across players, not a causal effect of skin tone.</p>
+<p>I fixed the following alternatives before fitting any model. Each changes one primary choice unless stated otherwise. A change in <em>conclusion</em> means a material change in direction or whether the 95% interval includes 1; small shifts in estimates or interval width do not count.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Analysis choices"><table class="alternatives">
+<thead>
+<tr>
+<th>Alternative</th>
+<th>Defensible reason</th>
+<th>Expected effect on conclusion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Direct red cards only</td>
+<td>Exclude second-yellow dismissals, which may reflect a different decision process</td>
+<td>Could change it</td>
+</tr>
+<tr>
+<td>No position or league adjustment</td>
+<td>Describe the overall observed association without controlling for recorded player context</td>
+<td>Could change it</td>
+</tr>
+<tr>
+<td>Add age, height, and weight</td>
+<td>Account for further observed player differences, using complete cases for these fields</td>
+<td>Unlikely, but sample loss could matter</td>
+</tr>
+<tr>
+<td>Add referee-country groups</td>
+<td>Account for between-country differences in officiating and player composition</td>
+<td>Could change it</td>
+</tr>
+<tr>
+<td>Use rater 1 alone</td>
+<td>Test measurement choice</td>
+<td>Unlikely</td>
+</tr>
+<tr>
+<td>Use rater 2 alone</td>
+<td>Test measurement choice</td>
+<td>Unlikely</td>
+</tr>
+<tr>
+<td>Compare dark (&gt;0.5) with light (&lt;0.5), excluding the midpoint</td>
+<td>Use a categorical contrast that maps directly to the question</td>
+<td>Could change it because the contrast differs</td>
+</tr>
+<tr>
+<td>Restrict to players with at least 30 observed games</td>
+<td>Reduce noise from players with little exposure</td>
+<td>Unlikely, but sample loss could matter</td>
+</tr>
+<tr>
+<td>Aggregate to one row per player</td>
+<td>Treat the player as the independent sampling unit</td>
+<td>Unlikely for the estimate; may change precision</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="primary-result">Primary result</h2>
+<p>I analysed 1,585 of 2,053 players with skin-tone ratings (124,621 player–referee dyads; 373,067 games). These dyads contain 3,092 dismissals. The adjusted odds ratio for a rating of 0.75 rather than 0.25 is <strong>1.12 (95% CI 1.03–1.22)</strong>. This compares players with different ratings after conditioning on recorded position and league. A 95% interval that excludes 1 indicates evidence of an association under this specification; it does not establish discrimination by referees.</p>
+<p>As a descriptive check, players rated below 0.5 received 2,367 dismissals in 290,283 games (8.2 per 1,000 games); those rated above 0.5 received 504 in 57,369 games (8.8 per 1,000). The midpoint group is omitted from this descriptive comparison.</p>
+<h2 id="sensitivity-analyses">Sensitivity analyses</h2>
+<p>Each row below gives the model estimate, its 95% confidence interval, and the analysed sample. Except for the binary dark/light row, odds ratios compare a skin-tone rating of 0.75 with 0.25. The binary row compares ratings above 0.5 with ratings below 0.5 and excludes ratings of exactly 0.5. The player-aggregate interval clusters at player level; other intervals cluster by both player and referee.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="Sensitivity estimates"><table class="numeric">
+<thead>
+<tr>
+<th>Specification</th>
+<th style="text-align: right;">Odds ratio [95% CI]</th>
+<th style="text-align: right;">Players</th>
+<th style="text-align: right;">Games</th>
+<th style="text-align: right;">Events</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary</td>
+<td style="text-align: right;">1.121 [1.028, 1.223]</td>
+<td style="text-align: right;">1,585</td>
+<td style="text-align: right;">373,067</td>
+<td style="text-align: right;">3,092</td>
+</tr>
+<tr>
+<td>Direct reds</td>
+<td style="text-align: right;">1.142 [1.031, 1.265]</td>
+<td style="text-align: right;">1,585</td>
+<td style="text-align: right;">373,067</td>
+<td style="text-align: right;">1,589</td>
+</tr>
+<tr>
+<td>Unadjusted</td>
+<td style="text-align: right;">1.115 [1.022, 1.216]</td>
+<td style="text-align: right;">1,585</td>
+<td style="text-align: right;">373,067</td>
+<td style="text-align: right;">3,092</td>
+</tr>
+<tr>
+<td>Extra player covariates</td>
+<td style="text-align: right;">1.101 [1.010, 1.200]</td>
+<td style="text-align: right;">1,564</td>
+<td style="text-align: right;">371,813</td>
+<td style="text-align: right;">3,087</td>
+</tr>
+<tr>
+<td>Referee country</td>
+<td style="text-align: right;">1.140 [1.046, 1.243]</td>
+<td style="text-align: right;">1,585</td>
+<td style="text-align: right;">373,067</td>
+<td style="text-align: right;">3,092</td>
+</tr>
+<tr>
+<td>Rater 1</td>
+<td style="text-align: right;">1.123 [1.032, 1.222]</td>
+<td style="text-align: right;">1,585</td>
+<td style="text-align: right;">373,067</td>
+<td style="text-align: right;">3,092</td>
+</tr>
+<tr>
+<td>Rater 2</td>
+<td style="text-align: right;">1.109 [1.018, 1.207]</td>
+<td style="text-align: right;">1,585</td>
+<td style="text-align: right;">373,067</td>
+<td style="text-align: right;">3,092</td>
+</tr>
+<tr>
+<td>Dark versus light</td>
+<td style="text-align: right;">1.142 [1.002, 1.301]</td>
+<td style="text-align: right;">1,469</td>
+<td style="text-align: right;">347,652</td>
+<td style="text-align: right;">2,871</td>
+</tr>
+<tr>
+<td>30+ games</td>
+<td style="text-align: right;">1.120 [1.027, 1.221]</td>
+<td style="text-align: right;">1,536</td>
+<td style="text-align: right;">372,292</td>
+<td style="text-align: right;">3,084</td>
+</tr>
+<tr>
+<td>Player aggregate</td>
+<td style="text-align: right;">1.121 [1.027, 1.224]</td>
+<td style="text-align: right;">1,585</td>
+<td style="text-align: right;">373,067</td>
+<td style="text-align: right;">3,092</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="plot"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDIwIiBoZWlnaHQ9IjQ5MCIgdmlld0JveD0iMCAwIDEwMjAgNDkwIj4KPHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0iI2ZmZmZmZiIvPgo8c3R5bGU+dGV4dHtmb250LWZhbWlseTpBcmlhbCxzYW5zLXNlcmlmO2ZpbGw6IzFlMjkzYn0ubGFiZWx7Zm9udC1zaXplOjE1cHh9LnRpY2t7Zm9udC1zaXplOjEzcHg7ZmlsbDojNDc1NTY5fS5ub3Rle2ZvbnQtc2l6ZToxMnB4O2ZpbGw6IzQ3NTU2OX08L3N0eWxlPgo8dGV4dCB4PSIyNCIgeT0iMjciIGZvbnQtc2l6ZT0iMjAiIGZvbnQtd2VpZ2h0PSJib2xkIj5Ta2luIHRvbmUgYW5kIGRpc21pc3NhbCBvZGRzPC90ZXh0Pgo8dGV4dCB4PSIyNCIgeT0iNDkiIGNsYXNzPSJub3RlIj45NSUgY29uZmlkZW5jZSBpbnRlcnZhbHM7IGRhcmsvbGlnaHQgdXNlcyBhIGJpbmFyeSBjb250cmFzdCwgYW5kIHBsYXllciBhZ2dyZWdhdGUgdXNlcyBwbGF5ZXItY2x1c3RlcmVkIHVuY2VydGFpbnR5LjwvdGV4dD4KPHJlY3QgeD0iMTQiIHk9IjY1IiB3aWR0aD0iOTkwIiBoZWlnaHQ9IjMyIiBmaWxsPSIjZjhlZWU4Ii8+CjxsaW5lIHgxPSIzMTAuMCIgeDI9IjMxMC4wIiB5MT0iNjciIHkyPSI0MjEiIHN0cm9rZT0iI2UyZThmMCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9IjMxMC4wIiB5PSI0NDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0aWNrIj4wLjY8L3RleHQ+CjxsaW5lIHgxPSI0NTkuMyIgeDI9IjQ1OS4zIiB5MT0iNjciIHkyPSI0MjEiIHN0cm9rZT0iI2UyZThmMCIgc3Ryb2tlLXdpZHRoPSIxIi8+Cjx0ZXh0IHg9IjQ1OS4zIiB5PSI0NDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0aWNrIj4wLjg8L3RleHQ+CjxsaW5lIHgxPSI1NzUuMCIgeDI9IjU3NS4wIiB5MT0iNjciIHkyPSI0MjEiIHN0cm9rZT0iIzk0YTNiOCIgc3Ryb2tlLXdpZHRoPSIyIi8+Cjx0ZXh0IHg9IjU3NS4wIiB5PSI0NDgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGNsYXNzPSJ0aWNrIj4xPC90ZXh0Pgo8bGluZSB4MT0iNjkwLjgiIHgyPSI2OTAuOCIgeTE9IjY3IiB5Mj0iNDIxIiBzdHJva2U9IiNlMmU4ZjAiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCB4PSI2OTAuOCIgeT0iNDQ4IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBjbGFzcz0idGljayI+MS4yNTwvdGV4dD4KPGxpbmUgeDE9Ijc4NS40IiB4Mj0iNzg1LjQiIHkxPSI2NyIgeTI9IjQyMSIgc3Ryb2tlPSIjZTJlOGYwIiBzdHJva2Utd2lkdGg9IjEiLz4KPHRleHQgeD0iNzg1LjQiIHk9IjQ0OCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRpY2siPjEuNTwvdGV4dD4KPHRleHQgeD0iMjQiIHk9Ijg4IiBjbGFzcz0ibGFiZWwiPlByaW1hcnk8L3RleHQ+CjxsaW5lIHgxPSI1ODkuNSIgeDI9IjY3OS40IiB5MT0iODMiIHkyPSI4MyIgc3Ryb2tlPSIjYTIzOTIxIiBzdHJva2Utd2lkdGg9IjIuMyIvPgo8bGluZSB4MT0iNTg5LjUiIHgyPSI1ODkuNSIgeTE9Ijc4IiB5Mj0iODgiIHN0cm9rZT0iI2EyMzkyMSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSI2NzkuNCIgeDI9IjY3OS40IiB5MT0iNzgiIHkyPSI4OCIgc3Ryb2tlPSIjYTIzOTIxIiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNjM0LjQiIGN5PSI4MyIgcj0iNSIgZmlsbD0iI2EyMzkyMSIvPgo8dGV4dCB4PSI5MDAiIHk9Ijg4IiBjbGFzcz0ibGFiZWwiPjEuMTI8L3RleHQ+Cjx0ZXh0IHg9IjI0IiB5PSIxMjMiIGNsYXNzPSJsYWJlbCI+RGlyZWN0IHJlZHM8L3RleHQ+CjxsaW5lIHgxPSI1OTAuNyIgeDI9IjY5Ny4wIiB5MT0iMTE4IiB5Mj0iMTE4IiBzdHJva2U9IiMyNTYzN2QiIHN0cm9rZS13aWR0aD0iMi4zIi8+CjxsaW5lIHgxPSI1OTAuNyIgeDI9IjU5MC43IiB5MT0iMTEzIiB5Mj0iMTIzIiBzdHJva2U9IiMyNTYzN2QiIHN0cm9rZS13aWR0aD0iMiIvPgo8bGluZSB4MT0iNjk3LjAiIHgyPSI2OTcuMCIgeTE9IjExMyIgeTI9IjEyMyIgc3Ryb2tlPSIjMjU2MzdkIiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNjQzLjgiIGN5PSIxMTgiIHI9IjUiIGZpbGw9IiMyNTYzN2QiLz4KPHRleHQgeD0iOTAwIiB5PSIxMjMiIGNsYXNzPSJsYWJlbCI+MS4xNDwvdGV4dD4KPHRleHQgeD0iMjQiIHk9IjE1OCIgY2xhc3M9ImxhYmVsIj5VbmFkanVzdGVkPC90ZXh0Pgo8bGluZSB4MT0iNTg2LjMiIHgyPSI2NzYuNiIgeTE9IjE1MyIgeTI9IjE1MyIgc3Ryb2tlPSIjMjU2MzdkIiBzdHJva2Utd2lkdGg9IjIuMyIvPgo8bGluZSB4MT0iNTg2LjMiIHgyPSI1ODYuMyIgeTE9IjE0OCIgeTI9IjE1OCIgc3Ryb2tlPSIjMjU2MzdkIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjY3Ni42IiB4Mj0iNjc2LjYiIHkxPSIxNDgiIHkyPSIxNTgiIHN0cm9rZT0iIzI1NjM3ZCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjYzMS40IiBjeT0iMTUzIiByPSI1IiBmaWxsPSIjMjU2MzdkIi8+Cjx0ZXh0IHg9IjkwMCIgeT0iMTU4IiBjbGFzcz0ibGFiZWwiPjEuMTE8L3RleHQ+Cjx0ZXh0IHg9IjI0IiB5PSIxOTMiIGNsYXNzPSJsYWJlbCI+RXh0cmEgcGxheWVyIGNvdmFyaWF0ZXM8L3RleHQ+CjxsaW5lIHgxPSI1ODAuMSIgeDI9IjY2OS43IiB5MT0iMTg4IiB5Mj0iMTg4IiBzdHJva2U9IiMyNTYzN2QiIHN0cm9rZS13aWR0aD0iMi4zIi8+CjxsaW5lIHgxPSI1ODAuMSIgeDI9IjU4MC4xIiB5MT0iMTgzIiB5Mj0iMTkzIiBzdHJva2U9IiMyNTYzN2QiIHN0cm9rZS13aWR0aD0iMiIvPgo8bGluZSB4MT0iNjY5LjciIHgyPSI2NjkuNyIgeTE9IjE4MyIgeTI9IjE5MyIgc3Ryb2tlPSIjMjU2MzdkIiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNjI0LjkiIGN5PSIxODgiIHI9IjUiIGZpbGw9IiMyNTYzN2QiLz4KPHRleHQgeD0iOTAwIiB5PSIxOTMiIGNsYXNzPSJsYWJlbCI+MS4xMDwvdGV4dD4KPHRleHQgeD0iMjQiIHk9IjIyOCIgY2xhc3M9ImxhYmVsIj5SZWZlcmVlIGNvdW50cnk8L3RleHQ+CjxsaW5lIHgxPSI1OTguNSIgeDI9IjY4Ny45IiB5MT0iMjIzIiB5Mj0iMjIzIiBzdHJva2U9IiMyNTYzN2QiIHN0cm9rZS13aWR0aD0iMi4zIi8+CjxsaW5lIHgxPSI1OTguNSIgeDI9IjU5OC41IiB5MT0iMjE4IiB5Mj0iMjI4IiBzdHJva2U9IiMyNTYzN2QiIHN0cm9rZS13aWR0aD0iMiIvPgo8bGluZSB4MT0iNjg3LjkiIHgyPSI2ODcuOSIgeTE9IjIxOCIgeTI9IjIyOCIgc3Ryb2tlPSIjMjU2MzdkIiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNjQzLjIiIGN5PSIyMjMiIHI9IjUiIGZpbGw9IiMyNTYzN2QiLz4KPHRleHQgeD0iOTAwIiB5PSIyMjgiIGNsYXNzPSJsYWJlbCI+MS4xNDwvdGV4dD4KPHRleHQgeD0iMjQiIHk9IjI2MyIgY2xhc3M9ImxhYmVsIj5SYXRlciAxPC90ZXh0Pgo8bGluZSB4MT0iNTkxLjMiIHgyPSI2NzkuMiIgeTE9IjI1OCIgeTI9IjI1OCIgc3Ryb2tlPSIjMjU2MzdkIiBzdHJva2Utd2lkdGg9IjIuMyIvPgo8bGluZSB4MT0iNTkxLjMiIHgyPSI1OTEuMyIgeTE9IjI1MyIgeTI9IjI2MyIgc3Ryb2tlPSIjMjU2MzdkIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjY3OS4yIiB4Mj0iNjc5LjIiIHkxPSIyNTMiIHkyPSIyNjMiIHN0cm9rZT0iIzI1NjM3ZCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjYzNS4zIiBjeT0iMjU4IiByPSI1IiBmaWxsPSIjMjU2MzdkIi8+Cjx0ZXh0IHg9IjkwMCIgeT0iMjYzIiBjbGFzcz0ibGFiZWwiPjEuMTI8L3RleHQ+Cjx0ZXh0IHg9IjI0IiB5PSIyOTgiIGNsYXNzPSJsYWJlbCI+UmF0ZXIgMjwvdGV4dD4KPGxpbmUgeDE9IjU4NC41IiB4Mj0iNjcyLjciIHkxPSIyOTMiIHkyPSIyOTMiIHN0cm9rZT0iIzI1NjM3ZCIgc3Ryb2tlLXdpZHRoPSIyLjMiLz4KPGxpbmUgeDE9IjU4NC41IiB4Mj0iNTg0LjUiIHkxPSIyODgiIHkyPSIyOTgiIHN0cm9rZT0iIzI1NjM3ZCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSI2NzIuNyIgeDI9IjY3Mi43IiB5MT0iMjg4IiB5Mj0iMjk4IiBzdHJva2U9IiMyNTYzN2QiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSI2MjguNiIgY3k9IjI5MyIgcj0iNSIgZmlsbD0iIzI1NjM3ZCIvPgo8dGV4dCB4PSI5MDAiIHk9IjI5OCIgY2xhc3M9ImxhYmVsIj4xLjExPC90ZXh0Pgo8dGV4dCB4PSIyNCIgeT0iMzMzIiBjbGFzcz0ibGFiZWwiPkRhcmsgdmVyc3VzIGxpZ2h0PC90ZXh0Pgo8bGluZSB4MT0iNTc2LjIiIHgyPSI3MTEuNiIgeTE9IjMyOCIgeTI9IjMyOCIgc3Ryb2tlPSIjMjU2MzdkIiBzdHJva2Utd2lkdGg9IjIuMyIvPgo8bGluZSB4MT0iNTc2LjIiIHgyPSI1NzYuMiIgeTE9IjMyMyIgeTI9IjMzMyIgc3Ryb2tlPSIjMjU2MzdkIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjcxMS42IiB4Mj0iNzExLjYiIHkxPSIzMjMiIHkyPSIzMzMiIHN0cm9rZT0iIzI1NjM3ZCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjY0My45IiBjeT0iMzI4IiByPSI1IiBmaWxsPSIjMjU2MzdkIi8+Cjx0ZXh0IHg9IjkwMCIgeT0iMzMzIiBjbGFzcz0ibGFiZWwiPjEuMTQ8L3RleHQ+Cjx0ZXh0IHg9IjI0IiB5PSIzNjgiIGNsYXNzPSJsYWJlbCI+MzArIGdhbWVzPC90ZXh0Pgo8bGluZSB4MT0iNTg4LjciIHgyPSI2NzguNyIgeTE9IjM2MyIgeTI9IjM2MyIgc3Ryb2tlPSIjMjU2MzdkIiBzdHJva2Utd2lkdGg9IjIuMyIvPgo8bGluZSB4MT0iNTg4LjciIHgyPSI1ODguNyIgeTE9IjM1OCIgeTI9IjM2OCIgc3Ryb2tlPSIjMjU2MzdkIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjY3OC43IiB4Mj0iNjc4LjciIHkxPSIzNTgiIHkyPSIzNjgiIHN0cm9rZT0iIzI1NjM3ZCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjYzMy43IiBjeT0iMzYzIiByPSI1IiBmaWxsPSIjMjU2MzdkIi8+Cjx0ZXh0IHg9IjkwMCIgeT0iMzY4IiBjbGFzcz0ibGFiZWwiPjEuMTI8L3RleHQ+Cjx0ZXh0IHg9IjI0IiB5PSI0MDMiIGNsYXNzPSJsYWJlbCI+UGxheWVyIGFnZ3JlZ2F0ZTwvdGV4dD4KPGxpbmUgeDE9IjU4OS4wIiB4Mj0iNjc5LjgiIHkxPSIzOTgiIHkyPSIzOTgiIHN0cm9rZT0iIzI1NjM3ZCIgc3Ryb2tlLXdpZHRoPSIyLjMiLz4KPGxpbmUgeDE9IjU4OS4wIiB4Mj0iNTg5LjAiIHkxPSIzOTMiIHkyPSI0MDMiIHN0cm9rZT0iIzI1NjM3ZCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSI2NzkuOCIgeDI9IjY3OS44IiB5MT0iMzkzIiB5Mj0iNDAzIiBzdHJva2U9IiMyNTYzN2QiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSI2MzQuNCIgY3k9IjM5OCIgcj0iNSIgZmlsbD0iIzI1NjM3ZCIvPgo8dGV4dCB4PSI5MDAiIHk9IjQwMyIgY2xhc3M9ImxhYmVsIj4xLjEyPC90ZXh0Pgo8dGV4dCB4PSI1OTUiIHk9IjQ3NyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgY2xhc3M9InRpY2siPk9kZHMgcmF0aW8gKGxvZyBzY2FsZSk8L3RleHQ+Cjwvc3ZnPg==" alt="Forest plot of odds ratios and 95% confidence intervals for the primary model and nine alternative specifications" /><figcaption>Odds ratios across the primary model and nine planned alternatives. The vertical reference line marks an odds ratio of 1.</figcaption></figure>
+<p>All ten 95% intervals exclude 1, although the smallest lower bound is only 1.002. None of the alternative specifications changes the interval's relationship to 1.</p>
+<h2 id="decisions-and-limits">Decisions and limits</h2>
+<p>The question and data left several consequential choices open:</p>
+<ol type="1">
+<li><strong>Target and outcome.</strong> I estimated an association in dismissal odds per player-game and counted both direct reds and second-yellow dismissals. The direct-red-only result is a sensitivity check.</li>
+<li><strong>Exposure and unit.</strong> I used each dyad's number of games as binomial trials, so games contribute equally to the likelihood. I tested aggregation to one row per player.</li>
+<li><strong>Skin tone.</strong> I averaged two photo ratings, assumed a linear effect on log odds, and chose a 0.50-point contrast (0.25 to 0.75). I tested each rater separately and a categorical dark/light contrast.</li>
+<li><strong>Missing data.</strong> I excluded players without both ratings and put missing positions in an <code>Unknown</code> category. The extra-covariate model uses complete cases for age, height, and weight. I did not impute unobserved skin tone.</li>
+<li><strong>Adjustment.</strong> I adjusted for recorded position and league. I examined no adjustment, additional player characteristics, and referee-country groups (codes 3, 7, 8, and 44 versus all others) separately.</li>
+<li><strong>Dependence and interval.</strong> I used a logistic binomial model and a normal-approximation 95% interval from a two-way player-and-referee cluster covariance. The player-aggregate model uses a player-clustered interval.</li>
+<li><strong>Sample restriction.</strong> The primary analysis keeps all rated players, while one check excludes those with fewer than 30 observed games.</li>
+</ol>
+<p>The data do not contain each match's circumstances, playing time, fouls, or the player's skin tone as perceived by the referee. Position and league are recorded for the sampled season, whereas card counts cover player–referee careers. Ratings are missing for players without a photo. The models therefore estimate an association among rated players and cannot isolate discriminatory decisions. The binomial model treats the game count as exposure and assumes at most one dismissal per player per game; the dyad totals satisfy the corresponding count constraint. Players' tone ratings do not vary within player, so this analysis cannot compare the same player under different perceived skin tones.</p>
+<p>To reproduce the analysis from the supplied CSV, run <code>python analysis.py</code> in this folder with NumPy, pandas, Patsy, and statsmodels installed. The script generates this report and the figure, then downloads the OSF team-estimate table after completing the local analyses.</p>
+<h2 id="comparison-with-the-29-teams">Comparison with the 29 teams</h2>
+<p>I downloaded the <a href="https://osf.io/download/fa743/">OSF team-estimate table</a> after completing the local models. It contains 29 team estimates and a harmonised <code>OR</code> column. Of these, 20 are labelled odds ratios in the source file; five are incidence-rate ratios, two are correlations, and two are standardised differences with converted values in the <code>OR</code> column. Their outcomes, contrasts, and modelling choices are not necessarily the same as mine, so these ranks are descriptive rather than a meta-analysis.</p>
+<p>The median of all 29 <code>OR</code> values is 1.31 (interquartile range 1.21–1.39). My primary estimate (1.12) is below 24 and above 5 of them; among the 20 originally labelled odds ratios, it is below 17 and above 3.</p>
+<div class="table-wrap" role="region" tabindex="0" aria-label="OSF comparison"><table class="numeric">
+<thead>
+<tr>
+<th>Local specification</th>
+<th style="text-align: right;">Local OR</th>
+<th style="text-align: right;">OSF values below it (of 29)</th>
+<th style="text-align: right;">Original OR values below it (of 20)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Primary</td>
+<td style="text-align: right;">1.121</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>Direct reds</td>
+<td style="text-align: right;">1.142</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>Unadjusted</td>
+<td style="text-align: right;">1.115</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>Extra player covariates</td>
+<td style="text-align: right;">1.101</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">2</td>
+</tr>
+<tr>
+<td>Referee country</td>
+<td style="text-align: right;">1.140</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>Rater 1</td>
+<td style="text-align: right;">1.123</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>Rater 2</td>
+<td style="text-align: right;">1.109</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>Dark versus light</td>
+<td style="text-align: right;">1.142</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">4</td>
+</tr>
+<tr>
+<td>30+ games</td>
+<td style="text-align: right;">1.120</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+</tr>
+<tr>
+<td>Player aggregate</td>
+<td style="text-align: right;">1.121</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">3</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ranks use unrounded estimates. The dark-versus-light row uses a binary contrast and is less directly comparable with estimates for a 0.50-point rating difference.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Among players with photographs, darker skin-tone ratings were associated with somewhat higher odds of dismissal in this dataset (adjusted OR 1.12, 95% CI 1.03–1.22). The direction persisted across the specified alternatives, but the observational data cannot show whether referee discrimination caused the difference.</p>
+</main>
+</div>
+<footer class="footer">Report text: <a href="report.md">report.md</a> · Reproduction: <a href="analysis.py">analysis.py</a> · Data definitions: <a href="README.md">README.md</a></footer>
+</body></html>

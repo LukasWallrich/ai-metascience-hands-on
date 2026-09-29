@@ -1,0 +1,46 @@
+"quantity","estimate"
+"Mean deaths",20.6521739130435
+"Variance of deaths",1673.15241280459
+"Mean minimum pressure",964.902173913043
+"r(deaths, NDAM)",0.554677769752314
+"r(deaths, pressure)",-0.394228831200406
+"r(deaths, category)",0.280539114733902
+"r(NDAM, pressure)",-0.555982408156435
+"r(NDAM, category)",0.480703680121452
+"r(pressure, category)",-0.875007422704209
+"M1 Pearson chi2/df",3.44787682133374
+"M2 Pearson chi2/df",1.54781449212621
+"M3 Pearson chi2/df",1.10730355682182
+"M3 MFI x pressure b",0.00631530163238251
+"M3 MFI x pressure SE",0.0024887596190869
+"M3 MFI x pressure p",0.0111637871654101
+"M3 MFI x NDAM b",1.68920349210712e-05
+"M3 MFI x NDAM SE",4.39390822078459e-06
+"M3 MFI x NDAM p",0.000120837192375159
+"LR chi2",60.5652902964532
+"M3 AIC",658.09064303169
+"M3 BIC",675.743163071033
+"M4 MFI x pressure b",0.394762087537532
+"M4 MFI x pressure SE",0.156736345209022
+"M4 MFI x pressure p",0.0117809766554114
+"M4 MFI x NDAM b",0.705105140604609
+"M4 MFI x NDAM SE",0.183543149430957
+"M4 MFI x NDAM p",0.000122219239624388
+"Binary: gender x pressure b",0.0381121327892829
+"Binary: gender x pressure p",0.0372825223877727
+"Binary: gender x NDAM b",0.00011076720519744
+"Binary: gender x NDAM p",0.000589496586780017
+"Split model b0",42.0193433399856
+"Split model b1 (pressure)",-0.041257232988753
+"Split model b2 (low damage)",-0.39530131518788
+"Split model b3 (MFI)",-3.2995300118066
+"Split model b4 (MFI x pressure)",0.00359520030108926
+"Split model b5 (MFI x low damage)",-0.215676216670922
+"Pred. deaths high damage MFI 1",10.8018561796895
+"Pred. deaths high damage MFI 11",58.8213906312744
+"Pred. deaths low damage MFI 1",5.86346341817422
+"Pred. deaths low damage MFI 11",3.69420685003384
+"Pred. deaths MFI 3",15.160229297748
+"Pred. deaths MFI 9",41.9109889045507
+"Pred. deaths Charley (MFI 2.889)",14.877698742812
+"Pred. deaths Eloise (MFI 8.944)",41.5151012703906

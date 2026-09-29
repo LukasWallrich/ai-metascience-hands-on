@@ -1,0 +1,12 @@
+"spec","description","engine","n_rows","n_events","or","lo","hi","p"
+"PRIMARY: mean skin tone, red cards, cluster-robust GLM","average of both raters; red cards; population-averaged logistic with SE clustered by player and referee (n=124,621)","GLM, cluster-robust (CR2)",124621,1589,1.33724438260606,1.10059070338271,1.62478433927825,0.00344951506491318
+"Rater 1 only","use one rater's skin-tone rating instead of the average","GLM, cluster-robust (CR2)",124621,1589,1.34048217724753,1.10722466901132,1.62287972604764,0.00266205718428834
+"Rater 2 only","use the other rater's skin-tone rating","GLM, cluster-robust (CR2)",124621,1589,1.30622736470886,1.0774389359541,1.58359779972435,0.00654384159787128
+"Binary dark (>0.5) vs light","dichotomise skin tone instead of treating it as continuous","GLM, cluster-robust (CR2)",124621,1589,1.11193107057503,0.949221647752931,1.30253108811521,0.18871217659942
+"Outcome = all send-offs (red + 2nd yellow)","count second-yellow dismissals as red cards too","GLM, cluster-robust (CR2)",124621,3092,1.24280989265671,1.04427876164229,1.47908440353252,0.0143687715425044
+"Adjust for player position","add 12-level position fixed effect","GLM, cluster-robust (CR2)",124621,1589,1.34502253510512,1.10752099636289,1.63345491948384,0.00278750897872296
+"Adjust for position, height, BMI, age","add player physical and age covariates","GLM, cluster-robust (CR2)",124621,1589,1.32968943936667,1.09009512036592,1.62194470200887,0.00493860439627801
+"Adjust for league country and club (club as random intercept)","mixed model: league country fixed, player and club random intercepts","Mixed model",124621,1589,1.32509753487488,1.07819147715575,1.62854512777589,0.0074594182474754
+"Exclude goalkeepers","drop goalkeepers, who rarely get red cards","GLM, cluster-robust (CR2)",113568,1448,1.38179127830095,1.12534087557045,1.69668335900508,0.00201918005019988
+"Poisson model, log(games) offset","count model for red cards instead of binomial; cluster-robust SE","GLM Poisson, cluster-robust (CR2)",124621,1589,1.33550154662094,1.10015427630033,1.62119479008417,0.00344391637446066
+"Player-level aggregation","one row per player: career red cards / career games, ordinary logistic","GLM, player level",1585,1589,1.33724442545537,1.13367933472442,1.57736195645319,0.000562407355504409

@@ -1,0 +1,30 @@
+"Team","Analytic.Approach","Effect.size.units","Estimate","Low","Hi","OR","OR_lo","OR_hi"
+1,"Ordinary least squares with robust standard errors, logistic regression","OR",1.179,0.952,1.405,1.179,0.952,1.405
+2,"Linear probability model, logistic regression","OR",1.341,1.1,1.63,1.341,1.1,1.63
+3,"Multilevel Binomial Logistic Regression using bayesian inference","OR",1.31,1.09,1.57,1.31,1.09,1.57
+4,"Spearman correlation","D",0.10285,0.1026,0.1031,1.20508398861786,1.20453766734877,1.20563055767242
+5,"Generalized linear mixed models","OR",1.38,1.1,1.75,1.38,1.1,1.75
+6,"Linear Probability Model","OR",1.283,0.771,2.133,1.283,0.771,2.133
+7,"Dirichlet process Bayesian clustering","OR",1.71,1.7,1.72,1.71,1.7,1.72
+8,"Negative binomial regression with a log link analysis","OR",1.391,1.174,1.648,1.391,1.174,1.648
+9,"Generalized linear mixed effects models with a logit link function ","OR",1.48,1.2,1.84,1.48,1.2,1.84
+10,"Multilevel regression and logistic regression","R",0.008,0.003,0.014,1.02944695231468,1.01094227872411,1.05210335953285
+11,"Multiple linear regression","D",0.124,0.028,0.22,1.25221141615404,1.05209812238872,1.49038706312524
+12,"Zero-inflated Poisson regression","IRR",0.8878,0.4941,1.595,0.8878,0.4941,1.595
+13,"Poisson Multi-level modeling","IRR",1.41,1.13,1.75,1.41,1.13,1.75
+14,"Weighted least squares regression with referee fixed-effects and clustered standard errors","OR",1.21445,0.97011,1.45677,1.21445,0.97011,1.45677
+15,"Hierarchical log-linear modeling","OR",1.016,0.999,1.033,1.016,0.999,1.033
+16,"Hierarchical Poisson Regression","IRR",1.32,1.06,1.63,1.32,1.06,1.63
+17,"Bayesian logistic regression","OR",0.956,0.771,1.184,0.956,0.771,1.184
+18,"Hierarchical Bayes model","OR",1.101,0.983,1.265,1.101,0.983,1.265
+20,"Cross-classified multilevel negative binomial model ","OR",1.4,1.15,1.71,1.4,1.15,1.71
+21,"Tobit regression","R",0.28,0.0071586,0.5581066,2.88074698162271,1.02630933116147,11.4723466697569
+23,"Mixed model logistic regression","OR",1.31,1.1,1.56,1.31,1.1,1.56
+24,"Multilevel logistic regression","OR",1.38,1.11,1.72,1.38,1.11,1.72
+25,"Multilevel logistic binomial regression","OR",1.42,1.19,1.71,1.42,1.19,1.71
+26,"Three-level hierarchical generalized linear modeling with Poisson sampling","IRR",1.3,1.08,1.56,1.3,1.08,1.56
+27,"Poisson regression","IRR",2.931,0.1085,78.6596,2.931,0.1085,78.6596
+28,"Mixed effects logistic regression","OR",1.382,1.12,1.705,1.382,1.12,1.705
+30,"Clustered robust binomial logistic regression","OR",1.28,1.04,1.57,1.28,1.04,1.57
+31,"Logistic regression","OR",1.1226,0.881,1.4304,1.1226,0.881,1.4304
+32,"Generalized linear models for binary data","OR",1.39,1.1,1.75,1.39,1.1,1.75

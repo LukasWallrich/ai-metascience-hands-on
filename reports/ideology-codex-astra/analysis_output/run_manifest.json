@@ -1,0 +1,18 @@
+{
+  "python": "3.14.3 (main, Mar 10 2026, 18:02:52) [Clang 21.1.4 ]",
+  "packages": {
+    "numpy": "2.5.3",
+    "pandas": "3.0.6",
+    "scipy": "1.18.1",
+    "patsy": "1.0.3",
+    "statsmodels": "0.15.0",
+    "matplotlib": "3.11.2"
+  },
+  "article_source": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12757037/fullTextXML",
+  "sha256": {
+    "data/df.dta": "6f32804238c97d5f764604edfb7a5813fe635beddfa45b5d9647d6340ecf2733",
+    "code/Log Files/02_Main_Regs.log": "52e64485a23c429ca6599450f83d9c217ad798fbd201f970933b9c982844339b",
+    "sources/article.xml": "fae4272b26f468ec34a15da0ddc354cdd95c78fa25915bc1a2dbba7f1c68c1c3",
+    "robustness_plan.md": "c166fd31852506074246163100dc8a133ce29505f9ef3f192cb9df998199fd46"
+  }
+}

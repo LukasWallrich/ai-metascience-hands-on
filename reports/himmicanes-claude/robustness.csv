@@ -1,0 +1,11 @@
+"spec","n","est","lo","hi","p","theta","converged"
+"0 Published Model 4",92,0.877,0.461,1.294,0,0.81,TRUE
+"1 Main effects only",92,0.13,-0.119,0.38,0.306,0.72,TRUE
+"2 Binary gender instead of MFI",92,1.816,0.861,2.77,0,0.79,TRUE
+"3 log(damage) instead of raw damage",92,0.303,-0.121,0.726,0.162,1.11,TRUE
+"4 Only 1979+ (male names in use)",54,0.27,-0.117,0.657,0.171,1.16,TRUE
+"5 Updated 2014 pressure values",92,0.787,0.351,1.222,0,0.79,TRUE
+"6 Control for year",92,0.883,0.429,1.338,0,0.81,TRUE
+"7 Drop 3 deadliest hurricanes",89,0.68,0.209,1.15,0.005,0.95,TRUE
+"8 Drop 3 most damaging hurricanes",89,1.176,0.543,1.809,0,0.95,TRUE
+"9 log(damage), main effects only",92,0.079,-0.141,0.298,0.483,1.06,TRUE

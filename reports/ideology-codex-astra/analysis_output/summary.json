@@ -1,0 +1,47 @@
+{
+  "rows_in_file": 1254,
+  "models": 1253,
+  "teams": 71,
+  "group_counts": {
+    "group1": 9,
+    "group2": 31,
+    "group3": 31
+  },
+  "winsor_cutoffs": [
+    -0.5444800000000001,
+    0.5800816000000002
+  ],
+  "missing_z": 1,
+  "missing_z_tail": 1,
+  "median_singletons_removed": 4,
+  "baseline": {
+    "estimate": 0.08452301051180725,
+    "se": 0.03102696849806309,
+    "lo": 0.022641673073514723,
+    "hi": 0.14640434795009977,
+    "p": 0.00813389207711425,
+    "n": 1253,
+    "teams": 71,
+    "df": 70,
+    "rank": 19,
+    "choice": "Baseline",
+    "note": ""
+  },
+  "negative_tail_missing_z_audit": {
+    "estimate": -0.26943016799422836,
+    "se": 0.12472549962494263,
+    "lo": -0.5181873332304171,
+    "hi": -0.020673002758039627,
+    "p": 0.034184179388795005,
+    "n": 1252,
+    "teams": 71,
+    "df": 70,
+    "rank": 19
+  },
+  "positive_regular_fits": 10,
+  "significant_regular_fits": 7,
+  "positive_loo_fits": 71,
+  "significant_loo_fits": 71,
+  "max_b_log_difference": 4.626171076771435e-08,
+  "max_se_log_difference": 4.9735367657621765e-08
+}

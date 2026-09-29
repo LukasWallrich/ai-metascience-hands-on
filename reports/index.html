@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What the agents produced: backup runs, compared</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#FDFBF7; --surface:#fff; --text:#2D2A24; --text-2:#5C574D; --accent:#8B2635; --border:#E8E4DC; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:16px/1.55 Inter, -apple-system, sans-serif; }
+  main { max-width: 1060px; margin: 0 auto; padding: 2.5rem 1.25rem 4rem; }
+  h1, h2 { font-family: Fraunces, Georgia, serif; font-weight: 500; line-height: 1.15; }
+  h1 { font-size: 2rem; margin: .2rem 0 .6rem; }
+  h2 { font-size: 1.4rem; margin: 2.4rem 0 .4rem; }
+  .marker { text-transform: uppercase; letter-spacing: .14em; font-size: .75rem; font-weight: 600; color: var(--accent); margin: 0; }
+  .lead { color: var(--text-2); font-size: 1.05rem; }
+  a { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; font-size: .9rem; margin-top: .6rem; }
+  th, td { text-align: left; vertical-align: top; padding: .6rem .7rem; border-bottom: 1px solid var(--border); }
+  th { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--text-2); font-weight: 600; }
+  td:first-child { white-space: nowrap; font-weight: 500; }
+  td.links { white-space: nowrap; }
+  .quiet { color: var(--text-2); font-size: .92rem; }
+  details { margin-top: .8rem; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: .6rem .9rem; }
+  summary { cursor: pointer; font-weight: 500; }
+  ul { padding-left: 1.2rem; }
+</style>
+</head>
+<body>
+<main>
+<p class="marker">FORRT AI in Metascience · hands-on session</p>
+<h1>What the agents produced</h1>
+<p class="lead">Every coding agent got the same prompt for each case. Here are their reports, with the scripts and figures behind them. Open two reports for the same case side by side, and look for where they disagree.</p>
+<p class="quiet">The agents ran unattended on 28–29 September 2026, from the prompts on the <a href="../">session page</a>. Afterwards, each agent turned its own <code>report.md</code> into the HTML report linked here. Each folder also holds the agent's scripts and outputs. For the runs from 28 September (cases A and B with Claude Fable, Codex and DeepSeek), rerunning the agent's own script reproduced every number in its Markdown report. The strengths and weaknesses are my reading of each report.</p>
+
+<h2>Case A · "Female hurricanes are deadlier than male hurricanes"</h2>
+<p class="quiet">Jung et al. (2014), <a href="https://doi.org/10.1073/pnas.1402786111">PNAS</a>. Task: reproduce the main result, then test how robust it is. The data's documentation (from the DHARMa R package) describes one variable wrongly: <code>ZMinPressure_A</code> is scaled from the original pressure values, not the updated ones.</p>
+<table>
+<tr><th>Agent</th><th>Time</th><th>Strengths</th><th>Weaknesses</th><th>Files</th></tr>
+<tr><td>Claude Opus 5.5<br><span class="quiet">high effort</span></td><td>13 min</td>
+<td>Reproduced every number it found in the main text, including the published standard errors, and explained why R's default gives smaller ones. Found the documentation error. Reproduced the paper's 15 vs 42 predicted deaths. Flagged a likely sign typo in the paper.</td>
+<td>The slowest of the four. Its headline ratio (×5.2) uses a different damage level from the paper's (×2.8); it explains the difference.</td>
+<td class="links"><a href="himmicanes-claude-opus/report.html">report</a> · <a href="https://github.com/LukasWallrich/ai-metascience-hands-on/tree/main/reports/himmicanes-claude-opus">files</a></td></tr>
+<tr><td>Claude Fable 5.1</td><td>2.5 min</td>
+<td>Checked the data and found the documentation error. A clear table of nine robustness checks.</td>
+<td>Standard errors smaller than published (0.150 vs 0.184); it guessed, correctly, that the paper used different software. Did not reproduce the predicted deaths.</td>
+<td class="links"><a href="himmicanes-claude/report.html">report</a> · <a href="https://github.com/LukasWallrich/ai-metascience-hands-on/tree/main/reports/himmicanes-claude">files</a></td></tr>
+<tr><td>Codex GPT-6 Sol<br><span class="quiet">high effort</span></td><td>6 min</td>
+<td>Matched the published standard errors exactly. Its script writes the whole report, so every number comes from code.</td>
+<td>Read the paper from a PDF on a cycling blog. Trusted the wrong documentation, so its "original pressure" check re-ran the published model.</td>
+<td class="links"><a href="himmicanes-codex/report.html">report</a> · <a href="https://github.com/LukasWallrich/ai-metascience-hands-on/tree/main/reports/himmicanes-codex">files</a></td></tr>
+<tr><td>DeepSeek Flash<br><span class="quiet">via OpenCode</span></td><td>4 min</td>
+<td>Reproduced the paper's predicted-deaths model with a median split (×2.82 vs published ×2.76).</td>
+<td>Followed the wrong documentation, so the baseline for its robustness checks is not the published model.</td>
+<td class="links"><a href="himmicanes-deepseek/report.html">report</a> · <a href="https://github.com/LukasWallrich/ai-metascience-hands-on/tree/main/reports/himmicanes-deepseek">files</a></td></tr>
+</table>
+<p class="quiet">All four concluded that the claim does not hold up. All four chose the check that uses only storms from 1979 on, when male names came in, which is the best-known critique of the paper.</p>
+
+<h2>Case B · Do referees give more red cards to dark-skin-toned players?</h2>
+<p class="quiet">Silberzahn et al. (2018), <a href="https://doi.org/10.1177/2515245917747646">AMPPS</a>. Task: answer the question your own way, test robustness, then compare with the 29 teams (median odds ratio 1.31, range 0.89–2.93).</p>
+<table>
+<tr><th>Agent</th><th>Time</th><th>Strengths</th><th>Weaknesses</th><th>Files</th></tr>
+<tr><td>Claude Opus 5.5<br><span class="quiet">high effort</span></td><td>37 min</td>
+<td>Odds ratio 1.38 [1.12, 1.70] from a mixed model with player and referee random effects. Explained, with numbers, why its dark/light split gives a smaller estimate. A careful comparison with the teams that used similar models.</td>
+<td>Slow: the mixed models take minutes each. States the paper's numbers from memory, labels them as such, and checks them against the teams' file.</td>
+<td class="links"><a href="redcards-claude-opus/report.html">report</a> · <a href="https://github.com/LukasWallrich/ai-metascience-hands-on/tree/main/reports/redcards-claude-opus">files</a></td></tr>
+<tr><td>Claude Fable 5.1</td><td>about 1 h</td>
+<td>The same model and the same estimate (1.38). Flagged its dark/light split as a narrower contrast. Said openly that it had not rerun its script after a final cosmetic edit.</td>
+<td>Running unattended, it started its long R job in the background and stopped; it needed one nudge to finish.</td>
+<td class="links"><a href="redcards-claude/report.html">report</a> · <a href="https://github.com/LukasWallrich/ai-metascience-hands-on/tree/main/reports/redcards-claude">files</a></td></tr>
+<tr><td>Codex GPT-6 Sol<br><span class="quiet">high effort</span></td><td>8.5 min</td>
+<td>Fast. Ten checks, all consistent. Its script writes the whole report.</td>
+<td>Reported the effect for half the skin-tone scale (0.25 → 0.75), then placed its 1.12 below 24 of the 29 teams, although it noted that their contrasts differ. Over the full scale its estimate is about 1.26. It counted second yellows as red cards.</td>
+<td class="links"><a href="redcards-codex/report.html">report</a> · <a href="https://github.com/LukasWallrich/ai-metascience-hands-on/tree/main/reports/redcards-codex">files</a></td></tr>
+<tr><td>DeepSeek Flash<br><span class="quiet">via OpenCode</span></td><td>51 min</td>
+<td>1.34 [1.10, 1.62] over the full scale, with ten checks.</td>
+<td>Concluded that a dark/light split "removes the association", without noting that the split is a narrower contrast. Its script only runs in its original folder.</td>
+<td class="links"><a href="redcards-deepseek/report.html">report</a> · <a href="https://github.com/LukasWallrich/ai-metascience-hands-on/tree/main/reports/redcards-deepseek">files</a></td></tr>
+</table>
+<p class="quiet">Once the outcome and the skin-tone contrast are lined up, the four agents agree: a modest association that holds across their own checks, near the middle of the 29 teams.</p>
+
+<h2>Case C · Does researchers' ideology shape their findings?</h2>
+<p class="quiet">Borjas &amp; Breznau (2026), <a href="https://doi.org/10.1126/sciadv.adz7173">Science Advances</a>. Published in January 2026, so the models do not know it well. The agents got the authors' replication package and were told not to search for comments on the paper.</p>
+<table>
+<tr><th>Agent</th><th>Time</th><th>Strengths</th><th>Weaknesses</th><th>Files</th></tr>
+<tr><td>Claude Opus 5.5<br><span class="quiet">high effort</span></td><td>11 min</td>
+<td>Reproduced Table 1 exactly. Noticed that four discipline codes each contain a single team, and that the paper does not discuss this. Found a model whose missing test statistic is counted as significant. Ran a grid of 24 specifications.</td>
+<td>Did not test what happens when those four codes are merged.</td>
+<td class="links"><a href="ideology-claude/report.html">report</a> · <a href="https://github.com/LukasWallrich/ai-metascience-hands-on/tree/main/reports/ideology-claude">files</a></td></tr>
+<tr><td>Codex GPT-6 Astra<br><span class="quiet">high effort</span></td><td>10.5 min</td>
+<td>Saved the article and parsed the published numbers from it, with built-in checks against the authors' log. Also found the missing test statistic.</td>
+<td>Found the same four single-team codes, but treated them only as a technical problem for one type of standard error.</td>
+<td class="links"><a href="ideology-codex-astra/report.html">report</a> · <a href="https://github.com/LukasWallrich/ai-metascience-hands-on/tree/main/reports/ideology-codex-astra">files</a></td></tr>
+<tr><td>Codex GPT-6 Sol<br><span class="quiet">high effort</span></td><td>8 min</td>
+<td>Reproduced all nine columns of Table 1 quickly. Found that dropping the discipline controls makes the result non-significant.</td>
+<td>Did not look into why the discipline controls matter.</td>
+<td class="links"><a href="ideology-codex/report.html">report</a> · <a href="https://github.com/LukasWallrich/ai-metascience-hands-on/tree/main/reports/ideology-codex">files</a></td></tr>
+<tr><td>DeepSeek Flash<br><span class="quiet">via OpenCode</span></td><td>6.5 min</td>
+<td>An exact reproduction, including R² values and a mismatch between the paper's significance stars and its p values.</td>
+<td>Concluded that the claim "holds up". It read the result's dependence on the discipline controls as support for the paper.</td>
+<td class="links"><a href="ideology-deepseek/report.html">report</a> · <a href="https://github.com/LukasWallrich/ai-metascience-hands-on/tree/main/reports/ideology-deepseek">files</a></td></tr>
+</table>
+<details>
+<summary>What the replicators found (spoiler: read after looking at the reports)</summary>
+<ul>
+<li>A replication report from the Institute for Replication (<a href="https://www.econstor.eu/bitstream/10419/341575/1/I4R-DP303.pdf">Auspurg &amp; Brüderl, 2026, I4R DP 303</a>) points to the four single-team discipline codes: they absorb 80 estimates from four teams that go against the hypothesis.</li>
+<li>Merge those four codes, and the per-point ideology effect falls from 0.011 (p = .06) to 0.001 (p = .94). The pro–anti contrast that all four agents chose as the main result falls from 0.085 (p = .008) to 0.044 (p = .23) (my calculation).</li>
+<li>Dropping the regression weights, or using the original study's standardised estimates, also removes the per-point effect.</li>
+<li>The authors reply that their discipline coding is a theory-driven choice (<a href="https://www.econstor.eu/bitstream/10419/341576/1/I4R-DP304.pdf">Borjas &amp; Breznau, 2026, I4R DP 304</a>).</li>
+</ul>
+<p class="quiet">Two agents saw the single-team codes. None tested whether they change the result.</p>
+</details>
+
+<p class="quiet" style="margin-top:3rem;">Lukas Wallrich, Birkbeck, University of London. <a href="../">Session page</a> · <a href="../slides/">Slides</a></p>
+</main>
+</body>
+</html>

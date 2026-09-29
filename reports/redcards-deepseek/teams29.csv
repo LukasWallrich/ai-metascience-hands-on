@@ -1,0 +1,30 @@
+"Team","Analytic.Approach","OR","OR_lo","OR_hi"
+"Team 1","Ordinary least squares with robust standard errors, logistic regression",1.179,0.952,1.405
+"Team 2","Linear probability model, logistic regression",1.341,1.1,1.63
+"Team 3","Multilevel Binomial Logistic Regression using bayesian inference",1.31,1.09,1.57
+"Team 4","Spearman correlation",1.20508398861786,1.20453766734877,1.20563055767242
+"Team 5","Generalized linear mixed models",1.38,1.1,1.75
+"Team 6","Linear Probability Model",1.283,0.771,2.133
+"Team 7","Dirichlet process Bayesian clustering",1.71,1.7,1.72
+"Team 8","Negative binomial regression with a log link analysis",1.391,1.174,1.648
+"Team 9","Generalized linear mixed effects models with a logit link function ",1.48,1.2,1.84
+"Team 10","Multilevel regression and logistic regression",1.02944695231468,1.01094227872411,1.05210335953285
+"Team 11","Multiple linear regression",1.25221141615404,1.05209812238872,1.49038706312524
+"Team 12","Zero-inflated Poisson regression",0.8878,0.4941,1.595
+"Team 13","Poisson Multi-level modeling",1.41,1.13,1.75
+"Team 14","Weighted least squares regression with referee fixed-effects and clustered standard errors",1.21445,0.97011,1.45677
+"Team 15","Hierarchical log-linear modeling",1.016,0.999,1.033
+"Team 16","Hierarchical Poisson Regression",1.32,1.06,1.63
+"Team 17","Bayesian logistic regression",0.956,0.771,1.184
+"Team 18","Hierarchical Bayes model",1.101,0.983,1.265
+"Team 20","Cross-classified multilevel negative binomial model ",1.4,1.15,1.71
+"Team 21","Tobit regression",2.88074698162271,1.02630933116147,11.4723466697569
+"Team 23","Mixed model logistic regression",1.31,1.1,1.56
+"Team 24","Multilevel logistic regression",1.38,1.11,1.72
+"Team 25","Multilevel logistic binomial regression",1.42,1.19,1.71
+"Team 26","Three-level hierarchical generalized linear modeling with Poisson sampling",1.3,1.08,1.56
+"Team 27","Poisson regression",2.931,0.1085,78.6596
+"Team 28","Mixed effects logistic regression",1.382,1.12,1.705
+"Team 30","Clustered robust binomial logistic regression",1.28,1.04,1.57
+"Team 31","Logistic regression",1.1226,0.881,1.4304
+"Team 32","Generalized linear models for binary data",1.39,1.1,1.75

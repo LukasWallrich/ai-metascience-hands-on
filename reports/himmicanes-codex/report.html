@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Female hurricane names and fatalities | Codex GPT-6-Sol</title>
+  <style>
+    :root {
+      --ink: #172d3d;
+      --muted: #516777;
+      --line: #c8d6de;
+      --tint: #ecf3f6;
+      --sea: #195e85;
+      --storm: #183f58;
+      --white: #ffffff;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--white); color: var(--ink); font-family: "Avenir Next", Avenir, "Trebuchet MS", sans-serif; font-size: 17px; line-height: 1.68; }
+    a { color: var(--sea); text-underline-offset: .18em; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible { outline: 3px solid #dc8a56; outline-offset: 3px; }
+    .masthead { background: var(--storm); color: #f8fbfd; padding: 1.15rem 1.5rem 3.8rem; }
+    .masthead-inner { max-width: 1160px; margin: auto; }
+    .masthead-top { display: flex; justify-content: space-between; gap: 1.2rem; align-items: baseline; padding-bottom: 2.8rem; border-bottom: 1px solid #7794a6; font-size: .9rem; }
+    .masthead-top strong { font-weight: 700; letter-spacing: .01em; }
+    .masthead-top span { color: #d0e0e8; text-align: right; }
+    h1, h2 { font-family: "Iowan Old Style", "Baskerville", Georgia, serif; font-weight: 500; letter-spacing: -.025em; }
+    h1 { max-width: 920px; font-size: clamp(2.5rem, 5vw, 4.6rem); line-height: 1.12; margin: 2.8rem 0 .65rem; }
+    .subtitle { color: #d7e6ed; font-size: 1.12rem; margin: 0; }
+    .layout { max-width: 1160px; margin: auto; padding: 0 1.5rem 5rem; display: grid; grid-template-columns: 205px minmax(0, 1fr); gap: 3.5rem; }
+    .contents { align-self: start; position: sticky; top: 2rem; padding-top: 2.6rem; font-size: .9rem; line-height: 1.4; }
+    .contents p { color: var(--muted); margin: 0 0 .7rem; font-weight: 700; }
+    .contents a { display: block; color: var(--muted); text-decoration: none; padding: .43rem 0 .43rem .75rem; border-left: 2px solid var(--line); }
+    .contents a:hover, .contents a:focus-visible { border-left-color: var(--sea); color: var(--ink); }
+    main { min-width: 0; max-width: 810px; }
+    .abstract { margin-top: -2rem; padding: 1.7rem 2.1rem 1.55rem; background: var(--tint); border-left: 5px solid var(--sea); position: relative; }
+    .abstract h2 { margin: 0 0 .45rem; font-size: 1.55rem; line-height: 1.2; }
+    .abstract p { max-width: 68ch; margin: 0; font-size: 1.05rem; }
+    article { padding-top: 1.8rem; }
+    article h2 { font-size: clamp(1.7rem, 2.4vw, 2.15rem); line-height: 1.18; margin: 3.5rem 0 1.05rem; padding-top: .7rem; border-top: 1px solid var(--line); scroll-margin-top: 1.4rem; }
+    article h2:first-child { margin-top: 1.5rem; }
+    article p { max-width: 76ch; margin: 0 0 1.2rem; }
+    article ul, article ol { max-width: 76ch; margin: .5rem 0 1.35rem; padding-left: 1.5rem; }
+    article li { padding-left: .2rem; margin-bottom: .6rem; }
+    article li::marker { color: var(--sea); font-weight: 700; }
+    article code { background: #eef3f5; border-radius: 3px; padding: .07rem .27rem; font-size: .88em; }
+    .table-scroll { overflow-x: auto; margin: 1.5rem 0; border-top: 2px solid var(--ink); border-bottom: 1px solid var(--line); }
+    table { border-collapse: collapse; width: 100%; min-width: 670px; font-size: .88rem; line-height: 1.45; font-variant-numeric: tabular-nums; }
+    th, td { padding: .7rem .62rem; border-bottom: 1px solid #d8e2e7; vertical-align: top; }
+    th { text-align: left; background: var(--tint); font-weight: 700; }
+    tr:last-child td { border-bottom: 0; }
+    tbody tr:nth-child(even) { background: #f8fafb; }
+    td a { white-space: nowrap; }
+    figure { margin: 1.9rem 0 1.35rem; }
+    figure img { display: block; max-width: 100%; width: 100%; height: auto; border: 1px solid var(--line); }
+    figcaption { font-size: .85rem; color: var(--muted); line-height: 1.5; margin-top: .45rem; }
+    #conclusion + p { font-size: 1.08rem; border-left: 3px solid var(--sea); padding-left: 1rem; }
+    footer { max-width: 1160px; margin: auto; padding: 1.1rem 1.5rem 2.2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .85rem; }
+    @media (max-width: 850px) {
+      .layout { display: block; }
+      .contents { position: static; padding: 1.4rem 0 0; display: flex; flex-wrap: wrap; gap: .1rem .7rem; }
+      .contents p { width: 100%; }
+      .contents a { border-left: 0; border-bottom: 2px solid var(--line); padding: .25rem 0; }
+      .abstract { margin-top: 1.8rem; }
+      .masthead { padding-bottom: 2.5rem; }
+    }
+    @media (max-width: 560px) {
+      body { font-size: 16px; }
+      .masthead-top { display: block; padding-bottom: 1.4rem; }
+      .masthead-top span { display: block; text-align: left; margin-top: .1rem; }
+      h1 { margin-top: 1.7rem; }
+      .layout { padding: 0 1.05rem 3rem; }
+      .abstract { padding: 1.25rem 1.2rem; }
+      article h2 { margin-top: 2.5rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @media print {
+      .masthead { background: white; color: black; padding-bottom: 1rem; }
+      .masthead-top span, .subtitle { color: #333; }
+      .layout { display: block; }
+      .contents { display: none; }
+      .abstract { margin-top: 0; background: white; }
+      a { color: inherit; }
+      h2, figure, table { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="masthead-top"><strong>Codex GPT-6-Sol</strong><span>Reproduction and sensitivity analysis · Jung et al. (2014)</span></div>
+      <h1>Female hurricane names and fatalities</h1>
+      <p class="subtitle">A reproduction of the archival result and nine defensible alternative analyses</p>
+    </div>
+  </header>
+  <div class="layout">
+    <nav class="contents" aria-label="Contents"><p>On this page</p><a href="#data-and-reference-analysis">Reproduction</a>
+<a href="#decisions-the-article-did-not-settle-for-this-reproduction">Analysis decisions</a>
+<a href="#alternatives-specified-before-fitting">Prespecified alternatives</a>
+<a href="#sensitivity-results">Sensitivity results</a>
+<a href="#conclusion">Conclusion</a>
+<a href="#reproducibility">Reproducibility</a></nav>
+    <main>
+      <section class="abstract" aria-labelledby="abstract-title">
+        <h2 id="abstract-title">Abstract</h2>
+        <p>I reproduced the published negative binomial result for 92 US hurricanes: the interaction between name femininity and normalised damage matches the published coefficient (β = 0.705). Across nine prespecified alternatives, six retain a statistically significant interaction, but only one of ten predicted high-damage death-ratio intervals excludes 1. The archival data support a model-dependent association; they do not establish that a storm’s name causes deaths.</p>
+      </section>
+      <article>
+<h2 id="data-and-reference-analysis">Data and reference analysis</h2>
+<p>I analysed the 92 storms in the supplied <code>hurricanes.csv</code>, covering 1950–2012. The published archival analysis began with 94 storms and excluded Katrina and Audrey, which are absent from this CSV; I therefore cannot test their inclusion from the supplied data alone. The outcome is total deaths. The reference model is a maximum-likelihood negative binomial regression with a log link, using the supplied standardised name femininity (<code>ZMasFem</code>), updated minimum pressure (<code>ZMinPressure_A</code>), normalised damage (<code>ZNDAM</code>), and the two name-by-severity interactions. Standard errors in the direct reproduction use the model's information matrix, as in the paper. The <a href="https://cyclingandchill.com/wp-content/uploads/2023/11/22-jung-et-al-2014-female-hurricanes-are-deadlier-than-male-hurricanes.pdf">published paper</a> and the <a href="https://publish.illinois.edu/shavitt/files/2014/06/AnalysesonHurricaneData.June17.pdf">authors' follow-up analysis</a> were opened for the published values below; none are recalled from memory.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: right;">Published</th>
+<th style="text-align: right;">Reproduced</th>
+<th style="text-align: left;">Published-value source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Storms analysed</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: left;"><a href="https://cyclingandchill.com/wp-content/uploads/2023/11/22-jung-et-al-2014-female-hurricanes-are-deadlier-than-male-hurricanes.pdf">Opened source</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Name femininity × normalised damage, log coefficient</td>
+<td style="text-align: right;">0.705</td>
+<td style="text-align: right;">0.705</td>
+<td style="text-align: left;"><a href="https://cyclingandchill.com/wp-content/uploads/2023/11/22-jung-et-al-2014-female-hurricanes-are-deadlier-than-male-hurricanes.pdf">Opened source</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">SE of that interaction</td>
+<td style="text-align: right;">0.184</td>
+<td style="text-align: right;">0.184</td>
+<td style="text-align: left;"><a href="https://cyclingandchill.com/wp-content/uploads/2023/11/22-jung-et-al-2014-female-hurricanes-are-deadlier-than-male-hurricanes.pdf">Opened source</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">p for that interaction</td>
+<td style="text-align: right;">&lt; .001</td>
+<td style="text-align: right;">&lt; .001</td>
+<td style="text-align: left;"><a href="https://cyclingandchill.com/wp-content/uploads/2023/11/22-jung-et-al-2014-female-hurricanes-are-deadlier-than-male-hurricanes.pdf">Opened source</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Name femininity × minimum pressure, log coefficient</td>
+<td style="text-align: right;">0.395</td>
+<td style="text-align: right;">0.395</td>
+<td style="text-align: left;"><a href="https://cyclingandchill.com/wp-content/uploads/2023/11/22-jung-et-al-2014-female-hurricanes-are-deadlier-than-male-hurricanes.pdf">Opened source</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">SE of pressure interaction</td>
+<td style="text-align: right;">0.157</td>
+<td style="text-align: right;">0.157</td>
+<td style="text-align: left;"><a href="https://cyclingandchill.com/wp-content/uploads/2023/11/22-jung-et-al-2014-female-hurricanes-are-deadlier-than-male-hurricanes.pdf">Opened source</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">p for pressure interaction</td>
+<td style="text-align: right;">0.012</td>
+<td style="text-align: right;">0.012</td>
+<td style="text-align: left;"><a href="https://cyclingandchill.com/wp-content/uploads/2023/11/22-jung-et-al-2014-female-hurricanes-are-deadlier-than-male-hurricanes.pdf">Opened source</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">AIC, fitted negative binomial model</td>
+<td style="text-align: right;">658.09</td>
+<td style="text-align: right;">658.09</td>
+<td style="text-align: left;"><a href="https://cyclingandchill.com/wp-content/uploads/2023/11/22-jung-et-al-2014-female-hurricanes-are-deadlier-than-male-hurricanes.pdf">Opened source</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>The near-identical coefficients and fit confirm that the supplied data and model specification reproduce the article's principal archival regression. The paper's illustrative 15.15 versus 41.84 predicted deaths use a separate median-split damage model (<a href="https://cyclingandchill.com/wp-content/uploads/2023/11/22-jung-et-al-2014-female-hurricanes-are-deadlier-than-male-hurricanes.pdf">paper</a>); they should not be compared with the continuous-damage predictions here. For a consistent comparison across models, I use damage at the full sample's 75th percentile ($8,162.5 million) and pressure at the full sample mean (964.9 mb). At these values, the reference model predicts 9.74 deaths for MFI 3 and 14.69 for MFI 9, a ratio of 1.51 (95% Wald CI [0.98, 2.33]). This ratio and its CI come from the fitted coefficients and covariance matrix, not from independent storms assigned different names.</p>
+<h2 id="decisions-the-article-did-not-settle-for-this-reproduction">Decisions the article did not settle for this reproduction</h2>
+<ul>
+<li>I used the supplied standardised columns rather than recomputing them from rounded raw data.</li>
+<li>I chose a common high-damage comparison at the 75th percentile, MFI 3 versus 9, and mean pressure. The article's illustrative predictions instead use a separate, dichotomised-damage model.</li>
+<li>I held the comparison point and full-sample standardisation fixed across subsets, including after 1979, so model contrasts retain the same units.</li>
+<li>I used two-sided Wald tests for interactions and 95% Wald intervals for death ratios. The paper does not give intervals for this continuous-damage contrast.</li>
+<li>I set winsorisation cutoffs to the largest observed values at or below the empirical 90th percentiles (deaths 52, damage $20,020 million) and defined the three highest-death storms as Camille, Diane, Sandy.</li>
+<li>I used information-matrix standard errors in all alternatives for comparability with the published main model. The authors' <a href="https://publish.illinois.edu/shavitt/files/2014/06/AnalysesonHurricaneData.June17.pdf">follow-up</a> also reports sandwich standard errors, so inferential results can depend on that choice.</li>
+</ul>
+<h2 id="alternatives-specified-before-fitting">Alternatives specified before fitting</h2>
+<ol type="1">
+<li><strong>Only 1979–2012 storms.</strong> This is the era of alternating male and female names. Expect weaker evidence because historical naming is confounded with time and the sample shrinks.</li>
+<li><strong>Add a linear year term.</strong> Fatality prevention may change over decades. Expect little change if the published association is not driven by a simple time trend.</li>
+<li><strong>Add pressure-by-damage interaction.</strong> Storm strength may alter the relation between damage and deaths. Expect the name-by-damage evidence to weaken if the published model omitted this relevant interaction.</li>
+<li><strong>Use log(1 + damage), with its name interaction.</strong> Damage is highly skewed, so a nonlinear scale is reasonable. Expect the name-by-damage evidence to weaken if a few costly storms drive it.</li>
+<li><strong>Winsorise deaths and damage at their 90th percentiles.</strong> Limit the influence of extreme storms without deleting them. Expect a weaker association if the largest storms dominate.</li>
+<li><strong>Exclude the three storms with the most deaths in the supplied data.</strong> This is a simple influence check. Expect weaker evidence because these extreme fatalities are all associated with feminine names.</li>
+<li><strong>Use binary female versus male name, with the same interactions.</strong> The headline uses this distinction rather than the continuous rating. Expect a similar direction but less precision because the rating contains more information.</li>
+<li><strong>Use the original rather than updated minimum-pressure values.</strong> Both versions are supplied. Expect little change because the measures are close.</li>
+<li><strong>Exclude Sandy.</strong> Its unusually costly impact and potentially ambiguous name make it an influential case. Expect a similar or stronger association, as the authors' later analysis suggested.</li>
+</ol>
+<p>These choices were recorded in <a href="analysis_plan.md">analysis_plan.md</a> before fitting the models. Every alternative retains the question of whether more feminine names predict higher deaths among damaging storms; each changes one feature of the reference analysis.</p>
+<h2 id="sensitivity-results">Sensitivity results</h2>
+<p>The last column compares MFI 9 with MFI 3 at the common high-damage point, except in the binary-name row, which compares female with male names. The coefficient column is the fitted name-by-damage interaction (SE in parentheses). Its scale differs in the log-damage and binary-name rows, so the ratios are the more comparable summaries. The p value tests the interaction; the interval belongs to the high-damage ratio.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Model</th>
+<th style="text-align: right;">N</th>
+<th style="text-align: right;">Name × damage coefficient (SE)</th>
+<th style="text-align: right;">Interaction p</th>
+<th style="text-align: right;">High-damage death ratio [95% CI]</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Published specification</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">0.705 (0.184)</td>
+<td style="text-align: right;">&lt; .001</td>
+<td style="text-align: right;">1.51 [0.98, 2.33]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Only 1979–2012</td>
+<td style="text-align: right;">54</td>
+<td style="text-align: right;">0.271 (0.151)</td>
+<td style="text-align: right;">0.073</td>
+<td style="text-align: right;">1.03 [0.65, 1.64]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Add year trend</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">0.707 (0.187)</td>
+<td style="text-align: right;">&lt; .001</td>
+<td style="text-align: right;">1.52 [0.93, 2.48]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Add pressure × damage</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">0.229 (0.216)</td>
+<td style="text-align: right;">0.288</td>
+<td style="text-align: right;">1.16 [0.75, 1.81]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Log(1 + damage)</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">0.260 (0.206)</td>
+<td style="text-align: right;">0.208</td>
+<td style="text-align: right;">1.56 [0.82, 3.00]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Winsorise deaths and damage</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">0.699 (0.280)</td>
+<td style="text-align: right;">0.012</td>
+<td style="text-align: right;">1.34 [0.89, 2.03]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Exclude top three death tolls</td>
+<td style="text-align: right;">89</td>
+<td style="text-align: right;">0.602 (0.196)</td>
+<td style="text-align: right;">0.002</td>
+<td style="text-align: right;">1.25 [0.81, 1.93]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Binary female vs male</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">1.433 (0.417)</td>
+<td style="text-align: right;">&lt; .001</td>
+<td style="text-align: right;">1.62 [0.96, 2.72]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Original minimum pressure</td>
+<td style="text-align: right;">92</td>
+<td style="text-align: right;">0.705 (0.184)</td>
+<td style="text-align: right;">&lt; .001</td>
+<td style="text-align: right;">1.51 [0.98, 2.33]</td>
+</tr>
+<tr>
+<td style="text-align: left;">Exclude Sandy</td>
+<td style="text-align: right;">91</td>
+<td style="text-align: right;">0.849 (0.186)</td>
+<td style="text-align: right;">&lt; .001</td>
+<td style="text-align: right;">1.57 [1.02, 2.40]</td>
+</tr>
+</tbody>
+</table></div>
+<figure><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMTAwIiBoZWlnaHQ9IjYzNCIgdmlld0JveD0iMCAwIDExMDAgNjM0IiByb2xlPSJpbWciIGFyaWEtbGFiZWw9IlByZWRpY3RlZCBkZWF0aCByYXRpb3MgZm9yIG5pbmUgYWx0ZXJuYXRpdmUgYW5hbHlzZXMgYW5kIHRoZSByZWZlcmVuY2UgbW9kZWwsIHdpdGggOTUgcGVyY2VudCBjb25maWRlbmNlIGludGVydmFscyI+CjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9IndoaXRlIi8+CjxzdHlsZT50ZXh0e2ZvbnQtZmFtaWx5OkFyaWFsLEhlbHZldGljYSxzYW5zLXNlcmlmO2ZpbGw6IzE3MjYzNn0udGl0bGV7Zm9udC1zaXplOjE4cHg7Zm9udC13ZWlnaHQ6NzAwfS5sYWJ7Zm9udC1zaXplOjE0cHh9LnRpY2t7Zm9udC1zaXplOjEycHg7ZmlsbDojNTc2Njc3fS52YWx7Zm9udC1zaXplOjEzcHg7ZmlsbDojMTcyNjM2fTwvc3R5bGU+Cjx0ZXh0IGNsYXNzPSJ0aXRsZSIgeD0iMjAiIHk9IjMyIj5OYW1lIGZlbWluaW5pdHkgYW5kIGV4cGVjdGVkIGRlYXRocyBhdCBoaWdoIGRhbWFnZTwvdGV4dD4KPGxpbmUgeDE9IjMyNS4wIiB5MT0iNDQiIHgyPSIzMjUuMCIgeTI9IjU3MiIgc3Ryb2tlPSIjZTdlZGYyIiBzdHJva2Utd2lkdGg9IjEiLz4KPHRleHQgY2xhc3M9InRpY2siIHg9IjMyNS4wIiB5PSI1OTIiIHRleHQtYW5jaG9yPSJtaWRkbGUiPjAuNcOXPC90ZXh0Pgo8bGluZSB4MT0iNTE4LjMiIHkxPSI0NCIgeDI9IjUxOC4zIiB5Mj0iNTcyIiBzdHJva2U9IiM3Yjg3OTQiIHN0cm9rZS13aWR0aD0iMiIvPgo8dGV4dCBjbGFzcz0idGljayIgeD0iNTE4LjMiIHk9IjU5MiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+McOXPC90ZXh0Pgo8bGluZSB4MT0iNzExLjciIHkxPSI0NCIgeDI9IjcxMS43IiB5Mj0iNTcyIiBzdHJva2U9IiNlN2VkZjIiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCBjbGFzcz0idGljayIgeD0iNzExLjciIHk9IjU5MiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+MsOXPC90ZXh0Pgo8bGluZSB4MT0iOTA1LjAiIHkxPSI0NCIgeDI9IjkwNS4wIiB5Mj0iNTcyIiBzdHJva2U9IiNlN2VkZjIiIHN0cm9rZS13aWR0aD0iMSIvPgo8dGV4dCBjbGFzcz0idGljayIgeD0iOTA1LjAiIHk9IjU5MiIgdGV4dC1hbmNob3I9Im1pZGRsZSI+NMOXPC90ZXh0Pgo8dGV4dCBjbGFzcz0ibGFiIiB4PSIyMCIgeT0iNjkiPlB1Ymxpc2hlZCBzcGVjaWZpY2F0aW9uPC90ZXh0Pgo8bGluZSB4MT0iNTExLjUiIHkxPSI2NCIgeDI9Ijc1NC40IiB5Mj0iNjQiIHN0cm9rZT0iIzE5NWU4NSIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSI1MTEuNSIgeTE9IjU4IiB4Mj0iNTExLjUiIHkyPSI3MCIgc3Ryb2tlPSIjMTk1ZTg1IiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9Ijc1NC40IiB5MT0iNTgiIHgyPSI3NTQuNCIgeTI9IjcwIiBzdHJva2U9IiMxOTVlODUiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSI2MzIuOSIgY3k9IjY0IiByPSI1IiBmaWxsPSIjMTk1ZTg1Ii8+Cjx0ZXh0IGNsYXNzPSJ2YWwiIHg9IjkyMyIgeT0iNjkiPjEuNTEgWzAuOTgsIDIuMzNdPC90ZXh0Pgo8dGV4dCBjbGFzcz0ibGFiIiB4PSIyMCIgeT0iMTE4Ij5Pbmx5IDE5NznigJMyMDEyPC90ZXh0Pgo8bGluZSB4MT0iMzk5LjkiIHkxPSIxMTMiIHgyPSI2NTUuNiIgeTI9IjExMyIgc3Ryb2tlPSIjYzU2ZDQwIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjM5OS45IiB5MT0iMTA3IiB4Mj0iMzk5LjkiIHkyPSIxMTkiIHN0cm9rZT0iI2M1NmQ0MCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSI2NTUuNiIgeTE9IjEwNyIgeDI9IjY1NS42IiB5Mj0iMTE5IiBzdHJva2U9IiNjNTZkNDAiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSI1MjcuOCIgY3k9IjExMyIgcj0iNSIgZmlsbD0iI2M1NmQ0MCIvPgo8dGV4dCBjbGFzcz0idmFsIiB4PSI5MjMiIHk9IjExOCI+MS4wMyBbMC42NSwgMS42NF08L3RleHQ+Cjx0ZXh0IGNsYXNzPSJsYWIiIHg9IjIwIiB5PSIxNjciPkFkZCB5ZWFyIHRyZW5kPC90ZXh0Pgo8bGluZSB4MT0iNDk4LjciIHkxPSIxNjIiIHgyPSI3NzEuMiIgeTI9IjE2MiIgc3Ryb2tlPSIjYzU2ZDQwIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjQ5OC43IiB5MT0iMTU2IiB4Mj0iNDk4LjciIHkyPSIxNjgiIHN0cm9rZT0iI2M1NmQ0MCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSI3NzEuMiIgeTE9IjE1NiIgeDI9Ijc3MS4yIiB5Mj0iMTY4IiBzdHJva2U9IiNjNTZkNDAiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSI2MzQuOSIgY3k9IjE2MiIgcj0iNSIgZmlsbD0iI2M1NmQ0MCIvPgo8dGV4dCBjbGFzcz0idmFsIiB4PSI5MjMiIHk9IjE2NyI+MS41MiBbMC45MywgMi40OF08L3RleHQ+Cjx0ZXh0IGNsYXNzPSJsYWIiIHg9IjIwIiB5PSIyMTYiPkFkZCBwcmVzc3VyZSDDlyBkYW1hZ2U8L3RleHQ+CjxsaW5lIHgxPSI0MzYuNCIgeTE9IjIxMSIgeDI9IjY4NC4zIiB5Mj0iMjExIiBzdHJva2U9IiNjNTZkNDAiIHN0cm9rZS13aWR0aD0iMiIvPgo8bGluZSB4MT0iNDM2LjQiIHkxPSIyMDUiIHgyPSI0MzYuNCIgeTI9IjIxNyIgc3Ryb2tlPSIjYzU2ZDQwIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjY4NC4zIiB5MT0iMjA1IiB4Mj0iNjg0LjMiIHkyPSIyMTciIHN0cm9rZT0iI2M1NmQ0MCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjU2MC40IiBjeT0iMjExIiByPSI1IiBmaWxsPSIjYzU2ZDQwIi8+Cjx0ZXh0IGNsYXNzPSJ2YWwiIHg9IjkyMyIgeT0iMjE2Ij4xLjE2IFswLjc1LCAxLjgxXTwvdGV4dD4KPHRleHQgY2xhc3M9ImxhYiIgeD0iMjAiIHk9IjI2NSI+TG9nKDEgKyBkYW1hZ2UpPC90ZXh0Pgo8bGluZSB4MT0iNDYxLjMiIHkxPSIyNjAiIHgyPSI4MjUuMCIgeTI9IjI2MCIgc3Ryb2tlPSIjYzU2ZDQwIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjQ2MS4zIiB5MT0iMjU0IiB4Mj0iNDYxLjMiIHkyPSIyNjYiIHN0cm9rZT0iI2M1NmQ0MCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSI4MjUuMCIgeTE9IjI1NCIgeDI9IjgyNS4wIiB5Mj0iMjY2IiBzdHJva2U9IiNjNTZkNDAiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSI2NDMuMSIgY3k9IjI2MCIgcj0iNSIgZmlsbD0iI2M1NmQ0MCIvPgo8dGV4dCBjbGFzcz0idmFsIiB4PSI5MjMiIHk9IjI2NSI+MS41NiBbMC44MiwgMy4wMF08L3RleHQ+Cjx0ZXh0IGNsYXNzPSJsYWIiIHg9IjIwIiB5PSIzMTQiPldpbnNvcmlzZSBkZWF0aHMgYW5kIGRhbWFnZTwvdGV4dD4KPGxpbmUgeDE9IjQ4NS4xIiB5MT0iMzA5IiB4Mj0iNzE2LjUiIHkyPSIzMDkiIHN0cm9rZT0iI2M1NmQ0MCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSI0ODUuMSIgeTE9IjMwMyIgeDI9IjQ4NS4xIiB5Mj0iMzE1IiBzdHJva2U9IiNjNTZkNDAiIHN0cm9rZS13aWR0aD0iMiIvPgo8bGluZSB4MT0iNzE2LjUiIHkxPSIzMDMiIHgyPSI3MTYuNSIgeTI9IjMxNSIgc3Ryb2tlPSIjYzU2ZDQwIiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNjAwLjgiIGN5PSIzMDkiIHI9IjUiIGZpbGw9IiNjNTZkNDAiLz4KPHRleHQgY2xhc3M9InZhbCIgeD0iOTIzIiB5PSIzMTQiPjEuMzQgWzAuODksIDIuMDNdPC90ZXh0Pgo8dGV4dCBjbGFzcz0ibGFiIiB4PSIyMCIgeT0iMzYzIj5FeGNsdWRlIHRvcCB0aHJlZSBkZWF0aCB0b2xsczwvdGV4dD4KPGxpbmUgeDE9IjQ1OC41IiB5MT0iMzU4IiB4Mj0iNzAxLjgiIHkyPSIzNTgiIHN0cm9rZT0iI2M1NmQ0MCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSI0NTguNSIgeTE9IjM1MiIgeDI9IjQ1OC41IiB5Mj0iMzY0IiBzdHJva2U9IiNjNTZkNDAiIHN0cm9rZS13aWR0aD0iMiIvPgo8bGluZSB4MT0iNzAxLjgiIHkxPSIzNTIiIHgyPSI3MDEuOCIgeTI9IjM2NCIgc3Ryb2tlPSIjYzU2ZDQwIiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNTgwLjEiIGN5PSIzNTgiIHI9IjUiIGZpbGw9IiNjNTZkNDAiLz4KPHRleHQgY2xhc3M9InZhbCIgeD0iOTIzIiB5PSIzNjMiPjEuMjUgWzAuODEsIDEuOTNdPC90ZXh0Pgo8dGV4dCBjbGFzcz0ibGFiIiB4PSIyMCIgeT0iNDEyIj5CaW5hcnkgZmVtYWxlIHZzIG1hbGU8L3RleHQ+CjxsaW5lIHgxPSI1MDguMCIgeTE9IjQwNyIgeDI9Ijc5Ny40IiB5Mj0iNDA3IiBzdHJva2U9IiNjNTZkNDAiIHN0cm9rZS13aWR0aD0iMiIvPgo8bGluZSB4MT0iNTA4LjAiIHkxPSI0MDEiIHgyPSI1MDguMCIgeTI9IjQxMyIgc3Ryb2tlPSIjYzU2ZDQwIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9Ijc5Ny40IiB5MT0iNDAxIiB4Mj0iNzk3LjQiIHkyPSI0MTMiIHN0cm9rZT0iI2M1NmQ0MCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxjaXJjbGUgY3g9IjY1Mi43IiBjeT0iNDA3IiByPSI1IiBmaWxsPSIjYzU2ZDQwIi8+Cjx0ZXh0IGNsYXNzPSJ2YWwiIHg9IjkyMyIgeT0iNDEyIj4xLjYyIFswLjk2LCAyLjcyXTwvdGV4dD4KPHRleHQgY2xhc3M9ImxhYiIgeD0iMjAiIHk9IjQ2MSI+T3JpZ2luYWwgbWluaW11bSBwcmVzc3VyZTwvdGV4dD4KPGxpbmUgeDE9IjUxMS42IiB5MT0iNDU2IiB4Mj0iNzU0LjUiIHkyPSI0NTYiIHN0cm9rZT0iI2M1NmQ0MCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSI1MTEuNiIgeTE9IjQ1MCIgeDI9IjUxMS42IiB5Mj0iNDYyIiBzdHJva2U9IiNjNTZkNDAiIHN0cm9rZS13aWR0aD0iMiIvPgo8bGluZSB4MT0iNzU0LjUiIHkxPSI0NTAiIHgyPSI3NTQuNSIgeTI9IjQ2MiIgc3Ryb2tlPSIjYzU2ZDQwIiBzdHJva2Utd2lkdGg9IjIiLz4KPGNpcmNsZSBjeD0iNjMzLjAiIGN5PSI0NTYiIHI9IjUiIGZpbGw9IiNjNTZkNDAiLz4KPHRleHQgY2xhc3M9InZhbCIgeD0iOTIzIiB5PSI0NjEiPjEuNTEgWzAuOTgsIDIuMzNdPC90ZXh0Pgo8dGV4dCBjbGFzcz0ibGFiIiB4PSIyMCIgeT0iNTEwIj5FeGNsdWRlIFNhbmR5PC90ZXh0Pgo8bGluZSB4MT0iNTI0LjciIHkxPSI1MDUiIHgyPSI3NjIuOCIgeTI9IjUwNSIgc3Ryb2tlPSIjYzU2ZDQwIiBzdHJva2Utd2lkdGg9IjIiLz4KPGxpbmUgeDE9IjUyNC43IiB5MT0iNDk5IiB4Mj0iNTI0LjciIHkyPSI1MTEiIHN0cm9rZT0iI2M1NmQ0MCIgc3Ryb2tlLXdpZHRoPSIyIi8+CjxsaW5lIHgxPSI3NjIuOCIgeTE9IjQ5OSIgeDI9Ijc2Mi44IiB5Mj0iNTExIiBzdHJva2U9IiNjNTZkNDAiIHN0cm9rZS13aWR0aD0iMiIvPgo8Y2lyY2xlIGN4PSI2NDMuOCIgY3k9IjUwNSIgcj0iNSIgZmlsbD0iI2M1NmQ0MCIvPgo8dGV4dCBjbGFzcz0idmFsIiB4PSI5MjMiIHk9IjUxMCI+MS41NyBbMS4wMiwgMi40MF08L3RleHQ+Cjx0ZXh0IGNsYXNzPSJ0aWNrIiB4PSI2MTUuMCIgeT0iNjIyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5QcmVkaWN0ZWQgZGVhdGggcmF0aW8gKG1vcmUgZmVtaW5pbmUgLyBtb3JlIG1hc2N1bGluZSk8L3RleHQ+Cjwvc3ZnPgo=" alt="Predicted death ratios with 95% confidence intervals for all models" /><figcaption>Predicted death ratios and 95% confidence intervals across the reference model and nine alternatives.</figcaption></figure>
+<p>The figure's vertical line marks a death ratio of 1. The confidence intervals use the fitted negative binomial covariance matrix, and the displayed alternative specifications are sensitivity checks rather than independent replications. Normalised damage is an outcome of a storm as well as a proxy for its severity and exposure; conditioning on it may introduce bias. The available data also omit exposure, location, warning quality, and other potential causes of deaths, so these regressions cannot identify what would have happened had the same storm received another name. The accompanying experiments address perception and stated intentions, but this report tests the archival fatality result only.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>The published model is reproducible: its name-femininity-by-damage coefficient is 0.705 (p &lt; .001), and at $8,162.5 million damage it predicts 1.51 times as many deaths for MFI 9 as for MFI 3 (95% CI [0.98, 2.33]). Across the nine defensible alternatives, the high-damage ratio exceeds 1 in 9 of 9, but only 1 of 10 high-damage ratio intervals exclude 1 and the name-by-damage interaction has p &lt; .05 in 6 of 9; the headline claim therefore depends on modelling choices and this observational dataset does not establish a causal effect of storm names.</p>
+<h2 id="reproducibility">Reproducibility</h2>
+<p>Run <code>python analyse.py</code> from a clean start after installing <code>numpy</code>, <code>pandas</code>, <code>scipy</code>, and <code>statsmodels</code>; the script reads only the supplied CSV and <code>analysis_plan.md</code>, then writes this report and <code>figure.svg</code>. All fitted numbers, cutoffs, and counts in this report are computed by the script; published values are transcribed in the script from the linked sources. No paid API was used; incremental service cost was $0.</p>
+
+      </article>
+    </main>
+  </div>
+  <footer>Prepared by Codex GPT-6-Sol · <a href="report.md">Markdown report</a> · <a href="analyse.py">Analysis code</a> · <a href="analysis_plan.md">Prespecified choices</a></footer>
+</body>
+</html>
