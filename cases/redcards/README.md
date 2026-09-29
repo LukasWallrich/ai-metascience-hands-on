@@ -1,36 +1,43 @@
-# Case B: Do referees give more red cards to dark-skin-toned players?
+# Red-card data
 
-Silberzahn, R., Uhlmann, E. L., Martin, D. P., et al. (2018). Many analysts, one data
-set: Making transparent how variations in analytic choices affect results. *Advances
-in Methods and Practices in Psychological Science, 1*(3), 337–356.
-https://doi.org/10.1177/2515245917747646
+Download the dataset from the project's OSF page and unzip it into this folder: https://osf.io/download/fv8c3/ (5 MB zip, contains `CrowdstormingDataJuly1st.csv`).
 
-In this project, 29 teams analysed the same dataset to answer one question: are soccer
-referees more likely to give red cards to dark-skin-toned players than to
-light-skin-toned players?
+The text below is the README distributed with the dataset on OSF (https://osf.io/gvm2z/), unchanged.
 
-## Data
+From a company for sports statistics, we obtained data and profile photos from all soccer players (N = 2053) playing in the first male divisions of England, Germany, France and Spain in the 2012-2013 season and all referees (N = 3147) that these players played under in their professional career. We created a dataset of player–referee dyads including the number of matches players and referees encountered each other and our dependent variable, the number of red cards given to a player by a particular referee throughout all matches the two encountered each other.
+ 
+Player photos were available from the source for 1586 out of 2053 players. Players’ skin tone was coded by two independent raters blind to the research question who, based on their profile photo, categorized players on a 5-point scale ranging from “very light skin” to “very dark skin” with “neither dark nor light skin” as the center value. 
 
-Download the dataset from the project's OSF page and unzip it into this folder:
-https://osf.io/download/fv8c3/ (5 MB zip, contains `CrowdstormingDataJuly1st.csv`).
+Additionally, implicit bias scores for each referee country were calculated using a race implicit association test (IAT), with higher values corresponding to faster white | good, black | bad associations. Explicit bias scores for each referee country were calculated using a racial thermometer task, with higher values corresponding to greater feelings of warmth toward whites versus blacks. Both these measures were created by aggregating data from many online users in referee countries taking these tests on Project Implicit (http://projectimplicit.net)
 
-The file has 146,028 player–referee dyads: 2,053 players from the first male divisions
-of England, Germany, France and Spain (2012–13 season) and the 3,147 referees they
-played under across their careers. Each row counts the games and cards between one
-player and one referee.
+In all, the dataset has a total of 146028 dyads of players and referees. A detailed description of all variables in the dataset can be seen in the list below.
 
-| Variable | Meaning |
-|---|---|
-| `playerShort`, `player` | Player ID and name |
-| `club`, `leagueCountry` | Player's club and its country |
-| `birthday`, `height`, `weight`, `position` | Player characteristics |
-| `games`, `victories`, `ties`, `defeats`, `goals` | Counts within the player–referee dyad |
-| `yellowCards`, `yellowReds`, `redCards` | Cards the player received from this referee |
-| `photoID` | ID of the player photo (missing for 468 players) |
-| `rater1`, `rater2` | Skin tone rated from the photo by two independent raters (5-point scale, very light to very dark; stored as 0–1) |
-| `refNum`, `refCountry` | Anonymised referee ID and referee country ID |
-| `meanIAT`, `nIAT`, `seIAT` | Implicit race bias in the referee's country (Project Implicit), with its sample size and standard error |
-| `meanExp`, `nExp`, `seExp` | Explicit race bias in the referee's country, with its sample size and standard error |
+Variables:
 
-The 29 teams' estimates are published at https://osf.io/download/fa743/. The prompt
-asks the agent to look at them only after it has run its own analysis.
+playerShort - short player ID
+player - player name
+club - player club
+leagueCountry - country of player club (England, Germany, France, and Spain)
+birthday - player birthday
+height - player height (in cm)
+weight - player weight (in kg)
+position - detailed player position 
+games - number of games in the player-referee dyad
+victories - victories in the player-referee dyad
+ties - ties in the player-referee dyad
+defeats - losses in the player-referee dyad
+goals - goals scored by a player in the player-referee dyad
+yellowCards - number of yellow cards player received from referee
+yellowReds - number of yellow-red cards player received from referee
+redCards - number of red cards player received from referee
+photoID - ID of player photo (if available)
+rater1 - skin rating of photo by rater 1 (5-point scale ranging from “very light skin” to “very dark skin”)
+rater2 - skin rating of photo by rater 2 (5-point scale ranging from “very light skin” to “very dark skin”)
+refNum - unique referee ID number (referee name removed for anonymizing purposes)
+refCountry - unique referee country ID number (country name removed for anonymizing purposes)
+meanIAT - mean implicit bias score (using the race IAT) for referee country, higher values correspond to faster white | good, black | bad associations 
+nIAT - sample size for race IAT in that particular country
+seIAT - standard error for mean estimate of race IAT       
+meanExp - mean explicit bias score (using a racial thermometer task) for referee country, higher values correspond to greater feelings of warmth toward whites versus blacks
+nExp - sample size for explicit bias in that particular country
+seExp - standard error for mean estimate of explicit bias measure

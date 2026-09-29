@@ -1,29 +1,22 @@
-# Case A: "Female hurricanes are deadlier than male hurricanes"
+# hurricanes.csv
 
-Jung, K., Shavitt, S., Viswanathan, M., & Hilbe, J. M. (2014). Female hurricanes are
-deadlier than male hurricanes. *PNAS, 111*(24), 8782–8787.
-https://doi.org/10.1073/pnas.1402786111
+This is the `hurricanes` dataset from the DHARMa R package (GPL-3), exported to CSV. The text below is the package's documentation of the dataset, unchanged.
 
-The paper reports that hurricanes with more feminine names cause more deaths, and
-explains this with people taking feminine-named storms less seriously.
+A data set on hurricane strength and fatalities in the US between 1950 and 2012. The data originates from the study by Jung et al., PNAS, 2014, who claim that the masculinity / femininity of a hurricane name has a causal effect on fatalities, presumably through a different perception of danger caused by the names.
 
-## Data
+A 'data.frame': 93 obs. of  14 variables
 
-`hurricanes.csv`: 92 Atlantic hurricanes that made landfall in the US, 1950–2012,
-as used in the paper. This copy is the `hurricanes` dataset distributed with the
-DHARMa R package (GPL-3), exported to CSV.
-
-| Variable | Meaning |
-|---|---|
-| `Year` | Year of the hurricane |
-| `Name` | Name of the hurricane |
-| `MasFem` | Masculinity–femininity rating of the name (1 = very masculine, 11 = very feminine) |
-| `MinPressure_before` | Minimum air pressure, as in the original data |
-| `Minpressure_Updated_2014` | Minimum air pressure, updated values |
-| `Gender_MF` | Binary name gender (0 = male, 1 = female) |
-| `Category` | Hurricane category |
-| `alldeaths` | Number of deaths |
-| `NDAM` | Normalised damage in millions of US dollars (2013 values) |
-| `Elapsed_Yrs` | Years elapsed since the hurricane |
-| `Source` | Source of the record (MWR or Wikipedia) |
-| `ZMasFem`, `ZMinPressure_A`, `ZNDAM` | Standardised versions of `MasFem`, `MinPressure_before` and `NDAM` |
+- **Year**: Year of the hurricane (1950-2012)
+- **Name**: Name of the hurricane
+- **MasFem**: Masculinity-femininity rating of the hurricane's name in the range 1 = very masculine, 11 = very feminine
+- **MinPressure_before**: Minimum air pressure (909-1002)
+- **Minpressure_Updated_2014**: Updated minimum air pressure (909-1003)
+- **Gender_MF**: Binary gender (male/female) based on MasFem (male = 0, female = 1)
+- **Category**: Strength of the hurricane in categories (1:7). (1 = not at all, 7 = very intense)
+- **alldeaths**: Deaths occured (1:256)
+- **NDAM**: normalized damage in millions (1:75.000). The raw (dollar) amounts of property damage caused by hurricanes were obtained, and the unadjusted dollar amounts were normalized to 2013 monetary values by adjusting them to inflation, wealth and population density
+- **Elapsed_Yrs**: elapsed since the occurrence of hurricanes (1:63)
+- **Source**: MWR/wikipedia ()
+- **ZMasFem**: scaled (MasFem)
+- **ZMinPressure_A**: scaled (Minpressure_Updated_2014)
+- **ZNDAM**: scaled (NDAM)

@@ -258,17 +258,31 @@
 
     <!-- The prompt -->
     <section data-cid="s-4f4faa94" class="pad">
-      <p data-cid="e-c0d1ac91" class="marker">Case A · the prompt in short (full text on the page)</p>
-      <h2 data-cid="e-b0fa0ff0" style="margin-bottom:0.5em;">What each agent gets</h2>
+      <p data-cid="e-c0d1ac91" class="marker">The prompts in short (full text on the page)</p>
+      <h2 data-cid="e-b0fa0ff0" style="margin-bottom:0.3em;">What each agent gets</h2>
       <p data-cid="e-7be92022" class="small quiet">The data, a README, and the paper's reference and DOI. Then:</p>
-      <ol style="font-size:0.9em; margin-top:0.3em;">
-        <li data-cid="e-e66b41fa"><strong>Reproduce</strong> the main result, with one script that runs from a clean start.</li>
-        <li data-cid="e-283998a9"><strong>Compare</strong> with the published numbers, and say where each one came from.</li>
-        <li data-cid="e-c01250c2"><strong>List</strong> the decisions the paper left open.</li>
-        <li data-cid="e-68651c3f"><strong>Stress-test:</strong> predict first, then run 6&ndash;10 defensible alternatives.</li>
-        <li data-cid="e-7a9451a1"><strong>Judge</strong> whether the headline claim holds up.</li>
-      </ol>
-      <p data-cid="e-536fb666" class="small quiet" style="margin-top:0.6em;">Case B: the agent chooses its own analysis, and compares it with the 29 teams only afterwards.</p>
+      <div class="cols" style="gap:4%; margin-top:0.4em;">
+        <div data-cid="e-5d1e7a20" class="card">
+          <div data-cid="e-3a8c61f4" class="label">Case A · hurricanes</div>
+          <ol class="small" style="margin:0.2em 0 0 1em;">
+            <li data-cid="e-e66b41fa"><strong>Reproduce</strong> the main result, with one script that runs from a clean start.</li>
+            <li data-cid="e-283998a9"><strong>Compare</strong> with the published numbers, and say where each came from.</li>
+            <li data-cid="e-c01250c2"><strong>List</strong> the decisions the paper left open.</li>
+            <li data-cid="e-68651c3f"><strong>Stress-test:</strong> predict, then run 6&ndash;10 alternatives.</li>
+            <li data-cid="e-7a9451a1"><strong>Judge</strong> whether the claim holds up.</li>
+          </ol>
+        </div>
+        <div data-cid="e-8f2b40c7" class="card">
+          <div data-cid="e-c47e19d5" class="label">Case B · red cards</div>
+          <ol class="small" style="margin:0.2em 0 0 1em;">
+            <li data-cid="e-1f6d3b82"><strong>Answer</strong> the question your way, with one script and an odds ratio.</li>
+            <li data-cid="e-94ae27c0"><strong>List</strong> the decisions the data left open.</li>
+            <li data-cid="e-6b05d9e3"><strong>Stress-test:</strong> predict, then run 6&ndash;10 alternatives.</li>
+            <li data-cid="e-d28c7f15"><strong>Only then compare</strong> with the 29 teams.</li>
+            <li data-cid="e-40e9b6a1"><strong>Conclude.</strong></li>
+          </ol>
+        </div>
+      </div>
       <aside class="notes">
         13:26 (2 min). Walk through the five steps briefly; we come back to why the prompt looks like this
         once the agents are running. Point out step 2: every published number needs a source, and
@@ -392,7 +406,6 @@
         <li data-cid="e-09842263">You sign in with your own accounts, so you pay the agent providers as usual.</li>
         <li data-cid="e-4ff3a0c3">Each run is a thread, with a diff viewer for the files it changed.</li>
       </ul>
-      <p data-cid="e-848e3dd8">Today: the same prompt in three agents, side by side.</p>
       <p data-cid="e-bb395285" class="small quiet" style="margin-top:0.7em;">The agents work fine in a terminal or in their own apps. T3 Code is a convenience. <a data-cid="e-b346d40d" href="https://t3.codes" target="_blank">t3.codes</a></p>
       <aside class="notes">
         13:35 (4 min). Switch briefly to T3 Code and show the threads: one per agent and case.
@@ -407,15 +420,15 @@
       <div class="cols" style="gap:3%; margin-top:0.5em;">
         <div data-cid="e-9b4b6f4e" class="card">
           <div data-cid="e-e2778fe5" class="label">Claude Code</div>
-          <p data-cid="e-1a5983d3" class="small" style="margin:0;">Anthropic's agent. Comes with a Claude subscription: the standard paid plan is around $20/month.</p>
+          <p data-cid="e-1a5983d3" class="small" style="margin:0;">Anthropic's agent. Comes with a Claude subscription. Paid plans start at about $20/month.</p>
         </div>
         <div data-cid="e-57132b89" class="card">
           <div data-cid="e-bc2b67d1" class="label">Codex</div>
-          <p data-cid="e-ad2889e3" class="small" style="margin:0;">OpenAI's agent. Comes with a ChatGPT subscription: the standard paid plan is around $20/month.</p>
+          <p data-cid="e-ad2889e3" class="small" style="margin:0;">OpenAI's agent. Comes with a ChatGPT subscription. Paid plans start at about $20/month.</p>
         </div>
         <div data-cid="e-32ce3aa5" class="card">
           <div data-cid="e-80674225" class="label">OpenCode</div>
-          <p data-cid="e-a267e138" class="small" style="margin:0;">Open-source agent that works with many model providers. Today with DeepSeek Flash: paid per use, and much cheaper per task.</p>
+          <p data-cid="e-a267e138" class="small" style="margin:0;">Open-source agent. Works with many model providers (paid per use) or with local models. Today with DeepSeek Flash.</p>
         </div>
       </div>
       <p data-cid="e-433d8492" class="small quiet" style="margin-top:1em;">The models change every month. The habits on the next slide carry over.</p>
@@ -466,7 +479,7 @@
         <div class="mid"><span data-cid="e-f4cb33c5" class="tag">With care</span><p data-cid="e-3a5043fc">De-identified data you are allowed to share.</p></div>
         <div class="no"><span data-cid="e-970fa389" class="tag">Never*</span><p data-cid="e-d3d75036">Identifiable participant data.</p></div>
       </div>
-      <p data-cid="e-a754f720" class="tiny quiet" style="margin-top:0.8em;">* without a data processing agreement (and ethics approval), e.g. an enterprise contract or an approved secure environment.</p>
+      <p data-cid="e-a754f720" class="tiny quiet" style="margin-top:0.8em;">* without a data processing agreement (and ethics approval), e.g. an enterprise contract or an approved secure environment, or a fully local model.</p>
       <aside class="notes">
         13:48 (3 min). An agent reads whatever is in the folder and sends it to the model provider.
         Check what is in the folder before you start it.
@@ -481,7 +494,7 @@
         <div data-cid="e-b862bc8f" class="card">
           <div data-cid="e-2190d8a7" class="label">Asked from memory: no files, no web</div>
           <p data-cid="e-e722a0e9" class="small" style="margin:0;">All three agents recalled Silberzahn's numbers: 29 teams, odds ratios 0.89–2.93, 20 significant.</p>
-          <p data-cid="e-29ead66b" class="small" style="margin:0.5em 0 0 0;">DeepSeek put the hurricane paper on pp. 10185–10190. It is on pp. 8782–8787.</p>
+          <p data-cid="e-29ead66b" class="small" style="margin:0.5em 0 0 0;">All three knew the main critique of the hurricane paper: before 1979, every Atlantic hurricane had a female name. Given the data, all three then tested exactly that.</p>
         </div>
         <div data-cid="e-b623ceb8" class="card accent">
           <div data-cid="e-6c641dd3" class="label">What to do</div>
@@ -492,8 +505,10 @@
       <aside class="notes">
         13:51 (4 min). We asked each agent, with no files and no web, what Jung et al. found, whether it held up,
         and what Silberzahn et al. reported. We checked the answers against the sources. Claude and Codex declined
-        to give coefficients ("I will not give numbers that could be wrong"). All three named the main critique
-        of the hurricane paper: before 1979 all Atlantic hurricanes had female names, so name gender is confounded with era.
+        to give coefficients ("I will not give numbers that could be wrong"). All three named all four authors of the
+        hurricane paper (the prompt said only "Jung et al."). DeepSeek also gave volume and pages: the volume (111) was
+        right, the pages (10185–10190; actual 8782–8787) wrong. Before 1979 all Atlantic hurricanes had female names,
+        so name gender is confounded with era; slide 17 shows all three chose that check.
         So if the published numbers come from memory, "reproduced" can mean "recalled", and the robustness checks
         may follow a critique the agent has read. Other options: rerun the script yourself, rename the variables,
         or use synthetic data with a known effect.
@@ -555,11 +570,11 @@
         <tr><td>the other pressure variable</td><td>yes</td><td>yes*</td><td>yes*</td></tr>
       </table>
       <p data-cid="e-2a69cbbb" class="small" style="margin-top:0.7em;">Each ran 9 checks and concluded that the claim is fragile. All three chose the 1979 split, the best-known critique of the paper.</p>
-      <p data-cid="e-4f1c2a90" class="tiny">Each agent judged "survives" by its own yardstick. * Both followed a wrong line in my README.</p>
+      <p data-cid="e-4f1c2a90" class="tiny">Each agent judged "survives" by its own yardstick. * Both followed an error in the data's documentation.</p>
       <aside class="notes">
         Before 1979 all Atlantic hurricanes had female names, so name gender is confounded with era.
         Each agent predicted before running which checks would matter; they predicted the 1979 split correctly. Is that insight, or memory of the critique?
-        My README for these runs said ZMinPressure_A was standardised from the updated pressure values. It is standardised from the original ones (the DHARMa package documentation has the same error; the README on the page is corrected). Claude checked the data and noticed. Codex and DeepSeek trusted the README: Codex's "original pressure" check re-ran the published model; DeepSeek's "paper replication" baseline used the updated pressure, so its "original pressure" check (×5.18 at the 90th percentile) is the published model.
+        The data's documentation (from the DHARMa R package, which distributes the data) says ZMinPressure_A is scaled from the updated pressure values. It is scaled from the original ones. The READMEs for last night's runs repeated this; today's README is the DHARMa text itself, so the live agents face the same error. Claude checked the data and noticed. Codex and DeepSeek trusted the README: Codex's "original pressure" check re-ran the published model; DeepSeek's "paper replication" baseline used the updated pressure, so its "original pressure" check (×5.18 at the 90th percentile) is the published model.
         Yardsticks: Claude, CI of the femininity effect at damage +1 SD; DeepSeek, CI of the death ratio at the 90th percentile; Codex, interaction p &lt; .05. Codex's own summary: "only 1 of 10 high-damage ratio intervals exclude 1".
       </aside>
     </section>
@@ -601,7 +616,7 @@
       <p data-cid="e-3ed9c29e" class="marker">Both cases</p>
       <h2 data-cid="e-51a2eba9">What each agent decided without being asked</h2>
       <ul class="small" style="margin-top:0.3em;">
-        <li data-cid="e-f4ced829"><strong>Trusting the documentation.</strong> My README for these runs described one variable wrongly. Claude checked the data and noticed; Codex and DeepSeek built on the error.</li>
+        <li data-cid="e-f4ced829"><strong>Trusting the documentation.</strong> The data's documentation describes one variable wrongly. Claude checked the data and noticed; Codex and DeepSeek built on the error.</li>
         <li data-cid="e-7c31d0a4"><strong>Where "severe" starts.</strong> A median split, 1 SD above average, or the 75th percentile of damage: death ratios from &times;1.5 to &times;5.1 from one model.</li>
         <li data-cid="e-8e52b1f7"><strong>What counts as a red card.</strong> Codex added second yellows; the others did not.</li>
         <li data-cid="e-2d94c6a8"><strong>How far apart to compare.</strong> DeepSeek concluded that a dark/light split "removes the association". Codex ran the same split and flagged that it measures a different contrast.</li>
