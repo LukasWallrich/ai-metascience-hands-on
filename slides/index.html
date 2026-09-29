@@ -205,115 +205,39 @@
       <p data-cid="e-311e7871" class="marker">The next 70 minutes</p>
       <h2 data-cid="e-bb3cedc7">Plan</h2>
       <div class="turns timeline">
-        <div class="turn"><span data-cid="e-e137f659" class="tool">Start</span><span data-cid="e-f12fd5a9" class="res">Three cases, four agents, one prompt each: run unattended beforehand.</span></div>
-        <div class="turn"><span data-cid="e-b11a52b7" class="tool">Meanwhile</span><span data-cid="e-572571eb" class="res">How coding agents work, and how to work with them.</span></div>
-        <div class="turn"><span data-cid="e-e3bcf5ca" class="tool">Results</span><span data-cid="e-7a662aa9" class="res">What came back, and where the agents disagree.</span></div>
-        <div class="turn"><span data-cid="e-2c7e41b8" class="tool">Live</span><span data-cid="e-8d05f3a6" class="res">One interactive run, on a preprint of mine.</span></div>
-        <div class="turn"><span data-cid="e-986e9d06" class="tool">Last</span><span data-cid="e-d1dcad1f" class="res">What still needs a human, then your questions.</span></div>
+        <div class="turn"><span data-cid="e-e137f659" class="tool">Start</span><span data-cid="e-f12fd5a9" class="res">A live run on a preprint of mine: we start it now.</span></div>
+        <div class="turn"><span data-cid="e-b11a52b7" class="tool">Agents</span><span data-cid="e-572571eb" class="res">How coding agents work, and how to work with them.</span></div>
+        <div class="turn"><span data-cid="e-e3bcf5ca" class="tool">Cases</span><span data-cid="e-7a662aa9" class="res">Three papers, four agents, one prompt each: what came back, and where the agents disagree.</span></div>
+        <div class="turn"><span data-cid="e-2c7e41b8" class="tool">Live</span><span data-cid="e-8d05f3a6" class="res">Back to the live run: what it found, and one choice tested.</span></div>
+        <div class="turn"><span data-cid="e-986e9d06" class="tool">Last</span><span data-cid="e-d1dcad1f" class="res">What still needs a human, then discussion.</span></div>
       </div>
-      <p data-cid="e-4bc7a859" class="small quiet" style="margin-top:1.1em;">Follow along on your own machine, or just watch.</p>
+      <p data-cid="e-4bc7a859" class="small quiet" style="margin-top:1.1em;">Try it out with your own or a relevant paper, or just watch.</p>
       <aside class="notes">
-        13:21 (1 min). Rough clock: cases 13:22–13:30; working with agents 13:30–13:50;
-        results 13:50–14:05; interactive preprint run 14:05–14:22; what needs a human and questions until 14:30.
+        13:21 (1 min). Rough clock: live run started by 13:25; working with agents 13:25–13:45;
+        cases and results 13:45–14:08; back to the live run 14:08–14:22; what needs a human and discussion until 14:30.
         Watching is a fine option: setting up an agent for the first time takes longer than this session.
       </aside>
     </section>
 
-    <!-- Case A -->
-    <section data-cid="s-f078d7bd" class="pad">
-      <p data-cid="e-e98b6a4c" class="marker">Case A · small, agents finish in a few minutes</p>
-      <h2 data-cid="e-b40b8039">"Female hurricanes are deadlier than male hurricanes"</h2>
-      <p data-cid="e-db773f91" style="margin-top:0.6em;"><strong>92 US hurricanes</strong>, 1950–2012. Storms with more feminine names killed more people.</p>
-      <p data-cid="e-48cf816b">The authors' explanation: people take a storm with a feminine name less seriously.</p>
-      <p data-cid="e-cc309699" class="small quiet" style="margin-top:0.8em;">The data are open. <cite key="simonsohn2020"></cite> use them as a worked example for specification curve analysis.</p>
-      <p data-cid="e-d0c2e9ac" class="tiny" style="margin-top:1em;"><cite key="jung2014"></cite>, <em>PNAS</em>, 111(24), 8782–8787.</p>
-      <aside class="notes">
-        13:22 (2 min). Small dataset, one row per storm, so the runs finish in seconds and we can watch
-        the whole reproduction. The question for the agent: can it get the published result from the data,
-        and how much does that result depend on analysis choices?
-      </aside>
-    </section>
-
-    <!-- Case B -->
-    <section data-cid="s-05903621" class="pad">
-      <p data-cid="e-014643ec" class="marker">Case B · larger, many analysts</p>
-      <h2 data-cid="e-bccacd74">Do referees give more red cards to dark-skin-toned players?</h2>
-      <p data-cid="e-f12b7fbc" style="margin-top:0.4em;"><strong>29 teams</strong> analysed the same data: <strong>146,028</strong> player–referee pairs.</p>
-      <div class="cols" style="margin-top:0.5em;">
-        <div data-cid="e-72fd5b59" class="card">
-          <p class="statline" style="margin:0;"><span data-cid="e-a23cec83" class="big">0.89 – 2.93</span></p>
-          <p data-cid="e-8bc3a726" class="small quiet" style="margin:0.2em 0 0 0;">range of odds ratios (median 1.31)</p>
-        </div>
-        <div data-cid="e-ac4f9e61" class="card">
-          <p class="statline" style="margin:0;"><span data-cid="e-d238c9fe" class="big">20 of 29</span></p>
-          <p data-cid="e-3509dad3" class="small quiet" style="margin:0.2em 0 0 0;">teams had a confidence interval that excluded 1</p>
-        </div>
+    <!-- Live interactive run -->
+    <section data-cid="s-6d2a9e14" class="pad">
+      <p data-cid="e-a81f3c50" class="marker">Live · started now, back at the end</p>
+      <h2 data-cid="e-3f9b7d26">A live run on a preprint of mine</h2>
+      <p data-cid="e-c5e04a18" class="small quiet">Not in any training data, and I know where it is fragile: <a href="https://osf.io/preprints/psyarxiv/jsbgu" target="_blank">osf.io/preprints/psyarxiv/jsbgu</a></p>
+      <div data-cid="e-57b1d8e3" class="card" style="margin-top:0.5em;">
+        <p data-cid="e-0f6c29a7" class="small" style="margin:0; font-family:ui-monospace, Menlo, monospace; font-size:0.62em; line-height:1.5;">Consider the preprint at https://osf.io/preprints/psyarxiv/jsbgu and its linked data and code. Reproduce all numbers reported in it, with one script that runs from a clean start. Then identify the 3–5 analysis choices that are most fragile, list them, and predict what changing each might do to the results. Do not run those alternatives yet.</p>
       </div>
-      <p data-cid="e-19b671f5" class="small quiet" style="margin-top:0.8em;">Too slow to run live. In last night's runs, the agents saw this spread only after finishing their own analysis.</p>
-      <p data-cid="e-19074b3c" class="tiny" style="margin-top:0.6em;"><cite key="silberzahn2018"></cite>, <em>AMPPS</em>, 1(3), 337&ndash;356. Numbers from the teams' estimates file on OSF.</p>
+      <ol class="small" style="margin-top:0.6em;">
+        <li data-cid="e-94d2e6b1">It finds the data and code and reproduces the numbers while we talk.</li>
+        <li data-cid="e-2b8f0c73">It lists the fragile choices, with predictions.</li>
+        <li data-cid="e-e6a37d58">At the end, I pick one, and it tests it.</li>
+      </ol>
       <aside class="notes">
-        13:24 (2 min). Here the agent gets no published answer to reproduce. It picks its own analysis,
-        like one more team. Then it downloads the 29 teams' estimates and places itself among them.
-      </aside>
-    </section>
-
-    <!-- Case C -->
-    <section data-cid="s-7c2e9a41" class="pad">
-      <p data-cid="e-0a6f3c19" class="marker">Case C · recent: published January 2026</p>
-      <h2 data-cid="e-5d8b2e70">Does researchers' ideology shape their findings?</h2>
-      <p data-cid="e-93c4a1d6" style="margin-top:0.4em;"><strong>71 teams</strong> in a many-analysts study of immigration and support for social policy produced <strong>1,253</strong> estimates.</p>
-      <div class="cols" style="margin-top:0.5em;">
-        <div data-cid="e-2f7a8c35" class="card">
-          <p class="statline" style="margin:0;"><span data-cid="e-c1e5d948" class="big">+0.085</span></p>
-          <p data-cid="e-6b2d9f13" class="small quiet" style="margin:0.2em 0 0 0;">pro- minus anti-immigration teams' estimates (p = .008)</p>
-        </div>
-        <div data-cid="e-8e4f1a62" class="card">
-          <p class="statline" style="margin:0;"><span data-cid="e-4a9c7b20" class="big">+0.011</span></p>
-          <p data-cid="e-d3b6e085" class="small quiet" style="margin:0.2em 0 0 0;">per point of team pro-immigration sentiment (p = .06, tested at the 10% level)</p>
-        </div>
-      </div>
-      <p data-cid="e-17e8c4b9" class="small quiet" style="margin-top:0.8em;">The agents get the authors' replication package as published, and are told not to search for comments on the paper.</p>
-      <p data-cid="e-59f0a2d7" class="tiny" style="margin-top:0.6em;"><cite key="borjas2026"></cite>, <em>Science Advances</em>, 12(1), eadz7173. Data from <cite key="breznau2022"></cite>.</p>
-      <aside class="notes">
-        13:25 (1 min). Recent enough that the models do not know it well (see the caveat slide later).
-        Do not mention the replication report yet: it comes after the agents' results.
-        The package includes the authors' Stata and R code, logs and data. df.dta is the analysis file.
-      </aside>
-    </section>
-
-    <!-- The prompt -->
-    <section data-cid="s-4f4faa94" class="pad">
-      <p data-cid="e-c0d1ac91" class="marker">The prompts in short (full text on the page)</p>
-      <h2 data-cid="e-b0fa0ff0" style="margin-bottom:0.3em;">What each agent gets</h2>
-      <p data-cid="e-7be92022" class="small quiet">The data with its documentation (for case C, the whole replication package), and the paper's reference and DOI. Then:</p>
-      <div class="cols" style="gap:4%; margin-top:0.4em;">
-        <div data-cid="e-5d1e7a20" class="card">
-          <div data-cid="e-3a8c61f4" class="label">Cases A and C · hurricanes, ideology</div>
-          <ol class="small" style="margin:0.2em 0 0 1em;">
-            <li data-cid="e-e66b41fa"><strong>Reproduce</strong> the main result, with one script that runs from a clean start.</li>
-            <li data-cid="e-283998a9"><strong>Compare</strong> with the published numbers, and say where each came from.</li>
-            <li data-cid="e-c01250c2"><strong>List</strong> the decisions the paper left open.</li>
-            <li data-cid="e-68651c3f"><strong>Stress-test:</strong> predict, then run 6&ndash;10 alternatives.</li>
-            <li data-cid="e-7a9451a1"><strong>Judge</strong> whether the claim holds up.</li>
-          </ol>
-          <p data-cid="e-b83f0d27" class="tiny" style="margin:0.4em 0 0 0;">Case C adds: do not search for comments on the paper.</p>
-        </div>
-        <div data-cid="e-8f2b40c7" class="card">
-          <div data-cid="e-c47e19d5" class="label">Case B · red cards</div>
-          <ol class="small" style="margin:0.2em 0 0 1em;">
-            <li data-cid="e-1f6d3b82"><strong>Answer</strong> the question your way, with one script and an odds ratio.</li>
-            <li data-cid="e-94ae27c0"><strong>List</strong> the decisions the data left open.</li>
-            <li data-cid="e-6b05d9e3"><strong>Stress-test:</strong> predict, then run 6&ndash;10 alternatives.</li>
-            <li data-cid="e-d28c7f15"><strong>Only then compare</strong> with the 29 teams.</li>
-            <li data-cid="e-40e9b6a1"><strong>Conclude.</strong></li>
-          </ol>
-        </div>
-      </div>
-      <aside class="notes">
-        13:26 (2 min). Walk through the five steps briefly; we come back to why the prompt looks like this
-        once the agents are running. Point out step 2: every published number needs a source, and
-        "my memory" is an allowed answer, as long as it is declared. "Clean start": the script runs
-        on its own, in a fresh session, without anything the agent did by hand.
+        13:22 (3 min). New thread in T3 Code, Claude Opus 5.5 (high), in the empty folder
+        ~/Documents/Coding/presentations/ai-metascience-hands-on-prerun/live/preprint. Paste the prompt, start, back to the slides.
+        Preprint: "Can a Brief Informational Intervention Facilitate Culture-Add Hiring? An Experimental Vignette Study".
+        Teachable moment: the data link in the preprint (OSF project sqy3a) is not public, so the agent may hit a login wall.
+        If it does, ask the room whether the agent should use my OSF token from this machine: agents act with whatever credentials you give them.
       </aside>
     </section>
 
@@ -324,7 +248,7 @@
       <div class="cols" style="align-items:center; gap:5%; margin-top:0.4em;">
         <div style="flex:1.6;">
           <p data-cid="e-7b822a83" class="url"><a data-cid="e-ffb24e93" href="https://lukaswallrich.github.io/ai-metascience-hands-on/" target="_blank">lukaswallrich.github.io/<br>ai-metascience-hands-on</a></p>
-          <p data-cid="e-3aac021d" style="margin-top:0.8em;">Pick case A, case B, or your own paper with open data.</p>
+          <p data-cid="e-3aac021d" style="margin-top:0.8em;">Pick your own paper or a relevant one with open data and code, or one of our three cases.</p>
           <p data-cid="e-8e326640" class="small quiet">You need an agent you already use (<strong>Claude Code</strong>, <strong>Codex</strong>, <strong>OpenCode</strong>) and R or Python.</p>
         </div>
         <div style="flex:0 0 auto;">
@@ -335,30 +259,6 @@
         13:28 (1 min). The page has both prompts and a zip per case. Case B needs the data from OSF
         (link on the page). Your own paper: you know where the analysis is fragile, so you can judge the agent best.
         Published or de-identified data only. If you have no agent set up yet, watch and try later.
-      </aside>
-    </section>
-
-    <!-- Kick-off -->
-    <section data-cid="s-12c76cab" class="split-section">
-      <div class="split">
-        <div class="split-art"><img src="assets/launch.png" alt="Tasks launched in parallel"></div>
-        <div class="split-copy">
-          <p data-cid="e-ff0aa14d" class="marker">The runs</p>
-          <h2 data-cid="e-42638098">Four agents, same prompt</h2>
-          <ul style="font-size:0.9em;">
-            <li data-cid="e-44740086"><strong>Claude</strong> Opus 5.5 and Fable 5.1, in Claude Code</li>
-            <li data-cid="e-138f5acc"><strong>Codex</strong> GPT-6 Sol and Astra</li>
-            <li data-cid="e-da8bac6b"><strong>DeepSeek Flash</strong>, through OpenCode</li>
-          </ul>
-          <p data-cid="e-04baf3de" class="small quiet">Run unattended last night and this morning. Every thread is in T3 Code; every report is on the materials page.</p>
-        </div>
-      </div>
-      <aside class="notes">
-        13:29 (1 min). Switch to T3 Code: the project "Hands-on backup runs" has one thread per agent and case.
-        Open one (e.g. "C · ideology · Claude Opus 5.5") and scroll through the tool calls to show what a run looks like.
-        Run times: case A 2.5–13 min; case B 8.5–60 min; case C 6.5–11 min.
-        Models: A and B Claude Fable 5.1, GPT-6 Sol (high), DeepSeek Flash, plus Claude Opus 5.5 (high) this morning;
-        C Claude Opus 5.5 (high), GPT-6 Astra (high), GPT-6 Sol (high), DeepSeek Flash.
       </aside>
     </section>
 
@@ -467,12 +367,12 @@
       <div class="habits">
         <div class="fragment" data-fragment-index="0">
           <h3 data-cid="e-cb993762">Context</h3>
-          <p data-cid="e-67f01a02">The paper's reference and DOI, and a README that describes the variables. Better still: the PDF in the folder.</p>
-          <p data-cid="e-900d963c" class="said">"the data behind Jung et al. (2014) … README.md describes the variables"</p>
+          <p data-cid="e-67f01a02">The paper, with its linked data and code.</p>
+          <p data-cid="e-900d963c" class="said">"Consider the preprint at [URL] and the linked supplementary data and code"</p>
         </div>
         <div class="fragment" data-fragment-index="1">
           <h3 data-cid="e-1027840a">Grounding</h3>
-          <p data-cid="e-eab875c7">The data, and one script that runs from a clean start.</p>
+          <p data-cid="e-eab875c7">One script that runs from a clean start.</p>
           <p data-cid="e-3e5ceebe" class="said">"one script … produces every number you report"</p>
         </div>
         <div class="fragment" data-fragment-index="2">
@@ -505,6 +405,128 @@
       <aside class="notes">
         13:48 (3 min). An agent reads whatever is in the folder and sends it to the model provider.
         Check what is in the folder before you start it.
+      </aside>
+    </section>
+
+    <!-- Case A -->
+    <section data-cid="s-f078d7bd" class="pad">
+      <p data-cid="e-e98b6a4c" class="marker">Case A · small, agents finish in a few minutes</p>
+      <h2 data-cid="e-b40b8039">"Female hurricanes are deadlier than male hurricanes"</h2>
+      <p data-cid="e-db773f91" style="margin-top:0.6em;"><strong>92 US hurricanes</strong>, 1950–2012. Storms with more feminine names killed more people.</p>
+      <p data-cid="e-48cf816b">The authors' explanation: people take a storm with a feminine name less seriously.</p>
+      <p data-cid="e-cc309699" class="small quiet" style="margin-top:0.8em;">The data are open. <cite key="simonsohn2020"></cite> use them as a worked example for specification curve analysis.</p>
+      <p data-cid="e-d0c2e9ac" class="tiny" style="margin-top:1em;"><cite key="jung2014"></cite>, <em>PNAS</em>, 111(24), 8782–8787.</p>
+      <aside class="notes">
+        13:22 (2 min). Small dataset, one row per storm, so the runs finish in seconds and we can watch
+        the whole reproduction. The question for the agent: can it get the published result from the data,
+        and how much does that result depend on analysis choices?
+      </aside>
+    </section>
+
+    <!-- Case B -->
+    <section data-cid="s-05903621" class="pad">
+      <p data-cid="e-014643ec" class="marker">Case B · larger, many analysts</p>
+      <h2 data-cid="e-bccacd74">Do referees give more red cards to dark-skin-toned players?</h2>
+      <p data-cid="e-f12b7fbc" style="margin-top:0.4em;"><strong>29 teams</strong> analysed the same data: <strong>146,028</strong> player–referee pairs.</p>
+      <div class="cols" style="margin-top:0.5em;">
+        <div data-cid="e-72fd5b59" class="card">
+          <p class="statline" style="margin:0;"><span data-cid="e-a23cec83" class="big">0.89 – 2.93</span></p>
+          <p data-cid="e-8bc3a726" class="small quiet" style="margin:0.2em 0 0 0;">range of odds ratios (median 1.31)</p>
+        </div>
+        <div data-cid="e-ac4f9e61" class="card">
+          <p class="statline" style="margin:0;"><span data-cid="e-d238c9fe" class="big">20 of 29</span></p>
+          <p data-cid="e-3509dad3" class="small quiet" style="margin:0.2em 0 0 0;">teams had a confidence interval that excluded 1</p>
+        </div>
+      </div>
+      <p data-cid="e-19b671f5" class="small quiet" style="margin-top:0.8em;">Too slow to run live. In last night's runs, the agents saw this spread only after finishing their own analysis.</p>
+      <p data-cid="e-19074b3c" class="tiny" style="margin-top:0.6em;"><cite key="silberzahn2018"></cite>, <em>AMPPS</em>, 1(3), 337&ndash;356. Numbers from the teams' estimates file on OSF.</p>
+      <aside class="notes">
+        13:24 (2 min). Here the agent gets no published answer to reproduce. It picks its own analysis,
+        like one more team. Then it downloads the 29 teams' estimates and places itself among them.
+      </aside>
+    </section>
+
+    <!-- Case C -->
+    <section data-cid="s-7c2e9a41" class="pad">
+      <p data-cid="e-0a6f3c19" class="marker">Case C · recent: published January 2026</p>
+      <h2 data-cid="e-5d8b2e70">Does researchers' ideology shape their findings?</h2>
+      <p data-cid="e-93c4a1d6" style="margin-top:0.4em;"><strong>71 teams</strong> in a many-analysts study of immigration and support for social policy produced <strong>1,253</strong> estimates.</p>
+      <div class="cols" style="margin-top:0.5em;">
+        <div data-cid="e-2f7a8c35" class="card">
+          <p class="statline" style="margin:0;"><span data-cid="e-c1e5d948" class="big">+0.085</span></p>
+          <p data-cid="e-6b2d9f13" class="small quiet" style="margin:0.2em 0 0 0;">pro- minus anti-immigration teams' estimates (p = .008)</p>
+        </div>
+        <div data-cid="e-8e4f1a62" class="card">
+          <p class="statline" style="margin:0;"><span data-cid="e-4a9c7b20" class="big">+0.011</span></p>
+          <p data-cid="e-d3b6e085" class="small quiet" style="margin:0.2em 0 0 0;">per point of team pro-immigration sentiment (p = .06, tested at the 10% level)</p>
+        </div>
+      </div>
+      <p data-cid="e-17e8c4b9" class="small quiet" style="margin-top:0.8em;">The agents get the authors' replication package as published, and are told not to search for comments on the paper.</p>
+      <p data-cid="e-59f0a2d7" class="tiny" style="margin-top:0.6em;"><cite key="borjas2026"></cite>, <em>Science Advances</em>, 12(1), eadz7173. Data from <cite key="breznau2022"></cite>.</p>
+      <aside class="notes">
+        13:25 (1 min). Recent enough that the models do not know it well (see the caveat slide later).
+        Do not mention the replication report yet: it comes after the agents' results.
+        The package includes the authors' Stata and R code, logs and data. df.dta is the analysis file.
+      </aside>
+    </section>
+
+    <!-- The prompt -->
+    <section data-cid="s-4f4faa94" class="pad">
+      <p data-cid="e-c0d1ac91" class="marker">The prompts in short (full text on the page)</p>
+      <h2 data-cid="e-b0fa0ff0" style="margin-bottom:0.3em;">What each agent gets</h2>
+      <p data-cid="e-7be92022" class="small quiet">The data with its documentation (for case C, the whole replication package), and the paper's reference and DOI. Then:</p>
+      <div class="cols" style="gap:4%; margin-top:0.4em;">
+        <div data-cid="e-5d1e7a20" class="card">
+          <div data-cid="e-3a8c61f4" class="label">Cases A and C · hurricanes, ideology</div>
+          <ol class="small" style="margin:0.2em 0 0 1em;">
+            <li data-cid="e-e66b41fa"><strong>Reproduce</strong> the main result, with one script that runs from a clean start.</li>
+            <li data-cid="e-283998a9"><strong>Compare</strong> with the published numbers, and say where each came from.</li>
+            <li data-cid="e-c01250c2"><strong>List</strong> the decisions the paper left open.</li>
+            <li data-cid="e-68651c3f"><strong>Stress-test:</strong> predict, then run 6&ndash;10 alternatives.</li>
+            <li data-cid="e-7a9451a1"><strong>Judge</strong> whether the claim holds up.</li>
+          </ol>
+          <p data-cid="e-b83f0d27" class="tiny" style="margin:0.4em 0 0 0;">Case C adds: do not search for comments on the paper.</p>
+        </div>
+        <div data-cid="e-8f2b40c7" class="card">
+          <div data-cid="e-c47e19d5" class="label">Case B · red cards</div>
+          <ol class="small" style="margin:0.2em 0 0 1em;">
+            <li data-cid="e-1f6d3b82"><strong>Answer</strong> the question your way, with one script and an odds ratio.</li>
+            <li data-cid="e-94ae27c0"><strong>List</strong> the decisions the data left open.</li>
+            <li data-cid="e-6b05d9e3"><strong>Stress-test:</strong> predict, then run 6&ndash;10 alternatives.</li>
+            <li data-cid="e-d28c7f15"><strong>Only then compare</strong> with the 29 teams.</li>
+            <li data-cid="e-40e9b6a1"><strong>Conclude.</strong></li>
+          </ol>
+        </div>
+      </div>
+      <aside class="notes">
+        13:26 (2 min). Walk through the five steps briefly; we come back to why the prompt looks like this
+        once the agents are running. Point out step 2: every published number needs a source, and
+        "my memory" is an allowed answer, as long as it is declared. "Clean start": the script runs
+        on its own, in a fresh session, without anything the agent did by hand.
+      </aside>
+    </section>
+
+    <!-- Kick-off -->
+    <section data-cid="s-12c76cab" class="split-section">
+      <div class="split">
+        <div class="split-art"><img src="assets/launch.png" alt="Tasks launched in parallel"></div>
+        <div class="split-copy">
+          <p data-cid="e-ff0aa14d" class="marker">The runs</p>
+          <h2 data-cid="e-42638098">Four agents, same prompt</h2>
+          <ul style="font-size:0.9em;">
+            <li data-cid="e-44740086"><strong>Claude</strong> Opus 5.5 and Fable 5.1, in Claude Code</li>
+            <li data-cid="e-138f5acc"><strong>Codex</strong> GPT-6 Sol and Astra</li>
+            <li data-cid="e-da8bac6b"><strong>DeepSeek Flash</strong>, through OpenCode</li>
+          </ul>
+          <p data-cid="e-04baf3de" class="small quiet">Ran unattended last night and this morning, all through T3 Code. All reports: <a href="https://lukaswallrich.github.io/ai-metascience-hands-on/reports/" target="_blank">…/ai-metascience-hands-on/reports</a></p>
+        </div>
+      </div>
+      <aside class="notes">
+        13:29 (1 min). Switch to T3 Code: the project "Hands-on backup runs" has one thread per agent and case.
+        Open one (e.g. "C · ideology · Claude Opus 5.5") and scroll through the tool calls to show what a run looks like.
+        Run times: case A 2.5–13 min; case B 8.5–60 min; case C 6.5–11 min.
+        Models: A and B Claude Fable 5.1, GPT-6 Sol (high), DeepSeek Flash, plus Claude Opus 5.5 (high) this morning;
+        C Claude Opus 5.5 (high), GPT-6 Astra (high), GPT-6 Sol (high), DeepSeek Flash.
       </aside>
     </section>
 
@@ -561,11 +583,11 @@
       <p data-cid="e-62296435" class="marker">Case A · results from last night's runs</p>
       <h2 data-cid="e-c0607efa">Same coefficients, different headlines</h2>
       <table class="grid">
-        <tr><th></th><th>Published</th><th>Claude</th><th>Codex</th><th>DeepSeek</th></tr>
-        <tr><td>Name × damage</td><td>0.705</td><td>0.705</td><td>0.705</td><td>0.705</td></tr>
-        <tr><td>Its SE</td><td>0.184</td><td>0.150</td><td>0.184</td><td>&ndash;</td></tr>
-        <tr><td>Paper read from</td><td></td><td>PubMed Central</td><td>a PDF on a cycling blog</td><td>PubMed Central</td></tr>
-        <tr><td>Deaths, feminine vs masculine name, severe storm</td><td>&times;2.8<br><span class="tiny">high vs low damage split</span></td><td>&times;5.1<br><span class="tiny">damage +1 SD</span></td><td>&times;1.5<br><span class="tiny">75th percentile</span></td><td>&times;2.8<br><span class="tiny">median split, as the paper</span></td></tr>
+        <tr><th></th><th>Published</th><th>Opus 5.5</th><th>Fable 5.1</th><th>Codex</th><th>DeepSeek</th></tr>
+        <tr><td>Name × damage</td><td>0.705</td><td>0.705</td><td>0.705</td><td>0.705</td><td>0.705</td></tr>
+        <tr><td>Its SE</td><td>0.184</td><td>0.184</td><td>0.150</td><td>0.184</td><td>&ndash;</td></tr>
+        <tr><td>Paper read from</td><td></td><td>PubMed Central</td><td>PubMed Central</td><td>a PDF on a cycling blog</td><td>PubMed Central</td></tr>
+        <tr><td>Deaths, feminine vs masculine name, severe storm</td><td>&times;2.8<br><span class="tiny">high vs low damage split</span></td><td>&times;2.8<br><span class="tiny">median split, as the paper</span></td><td>&times;5.1<br><span class="tiny">damage +1 SD</span></td><td>&times;1.5<br><span class="tiny">75th percentile</span></td><td>&times;2.8<br><span class="tiny">median split, as the paper</span></td></tr>
       </table>
       <p data-cid="e-b8b7fafc" class="small" style="margin-top:0.7em;">The coefficients reproduce exactly. The paper does not say where "severe" starts, so each agent chose its own point.</p>
       <p data-cid="e-9b3f5d21" class="tiny">Runs on 28 Sep: Claude Fable 5.1 (Claude Code) · GPT-6 Sol, high effort (Codex) · DeepSeek Flash (OpenCode).</p>
@@ -585,61 +607,21 @@
       <p data-cid="e-cb6e47c7" class="marker">Case A · results from last night's runs</p>
       <h2 data-cid="e-6bc251a9">Which robustness checks did they choose?</h2>
       <table class="grid">
-        <tr><th>Does the effect survive…</th><th>Claude</th><th>Codex</th><th>DeepSeek</th></tr>
-        <tr><td>only storms from 1979 on</td><td>no</td><td>no</td><td>no</td></tr>
-        <tr><td>log damage</td><td>no</td><td>no</td><td>&ndash;</td></tr>
-        <tr><td>no interaction terms</td><td>no</td><td>&ndash;</td><td>no</td></tr>
-        <tr><td>binary name gender</td><td>yes</td><td>yes</td><td>yes</td></tr>
-        <tr><td>dropping the deadliest storms</td><td>yes</td><td>yes</td><td>&ndash;</td></tr>
-        <tr><td>the other pressure variable</td><td>yes</td><td>yes*</td><td>yes*</td></tr>
+        <tr><th>Does the effect survive…</th><th>Opus 5.5</th><th>Fable 5.1</th><th>Codex</th><th>DeepSeek</th></tr>
+        <tr><td>only storms from 1979 on</td><td>no</td><td>no</td><td>no</td><td>no</td></tr>
+        <tr><td>log damage</td><td>no</td><td>no</td><td>no</td><td>&ndash;</td></tr>
+        <tr><td>no interaction terms</td><td>no</td><td>no</td><td>&ndash;</td><td>no</td></tr>
+        <tr><td>binary name gender</td><td>yes</td><td>yes</td><td>yes</td><td>yes</td></tr>
+        <tr><td>dropping the deadliest storms</td><td>&ndash;</td><td>yes</td><td>yes</td><td>&ndash;</td></tr>
+        <tr><td>the other pressure variable</td><td>yes</td><td>yes</td><td>yes*</td><td>yes*</td></tr>
       </table>
-      <p data-cid="e-2a69cbbb" class="small" style="margin-top:0.7em;">Each ran 9 checks and concluded that the claim is fragile. All three chose the 1979 split, the best-known critique of the paper.</p>
+      <p data-cid="e-2a69cbbb" class="small" style="margin-top:0.7em;">Each ran 9&ndash;10 checks and concluded that the claim is fragile. All four chose the 1979 split, the best-known critique of the paper.</p>
       <p data-cid="e-4f1c2a90" class="tiny">Each agent judged "survives" by its own yardstick. * Both followed an error in the data's documentation.</p>
       <aside class="notes">
         Before 1979 all Atlantic hurricanes had female names, so name gender is confounded with era.
         Each agent predicted before running which checks would matter; they predicted the 1979 split correctly. Is that insight, or memory of the critique?
         The data's documentation (from the DHARMa R package, which distributes the data) says ZMinPressure_A is scaled from the updated pressure values. It is scaled from the original ones. The READMEs for last night's runs repeated this; today's README is the DHARMa text itself, so the live agents face the same error. Claude checked the data and noticed. Codex and DeepSeek trusted the README: Codex's "original pressure" check re-ran the published model; DeepSeek's "paper replication" baseline used the updated pressure, so its "original pressure" check (×5.18 at the 90th percentile) is the published model.
         Yardsticks: Claude, CI of the femininity effect at damage +1 SD; DeepSeek, CI of the death ratio at the 90th percentile; Codex, interaction p &lt; .05. Codex's own summary: "only 1 of 10 high-damage ratio intervals exclude 1".
-      </aside>
-    </section>
-
-    <!-- Backup results from the runs on 29 Sep (prerun/runs/ideology-*) -->
-    <section data-cid="s-3e81c5d2" class="pad">
-      <p data-cid="e-a4f27b93" class="marker">Case C · results from this morning's runs</p>
-      <h2 data-cid="e-6c0d9e18">Four agents, one package</h2>
-      <table class="grid">
-        <tr><th></th><th>Opus 5.5</th><th>GPT-6 Astra</th><th>GPT-6 Sol</th><th>DeepSeek Flash</th></tr>
-        <tr><td>Reproduced Table 1</td><td>all 9 columns</td><td>all 9 columns</td><td>all 9 columns</td><td>all 9 columns</td></tr>
-        <tr><td>Noticed 4 discipline codes with one team each</td><td>yes: "the paper does not discuss this"</td><td>yes, as a technical nuisance</td><td>no</td><td>no</td></tr>
-        <tr><td>Verdict</td><td>"weaker than Table 1 suggests"</td><td>"depends on defensible analysis choices"</td><td>"depends on reasonable analysis choices"</td><td>"holds up"</td></tr>
-      </table>
-      <p data-cid="e-0e9b4c67" class="small" style="margin-top:0.8em;">All four chose the pro&ndash;anti contrast (p = .008) as the main result. In every run, removing the discipline controls (alone or with all others) made it non-significant.</p>
-      <p data-cid="e-c85a1f30" class="tiny">Claude Code, Codex (both on high effort) and OpenCode, 6.5&ndash;11 minutes each.</p>
-      <aside class="notes">
-        Matching T3 threads: "C · ideology · …".
-        Opus 5.5: "Four of the 13 mdegree cells hold one team each: team 33 (pro), teams 46 and 47 (anti) and team 59 (moderate). Their fixed effect absorbs them completely, so the anti-immigration coefficient is identified from 7 of the 9 anti teams. The paper does not discuss this."
-        Astra: found the same "4 singleton discipline cells with unit leverage", but only because they made one standard-error method undefined; it excluded them for that one fit.
-        DeepSeek read the dependence on discipline controls as support: "consistent with the paper's argument that discipline composition is the mechanism's load-bearing control".
-        Opus and Astra also found a model with a missing z statistic that Stata counts as significant.
-      </aside>
-    </section>
-
-    <section data-cid="s-9b4d7f06" class="pad">
-      <p data-cid="e-2d6a8e51" class="marker">Case C · what the replicators found</p>
-      <h2 data-cid="e-f1c39b47">Two agents saw the problem. None ran the check.</h2>
-      <ul class="small" style="margin-top:0.3em;">
-        <li data-cid="e-7a0e5c82">Four discipline codes each hold one team. Their fixed effects absorb <strong>80 estimates</strong> that go against the hypothesis <cite key="auspurg2026"></cite>.</li>
-        <li data-cid="e-b5e2d914">Merge those four codes, and the per-point effect falls from 0.011 (p = .06) to 0.001 (p = .94). The agents' pro&ndash;anti contrast falls from 0.085 (p = .008) to 0.044 (p = .23).</li>
-        <li data-cid="e-3c97f0a6">Dropping the weights, or using the original study's standardised estimates, also removes the per-point effect.</li>
-        <li data-cid="e-e04b8d71">The authors reply that their discipline coding is a theory-driven choice <cite key="borjas2026reply"></cite>.</li>
-      </ul>
-      <aside class="notes">
-        Auspurg &amp; Brüderl, I4R Discussion Paper 303 (June 2026): "Due to idiosyncratic variable coding, 80 data points from four research teams that contradict the ideology hypothesis were effectively excluded from the analysis. Correcting this error renders the ideology effect statistically insignificant."
-        Their main text tests the per-point effect (Table 1, column 1), which they call B&amp;B's preferred specification, and argues that extreme-group contrasts lose information and inflate effects. Their supplement (Section E, Table A3) reruns all nine Table 1 models with their three changes: the pro–anti contrast falls to 0.012 (p = .29), and no model stays significant even at 10%.
-        The paper itself presents columns 1–3 as three alternative specifications and highlights the 0.085 contrast in the text, so the agents' choice of main result is defensible.
-        The single-change numbers on the slide (merge only: pro–anti 0.085 → 0.044, p = .23; per-point 0.011 → 0.0006) are my own calculation.
-        Borjas &amp; Breznau's reply (DP 304) also says researcher-level models without the single-team cells stay significant in most specifications.
-        The teaching point: seeing an oddity and testing whether it matters are different steps. The prompt asked for alternatives chosen in advance; none of the agents went back after noticing the cells.
       </aside>
     </section>
 
@@ -677,6 +659,46 @@
       </aside>
     </section>
 
+    <!-- Backup results from the runs on 29 Sep (prerun/runs/ideology-*) -->
+    <section data-cid="s-3e81c5d2" class="pad">
+      <p data-cid="e-a4f27b93" class="marker">Case C · results from this morning's runs</p>
+      <h2 data-cid="e-6c0d9e18">Four agents, the same replication package</h2>
+      <table class="grid">
+        <tr><th></th><th>Opus 5.5</th><th>GPT-6 Astra</th><th>GPT-6 Sol</th><th>DeepSeek Flash</th></tr>
+        <tr><td>Reproduced Table 1</td><td>all 9 columns</td><td>all 9 columns</td><td>all 9 columns</td><td>all 9 columns</td></tr>
+        <tr><td>Noticed 4 discipline codes with one team each</td><td>yes: "the paper does not discuss this"</td><td>yes, as a technical nuisance</td><td>no</td><td>no</td></tr>
+        <tr><td>Verdict</td><td>"weaker than Table 1 suggests"</td><td>"depends on defensible analysis choices"</td><td>"depends on reasonable analysis choices"</td><td>"holds up"</td></tr>
+      </table>
+      <p data-cid="e-0e9b4c67" class="small" style="margin-top:0.8em;">All four chose the pro&ndash;anti contrast (p = .008) as the main result. In every run, removing the discipline controls (alone or with all others) made it non-significant.</p>
+      <p data-cid="e-c85a1f30" class="tiny">Claude Code, Codex (both on high effort) and OpenCode, 6.5&ndash;11 minutes each.</p>
+      <aside class="notes">
+        Matching T3 threads: "C · ideology · …".
+        Opus 5.5: "Four of the 13 mdegree cells hold one team each: team 33 (pro), teams 46 and 47 (anti) and team 59 (moderate). Their fixed effect absorbs them completely, so the anti-immigration coefficient is identified from 7 of the 9 anti teams. The paper does not discuss this."
+        Astra: found the same "4 singleton discipline cells with unit leverage", but only because they made one standard-error method undefined; it excluded them for that one fit.
+        DeepSeek read the dependence on discipline controls as support: "consistent with the paper's argument that discipline composition is the mechanism's load-bearing control".
+        Opus and Astra also found a model with a missing z statistic that Stata counts as significant.
+      </aside>
+    </section>
+
+    <section data-cid="s-9b4d7f06" class="pad">
+      <p data-cid="e-2d6a8e51" class="marker">Case C · what the replicators found</p>
+      <h2 data-cid="e-f1c39b47">Two agents saw the problem. None ran the check.</h2>
+      <ul class="small" style="margin-top:0.3em;">
+        <li data-cid="e-7a0e5c82">Four discipline codes each hold one team. Their fixed effects absorb <strong>80 estimates</strong> that go against the hypothesis <cite key="auspurg2026"></cite>.</li>
+        <li data-cid="e-b5e2d914">Merge those four codes, and the per-point effect falls from 0.011 (p = .06) to 0.001 (p = .94). The agents' pro&ndash;anti contrast falls from 0.085 (p = .008) to 0.044 (p = .23).</li>
+        <li data-cid="e-3c97f0a6">Dropping the weights, or using the original study's standardised estimates, also removes the per-point effect.</li>
+        <li data-cid="e-e04b8d71">The authors reply that their discipline coding is a theory-driven choice <cite key="borjas2026reply"></cite>.</li>
+      </ul>
+      <aside class="notes">
+        Auspurg &amp; Brüderl, I4R Discussion Paper 303 (June 2026): "Due to idiosyncratic variable coding, 80 data points from four research teams that contradict the ideology hypothesis were effectively excluded from the analysis. Correcting this error renders the ideology effect statistically insignificant."
+        Their main text tests the per-point effect (Table 1, column 1), which they call B&amp;B's preferred specification, and argues that extreme-group contrasts lose information and inflate effects. Their supplement (Section E, Table A3) reruns all nine Table 1 models with their three changes: the pro–anti contrast falls to 0.012 (p = .29), and no model stays significant even at 10%.
+        The paper itself presents columns 1–3 as three alternative specifications and highlights the 0.085 contrast in the text, so the agents' choice of main result is defensible.
+        The single-change numbers on the slide (merge only: pro–anti 0.085 → 0.044, p = .23; per-point 0.011 → 0.0006) are my own calculation.
+        Borjas &amp; Breznau's reply (DP 304) also says researcher-level models without the single-team cells stay significant in most specifications.
+        The teaching point: seeing an oddity and testing whether it matters are different steps. The prompt asked for alternatives chosen in advance; none of the agents went back after noticing the cells.
+      </aside>
+    </section>
+
     <section data-cid="s-db4326cd" class="pad">
       <p data-cid="e-3ed9c29e" class="marker">All three cases</p>
       <h2 data-cid="e-51a2eba9">What each agent decided without being asked</h2>
@@ -694,32 +716,23 @@
       </aside>
     </section>
 
-    <!-- Live interactive run -->
-    <section data-cid="s-6d2a9e14" class="pad">
-      <p data-cid="e-a81f3c50" class="marker">Live · with a human in the loop</p>
-      <h2 data-cid="e-3f9b7d26">Now interactively, on a preprint of mine</h2>
-      <p data-cid="e-c5e04a18" class="small quiet">Not in any training data, and I know where it is fragile: <a href="https://osf.io/preprints/psyarxiv/jsbgu" target="_blank">osf.io/preprints/psyarxiv/jsbgu</a></p>
-      <div data-cid="e-57b1d8e3" class="card" style="margin-top:0.5em;">
-        <p data-cid="e-0f6c29a7" class="small" style="margin:0; font-family:ui-monospace, Menlo, monospace; font-size:0.62em; line-height:1.5;">Here is a preprint: https://osf.io/preprints/psyarxiv/jsbgu. Find its data and analysis code from the links in the preprint and download them into this folder. Before running anything: tell me what you take to be the main result and the three analysis choices you think are most fragile, and ask me any questions you need answered. Wait for my answers.</p>
-      </div>
-      <ol class="small" style="margin-top:0.6em;">
-        <li data-cid="e-94d2e6b1">The agent reads, finds the materials, and asks its questions.</li>
-        <li data-cid="e-2b8f0c73">I answer, and pick one fragile choice.</li>
-        <li data-cid="e-e6a37d58">It predicts the effect of that choice, then tests it.</li>
-      </ol>
+    <!-- Back to the live run -->
+    <section data-cid="s-8b3e5f72" class="pad">
+      <p data-cid="e-4c1a9d0e" class="marker">Live · back to the preprint</p>
+      <h2 data-cid="e-d7e2b6f4">What did the live run find?</h2>
+      <ul style="margin-top:0.5em;">
+        <li data-cid="e-19f8c3a5">Which numbers did it reproduce, and which not?</li>
+        <li data-cid="e-a6b0d4e2">Which fragile choices did it list, and what did it predict?</li>
+        <li data-cid="e-5e3c7f81">I pick one choice. It tests it, and we compare with its prediction.</li>
+      </ul>
       <aside class="notes">
-        14:05 (17 min). New thread in T3 Code, Claude Opus 5.5 (high), in an empty folder:
-        ~/Documents/Coding/presentations/ai-metascience-hands-on-prerun/live/preprint.
-        Preprint: "Can a Brief Informational Intervention Facilitate Culture-Add Hiring? An Experimental Vignette Study".
-        Teachable moment: the data link in the preprint (OSF project sqy3a) is not public, so the agent hits a login wall.
-        Ask the room: should the agent use my OSF token from this machine? Agents act with whatever credentials you give them.
-        Then answer its questions, choose one fragile choice (or name one I know), and ask it to predict before testing.
+        14:08 (14 min). Switch to the live thread in T3 Code. Read its reproduction table and its list of fragile choices.
+        Pick one choice (one of its list, or one I know is fragile) and send: "Test choice [n] now. Keep everything else fixed, and compare the result with your prediction."
       </aside>
     </section>
 
     <!-- What still needs a human -->
     <section data-cid="s-fdb2473b" class="pad">
-      <p data-cid="e-fcb86fcf" class="marker">Where I stay involved</p>
       <h2 data-cid="e-04282e2a">What still needs a human</h2>
       <ul style="margin-top:0.5em;">
         <li data-cid="e-ee2cae65">Deciding what counts as the "main result" before the agent does.</li>
@@ -752,7 +765,7 @@
         <div class="split-art"><img class="fit" src="assets/conversation.png" alt="Two speech bubbles in conversation"></div>
         <div class="split-copy">
           <p data-cid="e-1c0fee95" class="marker">Over to you</p>
-          <h2 data-cid="e-64f1bef9">Questions &amp; comments</h2>
+          <h2 data-cid="e-64f1bef9">Discussion</h2>
           <p data-cid="e-59ad4422" class="small quiet" style="margin-top:0.8em;">Materials and prompts:<br><a data-cid="e-727bfa45" href="https://lukaswallrich.github.io/ai-metascience-hands-on/" target="_blank">lukaswallrich.github.io/ai-metascience-hands-on</a></p>
         </div>
       </div>
