@@ -66,7 +66,14 @@
 </div>
 
 <div class="case">
-  <p class="marker">Case C · your own</p>
+  <p class="marker">Case C · recent, agents finish in about 10 minutes</p>
+  <h3>Does researchers' ideology shape their findings?</h3>
+  <p>Borjas &amp; Breznau (2026), <em>Science Advances</em>, <a href="https://doi.org/10.1126/sciadv.adz7173">doi:10.1126/sciadv.adz7173</a>. 1,253 estimates from 71 teams in a many-analysts study of immigration and support for social policy.</p>
+  <p><a class="btn" href="https://github.com/nbreznau/ideology_specification/archive/b72b1b05ee7447d838cb8fcee60afb1268d49559.zip">Download case C</a> <span class="quiet">(the authors' replication package, as published; 9 MB)</span> Unzip it and paste the case C prompt below.</p>
+</div>
+
+<div class="case">
+  <p class="marker">Case D · your own</p>
   <h3>A paper you know well, with open data</h3>
   <p>You know the right answer and where the analysis is fragile, so you can judge the agent best here. Use published or de-identified data only; don't give identifiable participant data to a commercial agent.</p>
   <p><a class="btn" href="cases/your-own/PROMPT.md">Prompt template</a></p>
@@ -84,8 +91,12 @@
 <pre id="p-b"></pre>
 </details>
 <details>
-<summary>Case C: your own paper (fill in the brackets)</summary>
+<summary>Case C: ideology and research findings</summary>
 <pre id="p-c"></pre>
+</details>
+<details>
+<summary>Case D: your own paper (fill in the brackets)</summary>
+<pre id="p-d"></pre>
 </details>
 
 <h2>While it runs</h2>
@@ -108,7 +119,8 @@
   });
   load('p-a', 'cases/himmicanes/PROMPT.md');
   load('p-b', 'cases/redcards/PROMPT.md');
-  load('p-c', 'cases/your-own/PROMPT.md');
+  load('p-c', 'cases/ideology/PROMPT.md');
+  load('p-d', 'cases/your-own/PROMPT.md');
 </script>
 </body>
 </html>

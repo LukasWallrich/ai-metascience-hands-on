@@ -28,5 +28,39 @@
     "issue": "11",
     "pages": "1208-1214",
     "doi": "10.1038/s41562-020-0912-z"
+  },
+  "borjas2026": {
+    "authors": "Borjas, G. J., & Breznau, N.",
+    "year": 2026,
+    "title": "Ideological bias in the production of research findings",
+    "journal": "Science Advances",
+    "volume": "12",
+    "issue": "1",
+    "pages": "eadz7173",
+    "doi": "10.1126/sciadv.adz7173"
+  },
+  "breznau2022": {
+    "authors": "Breznau, N., Rinke, E. M., Wuttke, A., ... Żółtak, T.",
+    "year": 2022,
+    "title": "Observing many researchers using the same data and hypothesis reveals a hidden universe of uncertainty",
+    "journal": "Proceedings of the National Academy of Sciences",
+    "volume": "119",
+    "issue": "44",
+    "pages": "e2203150119",
+    "doi": "10.1073/pnas.2203150119"
+  },
+  "auspurg2026": {
+    "authors": "Auspurg, K., & Brüderl, J.",
+    "year": 2026,
+    "title": "Fragile evidence for an ideological bias in the production of research findings: Comment on Borjas and Breznau",
+    "publisher": "I4R Discussion Paper No. 303, Institute for Replication",
+    "url": "https://www.econstor.eu/bitstream/10419/341575/1/I4R-DP303.pdf"
+  },
+  "borjas2026reply": {
+    "authors": "Borjas, G. J., & Breznau, N.",
+    "year": 2026,
+    "title": "A lack of robustness in robustness checking from Auspurg and Brüderl",
+    "publisher": "I4R Discussion Paper No. 304, Institute for Replication",
+    "url": "https://www.econstor.eu/bitstream/10419/341576/1/I4R-DP304.pdf"
   }
 }
