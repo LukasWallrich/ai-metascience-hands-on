@@ -579,6 +579,7 @@
         Published: 15.15 vs 41.84 predicted deaths (MFI 3 vs 9), from a model with damage split into high and low; the paper does not give the cut. DeepSeek reproduced that model with a median split: 17.85 vs 50.35 (×2.82).
         Claude: 10.09 vs 51.54 at damage +1 SD, pressure at the mean. Codex: 9.74 vs 14.69 at the 75th percentile of damage.
         DeepSeek's own robustness baseline used a different model (updated pressure; ×4.37 at the 90th percentile): see the next slide.
+        Rerun this morning with Claude Opus 5.5 (high effort), T3 thread "A · hurricanes · Claude Opus 5.5", 13 min: reproduced every number it found in the main text, including SE 0.184 (it identified the observed-information SEs), found the documentation error on the pressure variable, reproduced 15.15 vs 41.84 with a median split (ties coded low), and flagged a likely sign typo in the paper's binary-gender model. Verdict: "These data do not support the headline claim as a robust finding."
       </aside>
     </section>
 
@@ -662,6 +663,7 @@
         Codex rescaled: 1.121 squared = 1.26 (CI 1.06–1.50). Codex's unadjusted all-dismissals estimate (1.115 per half scale, about 1.24 full scale) matches DeepSeek's all-dismissals estimate of 1.24.
         Claude's headless run backgrounded its R job and ended its turn; it was resumed once with "run it in the foreground". In T3 Code, Claude is woken when a background job finishes (the session that prepared these slides ran in T3 Code and was woken this way several times).
         All three agree once outcome and scale are lined up: a modest association that is robust across their own checks.
+        Rerun this morning with Claude Opus 5.5 (high), T3 thread "B · red cards · Claude Opus 5.5", 37 min, no nudge needed: OR 1.38 [1.12, 1.70], same model as Claude Fable; it explained that its binary split (OR 1.20) is a narrower contrast (expected 1.38^0.7 ≈ 1.25).
       </aside>
     </section>
 
